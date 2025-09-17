@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Hive - About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .network-node {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        .network-node:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+        
+        .network-node:nth-child(3n) {
+            animation-delay: 1s;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+        
+        .connection-line {
+            stroke: rgba(255, 255, 255, 0.1);
+            stroke-width: 1;
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(246, 173, 85, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+
+
+<section class="text-center px-6 py-20 bg-gradient-to-b from-black via-[#0a0a0a] to-black">
+  <div class="max-w-4xl mx-auto space-y-4">
+   <h2 class="text-3xl md:text-4xl font-bold">
+  <span class="text-white">The Hive</span>
+  <span class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">
+    Growth Framework
+  </span>
+</h2>
+
+    <p class="text-gray-400">
+      How we take you from setup to scale.
+    </p>
+  </div>
+
+  <div class="flex justify-center gap-6 mt-20 flex-wrap">
+    <div class="flex flex-col items-center space-y-3">
+      <img src="locker/Images/Scout.png" alt="Scout" class="w-32 h-32">
+      <span class="text-gray-300 text-lg">Scout</span>
+    </div>
+
+    <div class="flex flex-col items-center space-y-3">
+      <img src="locker/Images/Join the Hive.png" alt="Join the Hive" class="w-32 h-32">
+      <span class="text-[#5FB1C3] font-semibold text-lg">Join the Hive</span>
+    </div>
+
+    <div class="flex flex-col items-center space-y-3">
+      <img src="locker/Images/Build The Hive.png" alt="Build the Hive" class="w-32 h-32">
+      <span class="text-[#E99855] font-semibold text-lg">Build the Hive</span>
+    </div>
+
+    <div class="flex flex-col items-center space-y-3">
+      <img src="locker/Images/Buzz v2.png" alt="Buzz" class="w-32 h-32">
+      <span class="text-gray-300 text-lg">Buzz</span>
+    </div>
+
+    <div class="flex flex-col items-center space-y-3">
+      <img src="locker/Images/Buzz v2.png" alt="Buzz" class="w-32 h-32">
+      <span class="text-gray-300 text-lg">Thrive</span>
+    </div>
+  </div>
+
+  <div class="mt-12">
+    <a href="#"
+       class="px-6 py-3 rounded-lg text-white font-semibold transition-colors"
+       style="background: linear-gradient(90deg, #E99855, #5FB1C3);">
+       Learn More
+    </a>
+  </div>
+</section>
+
+
+
+</body>
+</html>
