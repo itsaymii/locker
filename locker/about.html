@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Hive - About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .network-node {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        .network-node:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+        
+        .network-node:nth-child(3n) {
+            animation-delay: 1s;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+        
+        .connection-line {
+            stroke: rgba(255, 255, 255, 0.1);
+            stroke-width: 1;
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(246, 173, 85, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <div class="container mx-auto px-6 py-16 max-w-7xl">
+        <div class="text-center mb-16">
+            <p class="text-gray-400 text-sm mb-4 tracking-wide uppercase">Digital Marketing Services in Melbourne</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 
+                       bg-gradient-to-r from-[#E99855] to-[#5FB1C3] 
+                       bg-clip-text text-transparent">
+                About Pixel Hive
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-light text-gray-300 mb-8">
+                Smarter Systems. Real Growth.
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                At Pixel Hive, we help ambitious businesses scale without the chaos. With our all-in-one marketing and lead management system, you'll capture more leads, close more sales, and finally have the clarity you've been missing.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="images/light.png" alt="Light" class="w-8 h-8">
+                    <h3 class="text-2xl font-semibold 
+                               bg-gradient-to-r from-[#E99855] to-[#5FB1C3] 
+                               bg-clip-text text-transparent">
+                        Our Story
+                    </h3>
+                </div>
+
+                <div class="space-y-6 text-gray-400 leading-relaxed">
+                    <p>
+                        Pixel Hive was born out of frustration. Like many business owners, we noticed how cluttered digital-media-delivered, and left up chasing leads through multiple systems instead of actually doing business.
+                    </p>
+                    
+                    <p>
+                        By bringing the right team, systems, and strategies together, we started seeing better results—fast. What began as a solution for ourselves grew into a mission to help other businesses scale smarter, without the waste and guesswork.
+                    </p>
+                    
+                    <p>
+                        Today, Pixel Hive is more than a digital agency. It's a command center for growth, where your marketing, workflows, and client management live in one place.
+                    </p>
+                </div>
+
+            <div class="flex gap-4 pt-8">
+                <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center 
+                                hover:bg-gradient-to-r ">
+                    <img src="images/instagram.png" alt="Instagram" class="w-5 h-5">
+                </a>
+
+                <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center 
+                                hover:bg-gradient-to-r ">
+                    <img src="images/facebook.png" alt="Facebook" class="w-5 h-5">
+                </a>
+            </div>
+
+            </div>
+
+            <div class="flex justify-center items-center">
+                <div class="w-80 h-80">
+                    <img src="images/socials.png" 
+                         alt="Network Visualization" 
+                         class="w-full h-full object-contain">
+                </div>
+            </div>
+                                 
+        </div>
+
+        <div class="text-center mt-16">
+            <button 
+                class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] 
+                       hover:from-[#E99855]/90 hover:to-[#5FB1C3]/90
+                       text-black font-semibold px-8 py-3 rounded-lg 
+                       transition-all duration-300 shadow-lg hover:shadow-xl">
+                Book a Discovery Call Now
+            </button>
+        </div>
+    </div>
+
+<section class="text-center px-6 py-16 bg-black">
+  <div class="max-w-3xl mx-auto space-y-6">
+    <h2 class="text-2xl md:text-3xl font-bold">
+      <span class="text-[#E99855]">Our Mission</span> <span class="text-white">Is Simple:</span>
+    </h2>
+    <p class="text-gray-300">
+      Make marketing transparent, scalable, and results-driven for businesses of all sizes.
+    </p>
+    <p class="text-gray-400">
+      <span class="text-[#E99855]">Our vision</span> is to build one of Australia's most trusted and impactful marketing platforms — 
+      helping brands grow, communities thrive, and great businesses be seen.
+    </p>
+  </div>
+</section>
+
+<section class="text-center px-6 py-20 bg-gradient-to-b from-black via-[#0a0a0a] to-black">
+  <div class="max-w-4xl mx-auto space-y-4">
+   <h2 class="text-3xl md:text-4xl font-bold">
+  <span class="text-white">The Hive</span>
+  <span class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">
+    Growth Framework
+  </span>
+</h2>
+
+    <p class="text-gray-400">
+      How we take you from setup to scale.
+    </p>
+  </div>
+
+  <div class="flex justify-center gap-6 mt-20 flex-wrap">
+    <div class="flex flex-col items-center space-y-3">
+      <img src="images/scout.png" alt="Scout" class="w-32 h-32">
+      <span class="text-gray-300 text-lg">Scout</span>
+    </div>
+
+    <div class="flex flex-col items-center space-y-3">
+      <img src="images/Join the Hive.png" alt="Join the Hive" class="w-32 h-32">
+      <span class="text-[#5FB1C3] font-semibold text-lg">Join the Hive</span>
+    </div>
+
+    <div class="flex flex-col items-center space-y-3">
+      <img src="images/Build The Hive.png" alt="Build the Hive" class="w-32 h-32">
+      <span class="text-[#E99855] font-semibold text-lg">Build the Hive</span>
+    </div>
+
+    <div class="flex flex-col items-center space-y-3">
+      <img src="images/Buzz v2.png" alt="Buzz" class="w-32 h-32">
+      <span class="text-gray-300 text-lg">Buzz</span>
+    </div>
+
+    <div class="flex flex-col items-center space-y-3">
+      <img src="images/Thrive v2.png" alt="Thrive" class="w-32 h-32">
+      <span class="text-gray-300 text-lg">Thrive</span>
+    </div>
+  </div>
+
+  <div class="mt-12">
+    <a href="#"
+       class="px-6 py-3 rounded-lg text-white font-semibold transition-colors"
+       style="background: linear-gradient(90deg, #E99855, #5FB1C3);">
+       Learn More
+    </a>
+  </div>
+</section>
+
+<section class="px-6 py-20 bg-black">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-12">
+    
+    <div class="space-y-6 text-left">
+      <h2 class="text-3xl md:text-4xl font-bold">
+        <span class="text-white">The Hive</span>
+        <span class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">
+          Advantage
+        </span>
+      </h2>
+      <p class="text-gray-300 leading-relaxed">
+        Unlike other agencies, we don’t just run ads or build websites. Pixel Hive gives you everything in one system — from AI Agents and IVR, to workflows, SEO, ads, social, and branding.
+      </p>
+      <p class="text-gray-300 leading-relaxed">
+        And here’s the difference: everything we build is custom to your business. Whether it’s a system, workflow, or website, we design it around your goals — never copy-and-paste templates.
+      </p>
+      <p class="text-gray-300 leading-relaxed">
+        One login. One dashboard. One partner invested in your growth.
+      </p>
+    </div>
+
+    <div class="flex justify-center md:justify-end">
+      <img src="images/MCC 1.png" alt="Laptop with dashboard" class="max-w-md md:max-w-lg">
+    </div>
+  </div>
+</section>
+
+<section class="px-6 py-20" 
+         style="background: linear-gradient(90deg, rgba(233,152,85,0.1) 0%, #000000 50%, rgba(95,177,195,0.1) 100%);">
+  <div class="max-w-5xl mx-auto text-center space-y-12">
+    
+    <h2 class="text-2xl md:text-3xl font-bold">
+      <span class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Industries</span>
+      <span class="text-white"> We Help</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-8 text-gray-300">
+      
+      <div class="flex items-center gap-3 justify-center">
+        <img src="images/Vector (1).png" alt="NDIS" class="w-6 h-6">
+        <span>NDIS, Age Care, Childcare, Medical Centres</span>
+      </div>
+      
+      <div class="flex items-center gap-3 justify-center">
+        <img src="images/Vector (1).png" alt="Property" class="w-6 h-6">
+        <span>Property Management Firms</span>
+      </div>
+      
+      <div class="flex items-center gap-3 justify-center">
+        <img src="images/Vector (3).png" alt="Construction" class="w-6 h-6">
+        <span>Construction & Trade Services</span>
+      </div>
+      
+      <div class="flex items-center gap-3 justify-center">
+        <img src="images/Vector (4).png" alt="Banks" class="w-6 h-6">
+        <span>Banks & Financial Services</span>
+      </div>
+      
+      <div class="flex items-center gap-3 justify-center">
+        <img src="images/Vector (5).png" alt="Corporate" class="w-6 h-6">
+        <span>Corporate & Government Services, and More</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 py-20 flex justify-center items-center bg-black">
+  <div class="max-w-2xl text-center p-10 rounded-xl shadow-lg border"
+       style="background: linear-gradient(90deg, rgba(233,152,85,0.08) 0%, rgba(95,177,195,0.08) 100%);
+              border: 1px solid rgba(95,177,195,0.3);">
+    
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">
+      <span class="text-white">Ready to </span>
+      <span class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Grow Smarter?</span>
+    </h2>
+    
+    <p class="text-gray-300 mb-8">
+      Let’s cut through the noise and build a system that actually works for your business.
+    </p>
+    
+    <a href="#"
+       class="px-6 py-3 rounded-lg text-black font-semibold shadow-md transition-colors"
+       style="background: linear-gradient(90deg, #E99855, #5FB1C3);">
+       Book a Discovery Call Now
+    </a>
+  </div>
+</section>
+
+
+</body>
+</html>
