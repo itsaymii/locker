@@ -24,102 +24,221 @@
     <div id="navbar"></div>
 
     <section id="home" class="relative bg-blue-50 h-[750px]">
-  <div class="absolute inset-0">
+    <div class="absolute inset-0">
     <img src="Images/hero-image.png" alt="Inclusive interaction" class="w-full h-full object-cover object-top" />
-    <div class="absolute inset-0 bg-black bg-opacity-20"></div>
-  </div>
+    <!-- reduced gradient opacity (was 0.45) -->
+    <div class="absolute inset-0 pointer-events-none"
+        style="background: linear-gradient(135deg, rgba(241,90,41,0.25) 0%, rgba(106,0,25,0.25) 100%); mix-blend-mode: overlay;"></div>
+    </div>
 
   <div class="relative z-10 flex items-center justify-center h-full">
     <div class="text-center text-white px-6">
       <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
         Empowering Lives Through <br> <span style="color: #FFD700;">Compassionate Support</span>
       </h1>
-    <p class="text-lg md:text-xl mb-8">
-      Quality NDIS services designed to help you achieve your goals, <br> increase independence, and participate fully in your community.
-    </p>
-    <div class="flex justify-center gap-4 flex-wrap">
-      <a href="#" class="text-white font-semibold px-6 py-3 rounded-lg shadow-md transition" style="background-color: #CE0019;" onmouseover="this.style.backgroundColor='#A0001A'" onmouseout="this.style.backgroundColor='#CE0019'">
-        Learn More
-      </a>
-      <a href="#" class="bg-transparent text-white font-semibold px-6 py-3 rounded-lg border-2 border-white hover:bg-white hover:text-gray-800 transition">
-        Contact Us
-      </a>
+
+      <!-- split into two paragraphs: first (larger), second (smaller) -->
+      <p class="text-lg md:text-2xl lg:text-3xl font-semibold mb-4 px-4 md:px-8 max-w-3xl mx-auto leading-tight">
+        At Latitude Quality Care, we believe everyone deserves the chance to live with independence, dignity, and choice.
+      </p>
+
+      <p class="text-sm md:text-base mb-6 px-4 md:px-8 max-w-3xl mx-auto leading-relaxed">
+        As a trusted NDIS provider in Melbourne, our goal is to support you in achieving your personal goals, building new skills, and becoming more confident in everyday life.
+        We deliver high-quality, person-centred care designed around your needs — so you can live life on your own terms and participate fully in your community.
+      </p>
+
+      <!-- single Contact Us button under the paragraph -->
+      <div class="mt-4">
+        <a href="#contact" class="inline-block bg-white text-[#CE0019] font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-[#A0001A] transition hover:text-white">
+          Contact Us
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-    <section id="services" class="py-16 px-6" style="background-color: #f9f9f9;">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl lg:text-4xl font-bold mb-6">
-                <span style="color: #363636;">Our</span> <span style="color: #F15A29;">Services</span>
-            </h2>
-            <p class="text-lg md:text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12">
-                We provide comprehensive NDIS services tailored to your individual needs, helping you achieve your goals and live life to the fullest.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                    <div class="h-48 bg-gray-200">
-                        <img src="Images/group.png" alt="Group/Centre Activities" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 text-left flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 whitespace-nowrap">Group/Centre Activities</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed flex-grow">
-                            This is to promote socialisation while offering both worker facilitated and self-directed capacity…
-                        </p>
-                        <button class="bg-transparent text-red-600 border-2 border-red-600 px-4 py-2 rounded-md font-semibold hover:bg-red-600 hover:text-white transition duration-300 mt-auto">
-                            Read More
-                        </button>
-                    </div>
-                </div>
+<section id="services" class="bg-[#f9f9f9] py-12 px-4">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      Our <span style="color: #F15A29;">Services</span>
+    </h2>
+    <p class="text-gray-700 text-base md:text-lg">
+      Our team provides a wide range of NDIS support services to help you live independently and confidently.
+      Each service is flexible and tailored to suit your goals and lifestyle.
+    </p>
+  </div>
 
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                    <div class="h-48 bg-gray-200">
-                        <img src="Images/participate.png" alt="Personal Care" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 text-left flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 whitespace-nowrap">Participate Community</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed flex-grow">
-                            Assisting participants to participate in group-based community, social and recreational activities...
-                        </p>
-                        <button class="bg-transparent text-red-600 border-2 border-red-600 px-4 py-2 rounded-md font-semibold hover:bg-red-600 hover:text-white transition duration-300 mt-auto">
-                            Read More
-                        </button>
-                    </div>
-                </div>
+  <div class="relative mt-10">
+    <!-- visible area centered -->
+    <div class="mx-auto" style="max-width:1100px;">
+      <!-- carousel -->
+      <div id="services-carousel" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 scrollbar-hide"
+           style="gap:24px; padding-left:16px; padding-right:16px;">
 
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                    <div class="h-48 bg-gray-200">
-                        <img src="Images/household.png" alt="Community Access" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 text-left flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 whitespace-nowrap">Household Tasks</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed flex-grow">
-                            Assistance with household tasks enables participants to maintain their living environment and promote independence.
-                        </p>
-                        <button class="bg-transparent text-red-600 border-2 border-red-600 px-4 py-2 rounded-md font-semibold hover:bg-red-600 hover:text-white transition duration-300 mt-auto">
-                            Read More
-                        </button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                    <div class="h-48 bg-gray-200">
-                        <img src="Images/development.png" alt="Support Coordination" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 text-left flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 whitespace-nowrap">Development-Life Skills</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed flex-grow">
-                            Development of daily living and life skills focuses on training and development activities undertaken…
-                        </p>
-                        <button class="bg-transparent text-red-600 border-2 border-red-600 px-4 py-2 rounded-md font-semibold hover:bg-red-600 hover:text-white transition duration-300 mt-auto">
-                            Read More
-                        </button>
-                    </div>
-                </div>
-            </div>
+        <!-- Card 1 -->
+        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
+          <div class="relative w-full h-48 overflow-hidden">
+            <img src="Images/accommodation.jpg" alt="Accommodation" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none"
+                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+          </div>
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-lg font-semibold mb-2">Accommodation / Tenancy</h3>
+            <p class="text-gray-600 text-sm mb-4">Find a safe and comfortable place to call home. We help you secure suitable housing, understand tenancy agreements, and maintain your independence.</p>
+            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+          </div>
         </div>
-    </section>
+
+        <!-- Card 2 -->
+        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
+          <div class="relative w-full h-48 overflow-hidden">
+            <img src="Images/group-activities.jpg" alt="Group Activities" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none"
+                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+          </div>
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-lg font-semibold mb-2">Group / Centre Activities</h3>
+            <p class="text-gray-600 text-sm mb-4">Connect, socialise and grow in inclusive group or centre settings to build skills and friendships.</p>
+            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
+          <div class="relative w-full h-48 overflow-hidden">
+            <img src="Images/participate-community.jpg" alt="Participate Community" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none"
+                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+          </div>
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-lg font-semibold mb-2">Participate Community</h3>
+            <p class="text-gray-600 text-sm mb-4">Assistance to join community, social and recreational activities to stay active and engaged.</p>
+            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
+          <div class="relative w-full h-48 overflow-hidden">
+            <img src="Images/household-tasks.jpg" alt="Household Tasks" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none"
+                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+          </div>
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-lg font-semibold mb-2">Household Tasks</h3>
+            <p class="text-gray-600 text-sm mb-4">Support with cleaning, laundry and meal prep to maintain a healthy living environment.</p>
+            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
+          <div class="relative w-full h-48 overflow-hidden">
+            <img src="Images/development-life-skills.jpg" alt="Life Skills" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none"
+                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+          </div>
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-lg font-semibold mb-2">Development / Life Skills</h3>
+            <p class="text-gray-600 text-sm mb-4">Training for daily living skills like budgeting, cooking and personal care.</p>
+            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
+          <div class="relative w-full h-48 overflow-hidden">
+            <img src="Images/assist-travel.jpg" alt="Assist Travel" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none"
+                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+          </div>
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-lg font-semibold mb-2">Assist Travel / Transport</h3>
+            <p class="text-gray-600 text-sm mb-4">Transport support to appointments, work or community activities.</p>
+            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
+          <div class="relative w-full h-48 overflow-hidden">
+            <img src="Images/assist-personal.jpg" alt="Assist Personal" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none"
+                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+          </div>
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-lg font-semibold mb-2">Assist Personal Activities</h3>
+            <p class="text-gray-600 text-sm mb-4">Personal care tailored to individual needs (showering, dressing, grooming).</p>
+            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
+          <div class="relative w-full h-48 overflow-hidden">
+            <img src="Images/daily-tasks.jpg" alt="Daily Tasks" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none"
+                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+          </div>
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-lg font-semibold mb-2">Daily Tasks / Shared Living</h3>
+            <p class="text-gray-600 text-sm mb-4">Support with daily tasks and shared living to build independence.</p>
+            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
+          <div class="relative w-full h-48 overflow-hidden">
+            <img src="Images/innov-community.jpg" alt="Innov Community" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none"
+                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+          </div>
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-lg font-semibold mb-2">Innov Community Participation</h3>
+            <p class="text-gray-600 text-sm mb-4">Programs to increase community participation and skill development.</p>
+            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
+          <div class="relative w-full h-48 overflow-hidden">
+            <img src="Images/support-coordination.jpg" alt="Support Coordination" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none"
+                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+          </div>
+          <div class="p-4 flex flex-col flex-grow">
+            <h3 class="text-lg font-semibold mb-2">Support Coordination</h3>
+            <p class="text-gray-600 text-sm mb-4">Guidance to understand your NDIS plan and coordinate supports effectively.</p>
+            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- arrows -->
+    <button id="services-prev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full hover:bg-gray-100 z-20" aria-label="Previous">
+      <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button id="services-next" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full hover:bg-gray-100 z-20" aria-label="Next">
+      <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</section>
+
+<style>
+/* hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+#services-carousel { scroll-snap-type: x mandatory; }
+@media (min-width: 1280px) {
+  /* ensure three full cards visible and centered on large screens */
+  #services-carousel { max-width: 1100px; margin: 0 auto; }
+}
+</style>
 
     <section class="py-12 md:py-16 px-4 md:px-6" style="background-color: #F97316;">
         <div class="max-w-6xl mx-auto">
@@ -220,7 +339,7 @@
         </div>
     </section>
 
-    <section class="relative py-24 md:py-32 lg:py-40 bg-cover bg-center bg-no-repeat" style="background-image: url('Images/laptop.png');">
+    <section class="relative py-24 md:py-32 lg:py-40 bg-cover bg-center bg-no-repeat" id="contact" style="background-image: url('Images/laptop.png');">
         <div class="absolute inset-0 bg-black opacity-60"></div>
         
         <div class="relative z-10 container mx-auto px-4 md:px-6">
@@ -360,6 +479,41 @@
                 }
             });
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+  const carousel = document.getElementById('services-carousel');
+  const prev = document.getElementById('services-prev');
+  const next = document.getElementById('services-next');
+  const cards = carousel.querySelectorAll('.flex-shrink-0');
+  const GAP = 24; // px (matches style gap)
+
+  function getScrollAmount() {
+    if (!cards.length) return 0;
+    return cards[0].getBoundingClientRect().width + GAP;
+  }
+
+  prev.addEventListener('click', () => {
+    carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+  });
+  next.addEventListener('click', () => {
+    carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+  });
+
+  // optional: disable arrows when at ends
+  function updateArrows() {
+    prev.disabled = carousel.scrollLeft <= 0;
+    next.disabled = Math.ceil(carousel.scrollLeft + carousel.clientWidth) >= carousel.scrollWidth;
+    prev.classList.toggle('opacity-50', prev.disabled);
+    next.classList.toggle('opacity-50', next.disabled);
+  }
+  carousel.addEventListener('scroll', updateArrows);
+  window.addEventListener('resize', updateArrows);
+  updateArrows();
+
+  // keyboard support
+  prev.addEventListener('keyup', (e) => { if (e.key === 'Enter') prev.click(); });
+  next.addEventListener('keyup', (e) => { if (e.key === 'Enter') next.click(); });
+});
     </script>
 
 </body>
