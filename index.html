@@ -26,9 +26,8 @@
     <section id="home" class="relative bg-blue-50 h-[750px]">
     <div class="absolute inset-0">
     <img src="Images/hero-image.png" alt="Inclusive interaction" class="w-full h-full object-cover object-top" />
-    <!-- reduced gradient opacity (was 0.45) -->
     <div class="absolute inset-0 pointer-events-none"
-        style="background: linear-gradient(135deg, rgba(241,90,41,0.25) 0%, rgba(106,0,25,0.25) 100%); mix-blend-mode: overlay;"></div>
+        style="background: linear-gradient(135deg, rgba(241,90,41,0.25) 0%, rgba(206,0,25,0.25) 100%); mix-blend-mode: overlay;"></div>
     </div>
 
   <div class="relative z-10 flex items-center justify-center h-full">
@@ -37,7 +36,6 @@
         Empowering Lives Through <br> <span style="color: #FFD700;">Compassionate Support</span>
       </h1>
 
-      <!-- split into two paragraphs: first (larger), second (smaller) -->
       <p class="text-lg md:text-2xl lg:text-3xl font-semibold mb-4 px-4 md:px-8 max-w-3xl mx-auto leading-tight">
         At Latitude Quality Care, we believe everyone deserves the chance to live with independence, dignity, and choice.
       </p>
@@ -47,7 +45,6 @@
         We deliver high-quality, person-centred care designed around your needs — so you can live life on your own terms and participate fully in your community.
       </p>
 
-      <!-- single Contact Us button under the paragraph -->
       <div class="mt-4">
         <a href="#contact" class="inline-block bg-white text-[#CE0019] font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-[#A0001A] transition hover:text-white">
           Contact Us
@@ -60,7 +57,7 @@
 <section id="services" class="bg-[#f9f9f9] py-12 px-4">
   <div class="max-w-3xl mx-auto text-center">
     <h2 class="text-3xl md:text-4xl font-bold mb-4">
-      Our <span style="color: #F15A29;">Services</span>
+      Our <span class="text-[#F15A29]">Services</span>
     </h2>
     <p class="text-gray-700 text-base md:text-lg">
       Our team provides a wide range of NDIS support services to help you live independently and confidently.
@@ -69,156 +66,132 @@
   </div>
 
   <div class="relative mt-10">
-    <!-- visible area centered -->
     <div class="mx-auto" style="max-width:1100px;">
-      <!-- carousel -->
       <div id="services-carousel" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 scrollbar-hide"
-           style="gap:24px; padding-left:16px; padding-right:16px;">
-
-        <!-- Card 1 -->
-        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
-          <div class="relative w-full h-48 overflow-hidden">
-            <img src="Images/accommodation.jpg" alt="Accommodation" class="w-full h-full object-cover">
-            <div class="absolute inset-0 pointer-events-none"
-                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+           style="gap:20px; padding-inline:20px; scroll-padding-inline: calc(50% - 160px); -webkit-overflow-scrolling: touch;">
+        <div class="service-card flex-shrink-0 bg-white rounded-lg shadow-md w-[min(86vw,320px)] sm:w-[320px] snap-center overflow-hidden flex flex-col">
+          <div class="relative w-full h-32 sm:h-36 overflow-hidden">
+            <img src="Images/accomodation.png" alt="Accommodation" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(241,90,41,0.18), rgba(206,0,25,0.18)); mix-blend-mode: overlay;"></div>
           </div>
-          <div class="p-4 flex flex-col flex-grow">
+          <div class="p-4 flex flex-col flex-1">
             <h3 class="text-lg font-semibold mb-2">Accommodation / Tenancy</h3>
             <p class="text-gray-600 text-sm mb-4">Find a safe and comfortable place to call home. We help you secure suitable housing, understand tenancy agreements, and maintain your independence.</p>
-            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+            <button class="read-more-btn bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-3 py-2 rounded-md shadow transition hover:bg-[#CE0019] hover:text-white w-32 mx-auto mt-auto">Read More</button>
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
-          <div class="relative w-full h-48 overflow-hidden">
-            <img src="Images/group-activities.jpg" alt="Group Activities" class="w-full h-full object-cover">
-            <div class="absolute inset-0 pointer-events-none"
-                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+        <div class="service-card flex-shrink-0 bg-white rounded-lg shadow-md w-[min(86vw,320px)] sm:w-[320px] snap-center overflow-hidden flex flex-col">
+          <div class="relative w-full h-32 sm:h-36 overflow-hidden">
+            <img src="Images/group.png" alt="Group Activities" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(241,90,41,0.18), rgba(206,0,25,0.18)); mix-blend-mode: overlay;"></div>
           </div>
-          <div class="p-4 flex flex-col flex-grow">
+          <div class="p-4 flex flex-col flex-1">
             <h3 class="text-lg font-semibold mb-2">Group / Centre Activities</h3>
             <p class="text-gray-600 text-sm mb-4">Connect, socialise and grow in inclusive group or centre settings to build skills and friendships.</p>
-            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+            <button class="read-more-btn bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-3 py-2 rounded-md shadow transition hover:bg-[#CE0019] hover:text-white w-32 mx-auto mt-auto">Read More</button>
           </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
-          <div class="relative w-full h-48 overflow-hidden">
-            <img src="Images/participate-community.jpg" alt="Participate Community" class="w-full h-full object-cover">
-            <div class="absolute inset-0 pointer-events-none"
-                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+        <div class="service-card flex-shrink-0 bg-white rounded-lg shadow-md w-[min(86vw,320px)] sm:w-[320px] snap-center overflow-hidden flex flex-col">
+          <div class="relative w-full h-32 sm:h-36 overflow-hidden">
+            <img src="Images/participate.png" alt="Participate Community" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(241,90,41,0.18), rgba(206,0,25,0.18)); mix-blend-mode: overlay;"></div>
           </div>
-          <div class="p-4 flex flex-col flex-grow">
+          <div class="p-4 flex flex-col flex-1">
             <h3 class="text-lg font-semibold mb-2">Participate Community</h3>
             <p class="text-gray-600 text-sm mb-4">Assistance to join community, social and recreational activities to stay active and engaged.</p>
-            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+            <button class="read-more-btn bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-3 py-2 rounded-md shadow transition hover:bg-[#CE0019] hover:text-white w-32 mx-auto mt-auto">Read More</button>
           </div>
         </div>
 
-        <!-- Card 4 -->
-        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
-          <div class="relative w-full h-48 overflow-hidden">
-            <img src="Images/household-tasks.jpg" alt="Household Tasks" class="w-full h-full object-cover">
-            <div class="absolute inset-0 pointer-events-none"
-                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+        <div class="service-card flex-shrink-0 bg-white rounded-lg shadow-md w-[min(86vw,320px)] sm:w-[320px] snap-center overflow-hidden flex flex-col">
+          <div class="relative w-full h-32 sm:h-36 overflow-hidden">
+            <img src="Images/household.png" alt="Household Tasks" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(241,90,41,0.18), rgba(206,0,25,0.18)); mix-blend-mode: overlay;"></div>
           </div>
-          <div class="p-4 flex flex-col flex-grow">
+          <div class="p-4 flex flex-col flex-1">
             <h3 class="text-lg font-semibold mb-2">Household Tasks</h3>
             <p class="text-gray-600 text-sm mb-4">Support with cleaning, laundry and meal prep to maintain a healthy living environment.</p>
-            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+            <button class="read-more-btn bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-3 py-2 rounded-md shadow transition hover:bg-[#CE0019] hover:text-white w-32 mx-auto mt-auto">Read More</button>
           </div>
         </div>
 
-        <!-- Card 5 -->
-        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
-          <div class="relative w-full h-48 overflow-hidden">
-            <img src="Images/development-life-skills.jpg" alt="Life Skills" class="w-full h-full object-cover">
-            <div class="absolute inset-0 pointer-events-none"
-                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+        <div class="service-card flex-shrink-0 bg-white rounded-lg shadow-md w-[min(86vw,320px)] sm:w-[320px] snap-center overflow-hidden flex flex-col">
+          <div class="relative w-full h-32 sm:h-36 overflow-hidden">
+            <img src="Images/development.png" alt="Life Skills" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(241,90,41,0.18), rgba(206,0,25,0.18)); mix-blend-mode: overlay;"></div>
           </div>
-          <div class="p-4 flex flex-col flex-grow">
+          <div class="p-4 flex flex-col flex-1">
             <h3 class="text-lg font-semibold mb-2">Development / Life Skills</h3>
             <p class="text-gray-600 text-sm mb-4">Training for daily living skills like budgeting, cooking and personal care.</p>
-            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+            <button class="read-more-btn bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-3 py-2 rounded-md shadow transition hover:bg-[#CE0019] hover:text-white w-32 mx-auto mt-auto">Read More</button>
           </div>
         </div>
 
-        <!-- Card 6 -->
-        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
-          <div class="relative w-full h-48 overflow-hidden">
-            <img src="Images/assist-travel.jpg" alt="Assist Travel" class="w-full h-full object-cover">
-            <div class="absolute inset-0 pointer-events-none"
-                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+        <div class="service-card flex-shrink-0 bg-white rounded-lg shadow-md w-[min(86vw,320px)] sm:w-[320px] snap-center overflow-hidden flex flex-col">
+          <div class="relative w-full h-32 sm:h-36 overflow-hidden">
+            <img src="Images/assist.png" alt="Assist Travel" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(241,90,41,0.18), rgba(206,0,25,0.18)); mix-blend-mode: overlay;"></div>
           </div>
-          <div class="p-4 flex flex-col flex-grow">
+          <div class="p-4 flex flex-col flex-1">
             <h3 class="text-lg font-semibold mb-2">Assist Travel / Transport</h3>
             <p class="text-gray-600 text-sm mb-4">Transport support to appointments, work or community activities.</p>
-            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+            <button class="read-more-btn bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-3 py-2 rounded-md shadow transition hover:bg-[#CE0019] hover:text-white w-32 mx-auto mt-auto">Read More</button>
           </div>
         </div>
 
-        <!-- Card 7 -->
-        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
-          <div class="relative w-full h-48 overflow-hidden">
-            <img src="Images/assist-personal.jpg" alt="Assist Personal" class="w-full h-full object-cover">
-            <div class="absolute inset-0 pointer-events-none"
-                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+        <div class="service-card flex-shrink-0 bg-white rounded-lg shadow-md w-[min(86vw,320px)] sm:w-[320px] snap-center overflow-hidden flex flex-col">
+          <div class="relative w-full h-32 sm:h-36 overflow-hidden">
+            <img src="Images/personal.png" alt="Assist Personal" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(241,90,41,0.18), rgba(206,0,25,0.18)); mix-blend-mode: overlay;"></div>
           </div>
-          <div class="p-4 flex flex-col flex-grow">
+          <div class="p-4 flex flex-col flex-1">
             <h3 class="text-lg font-semibold mb-2">Assist Personal Activities</h3>
             <p class="text-gray-600 text-sm mb-4">Personal care tailored to individual needs (showering, dressing, grooming).</p>
-            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+            <button class="read-more-btn bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-3 py-2 rounded-md shadow transition hover:bg-[#CE0019] hover:text-white w-32 mx-auto mt-auto">Read More</button>
           </div>
         </div>
 
-        <!-- Card 8 -->
-        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
-          <div class="relative w-full h-48 overflow-hidden">
-            <img src="Images/daily-tasks.jpg" alt="Daily Tasks" class="w-full h-full object-cover">
-            <div class="absolute inset-0 pointer-events-none"
-                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+        <div class="service-card flex-shrink-0 bg-white rounded-lg shadow-md w-[min(86vw,320px)] sm:w-[320px] snap-center overflow-hidden flex flex-col">
+          <div class="relative w-full h-32 sm:h-36 overflow-hidden">
+            <img src="Images/task.png" alt="Daily Tasks" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(241,90,41,0.18), rgba(206,0,25,0.18)); mix-blend-mode: overlay;"></div>
           </div>
-          <div class="p-4 flex flex-col flex-grow">
+          <div class="p-4 flex flex-col flex-1">
             <h3 class="text-lg font-semibold mb-2">Daily Tasks / Shared Living</h3>
             <p class="text-gray-600 text-sm mb-4">Support with daily tasks and shared living to build independence.</p>
-            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+            <button class="read-more-btn bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-3 py-2 rounded-md shadow transition hover:bg-[#CE0019] hover:text-white w-32 mx-auto mt-auto">Read More</button>
           </div>
         </div>
 
-        <!-- Card 9 -->
-        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
-          <div class="relative w-full h-48 overflow-hidden">
-            <img src="Images/innov-community.jpg" alt="Innov Community" class="w-full h-full object-cover">
-            <div class="absolute inset-0 pointer-events-none"
-                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+        <div class="service-card flex-shrink-0 bg-white rounded-lg shadow-md w-[min(86vw,320px)] sm:w-[320px] snap-center overflow-hidden flex flex-col">
+          <div class="relative w-full h-32 sm:h-36 overflow-hidden">
+            <img src="Images/innov.png" alt="Innov Community" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(241,90,41,0.18), rgba(206,0,25,0.18)); mix-blend-mode: overlay;"></div>
           </div>
-          <div class="p-4 flex flex-col flex-grow">
+          <div class="p-4 flex flex-col flex-1">
             <h3 class="text-lg font-semibold mb-2">Innov Community Participation</h3>
             <p class="text-gray-600 text-sm mb-4">Programs to increase community participation and skill development.</p>
-            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+            <button class="read-more-btn bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-3 py-2 rounded-md shadow transition hover:bg-[#CE0019] hover:text-white w-32 mx-auto mt-auto">Read More</button>
           </div>
         </div>
 
-        <!-- Card 10 -->
-        <div class="flex-shrink-0 bg-white rounded-lg shadow-md max-w-[320px] w-[320px] snap-start overflow-hidden flex flex-col md:h-[460px]">
-          <div class="relative w-full h-48 overflow-hidden">
-            <img src="Images/support-coordination.jpg" alt="Support Coordination" class="w-full h-full object-cover">
-            <div class="absolute inset-0 pointer-events-none"
-                 style="background: linear-gradient(135deg, rgba(241,90,41,0.20) 0%, rgba(206,0,25,0.22) 100%); mix-blend-mode: overlay;"></div>
+        <div class="service-card flex-shrink-0 bg-white rounded-lg shadow-md w-[min(86vw,320px)] sm:w-[320px] snap-center overflow-hidden flex flex-col">
+          <div class="relative w-full h-32 sm:h-36 overflow-hidden">
+            <img src="Images/life.png" alt="Support Coordination" class="w-full h-full object-cover">
+            <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(241,90,41,0.18), rgba(206,0,25,0.18)); mix-blend-mode: overlay;"></div>
           </div>
-          <div class="p-4 flex flex-col flex-grow">
-            <h3 class="text-lg font-semibold mb-2">Support Coordination</h3>
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="text-lg font-semibold mb-2">Assist Life Stage Transition</h3>
             <p class="text-gray-600 text-sm mb-4">Guidance to understand your NDIS plan and coordinate supports effectively.</p>
-            <button class="bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-4 py-2 rounded-md shadow-md hover:bg-[#CE0019] hover:text-white transition w-32 mx-auto mt-auto">Read More</button>
+            <button class="read-more-btn bg-white text-[#CE0019] border-2 border-[#CE0019] font-semibold px-3 py-2 rounded-md shadow transition hover:bg-[#CE0019] hover:text-white w-32 mx-auto mt-auto">Read More</button>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- arrows -->
     <button id="services-prev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full hover:bg-gray-100 z-20" aria-label="Previous">
       <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
     </button>
@@ -229,14 +202,16 @@
 </section>
 
 <style>
-/* hide scrollbar */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
-#services-carousel { scroll-snap-type: x mandatory; }
-@media (min-width: 1280px) {
-  /* ensure three full cards visible and centered on large screens */
-  #services-carousel { max-width: 1100px; margin: 0 auto; }
+#services-carousel { scroll-snap-type: x mandatory; will-change: scroll; }
+.service-card { scroll-snap-align: center; scroll-snap-stop: always; display: inline-flex; flex-direction: column; }
+
+.read-more-btn { line-height: 1; }
+
+@media (min-width:1280px){
+  #services-carousel { max-width:1100px; margin-inline:auto; }
 }
 </style>
 
@@ -250,7 +225,7 @@
                         <span style="color: #FFD700; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);" class="inline-block hover:animate-bounce animation-delay-150">Quality Care?</span>
                     </h2>
                     <p class="text-sm md:text-base lg:text-lg leading-relaxed mb-6 md:mb-8 text-center lg:text-left">
-                        We are committed to providing exceptional support services that empower you to live independently and achieve your personal goals.
+                        We don’t just provide support — we build meaningful relationships based on trust, respect, and understanding. Every person we work with is unique, and our approach reflects that.
                     </p>
                     
                     <ul class="space-y-3 md:space-y-4">
@@ -260,7 +235,7 @@
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Develop an understanding of the specific needs of each person.</span>
+                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Understand your individual goals and support needs.</span>
                         </li>
                         
                         <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
@@ -269,7 +244,7 @@
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Be flexible in our approach to dealing with our clients</span>
+                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Be flexible, reliable, and responsive in our care</span>
                         </li>
                         
                         <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
@@ -278,7 +253,7 @@
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Always conduct business in a sound, ethical and fair manner</span>
+                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Conduct all business ethically, fairly, and transparently</span>
                         </li>
                         
                         <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
@@ -287,7 +262,7 @@
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Employ staff who are qualified and experienced for their role</span>
+                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Employ qualified, compassionate, and experienced support staff</span>
                         </li>
                         
                         <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
@@ -296,7 +271,7 @@
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Protect stakeholder's rights to privacy</span>
+                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Respect your privacy and confidentiality at all times</span>
                         </li>
                         
                         <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
@@ -305,7 +280,7 @@
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Ensure the accuracy and integrity of the information we keep about our stakeholders</span>
+                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Maintain accuracy and integrity in all stakeholder information</span>
                         </li>
                         
                         <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
@@ -314,7 +289,7 @@
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Provide clear information on our fees, charges and refunds prior to entering into an agreement</span>
+                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Provide clear and upfront details on fees, charges, and agreements</span>
                         </li>
                         
                         <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
@@ -323,7 +298,8 @@
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Treat all people fairly and equitably</span>
+                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Treat all people with fairness, dignity, and equality</span>
+                            
                         </li>
                     </ul>
                 </div>
@@ -484,35 +460,58 @@
   const carousel = document.getElementById('services-carousel');
   const prev = document.getElementById('services-prev');
   const next = document.getElementById('services-next');
-  const cards = carousel.querySelectorAll('.flex-shrink-0');
-  const GAP = 24; // px (matches style gap)
+  const cards = Array.from(carousel.querySelectorAll('.service-card'));
+  if (!carousel || !prev || !next || !cards.length) return;
 
-  function getScrollAmount() {
-    if (!cards.length) return 0;
-    return cards[0].getBoundingClientRect().width + GAP;
+  const GAP = 20;
+
+  function centerForIndex(i) {
+    const card = cards[i];
+    const left = card.offsetLeft - (carousel.clientWidth - card.clientWidth) / 2;
+    return Math.max(0, left);
   }
 
-  prev.addEventListener('click', () => {
-    carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-  });
-  next.addEventListener('click', () => {
-    carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-  });
+  let currentIndex = 0;
+  function scrollToIndex(i) {
+    i = Math.max(0, Math.min(cards.length - 1, i));
+    const left = centerForIndex(i);
+    carousel.scrollTo({ left, behavior: 'smooth' });
+    currentIndex = i;
+    updateArrows();
+  }
 
-  // optional: disable arrows when at ends
+  prev.addEventListener('click', () => scrollToIndex(currentIndex - 1));
+  next.addEventListener('click', () => scrollToIndex(currentIndex + 1));
+
+  // update index with IntersectionObserver for smooth UX
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.55) {
+        const i = cards.indexOf(entry.target);
+        if (i >= 0) currentIndex = i;
+        updateArrows();
+      }
+    });
+  }, { root: carousel, threshold: [0.55, 0.75] });
+
+  cards.forEach(c => io.observe(c));
+
   function updateArrows() {
-    prev.disabled = carousel.scrollLeft <= 0;
-    next.disabled = Math.ceil(carousel.scrollLeft + carousel.clientWidth) >= carousel.scrollWidth;
+    prev.disabled = currentIndex <= 0;
+    next.disabled = currentIndex >= cards.length - 1;
     prev.classList.toggle('opacity-50', prev.disabled);
     next.classList.toggle('opacity-50', next.disabled);
   }
-  carousel.addEventListener('scroll', updateArrows);
-  window.addEventListener('resize', updateArrows);
-  updateArrows();
 
-  // keyboard support
-  prev.addEventListener('keyup', (e) => { if (e.key === 'Enter') prev.click(); });
-  next.addEventListener('keyup', (e) => { if (e.key === 'Enter') next.click(); });
+  // recenter on resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => scrollToIndex(currentIndex), 120);
+  });
+
+  // initial center
+  setTimeout(() => scrollToIndex(0), 60);
 });
     </script>
 
