@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Problems - Pixel Hive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-shadow-hover:hover {
+            box-shadow: 0 25px 50px -12px rgba(233, 152, 85, 0.3), 0 10px 20px -5px rgba(95, 177, 195, 0.2);
+        }
+    </style>
+</head>
+<body>
+<!-- Pain Point Section -->
+<section class="bg-gradient-to-b from-gray-50 to-white py-20 relative overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-10 left-10 w-32 h-32 bg-[#E99855] rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-40 h-40 bg-[#5FB1C3] rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/4 w-24 h-24 bg-[#E99855] rounded-full blur-2xl"></div>
+    </div>
+    
+    <!-- Decorative Shapes -->
+    <div class="absolute inset-0 pointer-events-none">
+        <!-- Top Left Shapes -->
+        <div class="absolute top-16 left-8 w-16 h-16 border-2 border-[#E99855] opacity-20 rounded-lg rotate-12"></div>
+        <div class="absolute top-32 left-24 w-8 h-8 bg-[#5FB1C3] opacity-30 rounded-full"></div>
+        <div class="absolute top-20 left-48 w-12 h-12 border-2 border-[#5FB1C3] opacity-25 rotate-45"></div>
+        
+        <!-- Top Right Shapes -->
+        <div class="absolute top-12 right-16 w-20 h-20 border-2 border-[#E99855] opacity-20 rounded-full"></div>
+        <div class="absolute top-28 right-32 w-6 h-6 bg-[#5FB1C3] opacity-35 rotate-45"></div>
+        <div class="absolute top-40 right-8 w-14 h-14 border-2 border-[#E99855] opacity-25 rounded-lg rotate-12"></div>
+        
+        <!-- Middle Left Shapes -->
+        <div class="absolute top-1/2 left-4 w-10 h-10 bg-[#E99855] opacity-20 rounded-full"></div>
+        <div class="absolute top-1/3 left-12 w-16 h-2 bg-[#5FB1C3] opacity-30 rounded-full rotate-45"></div>
+        <div class="absolute top-2/3 left-8 w-12 h-12 border-2 border-[#E99855] opacity-25 rotate-45"></div>
+        
+        <!-- Middle Right Shapes -->
+        <div class="absolute top-1/2 right-6 w-8 h-8 bg-[#5FB1C3] opacity-30 rotate-45"></div>
+        <div class="absolute top-1/3 right-20 w-18 h-18 border-2 border-[#E99855] opacity-20 rounded-full"></div>
+        <div class="absolute top-2/3 right-12 w-10 h-10 bg-[#5FB1C3] opacity-25 rounded-lg rotate-12"></div>
+        
+        <!-- Bottom Shapes -->
+        <div class="absolute bottom-20 left-16 w-14 h-14 border-2 border-[#5FB1C3] opacity-25 rounded-lg rotate-45"></div>
+        <div class="absolute bottom-32 left-40 w-6 h-6 bg-[#E99855] opacity-35 rounded-full"></div>
+        <div class="absolute bottom-16 right-24 w-12 h-12 border-2 border-[#E99855] opacity-30 rotate-12"></div>
+        <div class="absolute bottom-28 right-48 w-8 h-8 bg-[#5FB1C3] opacity-25 rotate-45"></div>
+        
+        <!-- Additional floating elements -->
+        <div class="absolute top-1/4 left-1/3 w-4 h-16 bg-[#E99855] opacity-15 rounded-full rotate-30"></div>
+        <div class="absolute top-3/4 right-1/3 w-4 h-20 bg-[#5FB1C3] opacity-15 rounded-full rotate-60"></div>
+        <div class="absolute top-1/2 left-2/3 w-16 h-4 bg-[#E99855] opacity-15 rounded-full rotate-15"></div>
+        
+        <!-- Triangle shapes -->
+        <div class="absolute top-24 left-2/3 w-0 h-0" style="border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 14px solid rgba(233, 152, 85, 0.2);"></div>
+        <div class="absolute bottom-40 left-1/4 w-0 h-0" style="border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 18px solid rgba(95, 177, 195, 0.2);"></div>
+        <div class="absolute top-2/3 right-1/4 w-0 h-0" style="border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 12px solid rgba(233, 152, 85, 0.25); transform: rotate(180deg);"></div>
+    </div>
+    
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-4xl mx-auto">
+            <!-- Section Badge -->
+            <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#E99855] to-[#5FB1C3] rounded-full text-sm font-medium mb-6">
+                <svg class="w-4 h-4 mr-2 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-white">Common Growth Problems</span>
+            </div>
+            
+            <!-- Headline -->
+            <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-8 leading-tight">
+                The Real Reason Growth 
+                <span class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">
+                    Feels Stuck
+                </span>
+            </h2>
+            <!-- Opening Body Copy -->
+            <p class="text-xl md:text-2xl text-gray-600 mb-16 leading-relaxed max-w-3xl mx-auto">
+                Still relying on spreadsheets, manual follow-ups, or random agencies to grow?<br>
+                <span class="font-bold text-gray-900 bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">
+                    You're not the problem. Your systems are.
+                </span>
+            </p>
+            
+            <!-- Pain Points Cards -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-2xl shadow-lg gradient-shadow-hover transition-all duration-300 border border-gray-100 group">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#E99855] to-[#5FB1C3] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Scattered Leads</h3>
+                            <p class="text-gray-600 leading-relaxed">Leads are scattered across emails and forms with no central system to track them</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg gradient-shadow-hover transition-all duration-300 border border-gray-100 group">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#E99855] to-[#5FB1C3] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">No Tracking</h3>
+                            <p class="text-gray-600 leading-relaxed">You can't track what's actually working or measure your marketing ROI</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg gradient-shadow-hover transition-all duration-300 border border-gray-100 group">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#E99855] to-[#5FB1C3] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">No Automation</h3>
+                            <p class="text-gray-600 leading-relaxed">There's no automation to keep clients engaged throughout their journey</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg gradient-shadow-hover transition-all duration-300 border border-gray-100 group">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-[#E99855] to-[#5FB1C3] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Misaligned Teams</h3>
+                            <p class="text-gray-600 leading-relaxed">Marketing isn't aligned with sales or operations, causing missed opportunities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Solution Statement -->
+            <div class="relative">
+                <div class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] p-1 rounded-3xl">
+                    <div class="bg-white p-12 rounded-3xl text-center">
+                        <div class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#E99855] to-[#5FB1C3] rounded-full text-sm font-medium mb-6">
+                            <svg class="w-4 h-4 mr-2 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-white">The Solution</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Let's fix that.
+                        </h3>
+                        <p class="text-xl md:text-2xl text-gray-600 mb-6">
+                            With a connected, automated growth system.
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-4 text-sm">
+                            <span class="px-4 py-2 bg-[#E99855] bg-opacity-20 text-[#E99855] rounded-full font-medium">Centralized Leads</span>
+                            <span class="px-4 py-2 bg-[#5FB1C3] bg-opacity-20 text-[#5FB1C3] rounded-full font-medium">Real-time Analytics</span>
+                            <span class="px-4 py-2 bg-[#E99855] bg-opacity-20 text-[#E99855] rounded-full font-medium">Smart Automation</span>
+                            <span class="px-4 py-2 bg-[#5FB1C3] bg-opacity-20 text-[#5FB1C3] rounded-full font-medium">Aligned Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

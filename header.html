@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Hive - Navigation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav id="navbar" class="bg-black transition-all duration-500 fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="home.html" class="text-3xl font-bold bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent hover:opacity-80 transition duration-300">
+                        Pixel Hive
+                    </a>
+                </div>
+                
+                <!-- Navigation Links and Book a Call Button -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <div id="nav-links" class="hidden items-center space-x-4">
+                        <a href="home.html" class="text-gray-700 hover:text-blue-600 px-2 py-2 text-sm font-medium transition duration-300">
+                            Home
+                        </a>
+                        <!-- Industries Dropdown -->
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-blue-600 px-2 py-2 text-sm font-medium transition duration-300 flex items-center">
+                                Industries
+                                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-80 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <div class="py-2">
+                                    <a href="ndis-aged-care.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#E99855] transition duration-300">
+                                        <div class="font-medium">NDIS, Aged Care & Childcare</div>
+                                        <div class="text-xs text-gray-500 mt-1">Medical centres and care services</div>
+                                    </a>
+                                    <a href="property-management.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#E99855] transition duration-300">
+                                        <div class="font-medium">Property Management</div>
+                                        <div class="text-xs text-gray-500 mt-1">Real estate and property services</div>
+                                    </a>
+                                    <a href="construction-trade.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#E99855] transition duration-300">
+                                        <div class="font-medium">Construction & Trade</div>
+                                        <div class="text-xs text-gray-500 mt-1">Building and trade services</div>
+                                    </a>
+                                    <a href="corporate-government.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#E99855] transition duration-300">
+                                        <div class="font-medium">Corporate & Government</div>
+                                        <div class="text-xs text-gray-500 mt-1">Large scale organizations</div>
+                                    </a>
+                                    <a href="banking-financial.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#E99855] transition duration-300">
+                                        <div class="font-medium">Banking & Financial</div>
+                                        <div class="text-xs text-gray-500 mt-1">Financial institutions and services</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="framework.html" class="text-gray-700 hover:text-blue-600 px-2 py-2 text-sm font-medium transition duration-300">
+                            How it Works
+                        </a>
+                        <a href="testimonials.html" class="text-gray-700 hover:text-blue-600 px-2 py-2 text-sm font-medium transition duration-300">
+                            Testimonials
+                        </a>
+                        <a href="why.html" class="text-gray-700 hover:text-blue-600 px-2 py-2 text-sm font-medium transition duration-300">
+                            Why Us
+                        </a>
+                    </div>
+                    <a href="#" class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] hover:from-[#d4813f] hover:to-[#4a9bb0] text-white px-6 py-2 rounded-lg text-md font-medium transition duration-300 shadow-md hover:shadow-lg ml-8">
+                        Book a Call
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="bg-gray-200 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" onclick="toggleMobileMenu()">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Menu icon -->
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50">
+                <a href="home.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Home
+                </a>
+                <!-- Mobile Industries Dropdown -->
+                <div class="relative">
+                    <button onclick="toggleMobileIndustries()" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between">
+                        Industries
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="mobile-industries" class="hidden bg-gray-100 ml-4">
+                        <a href="ndis-aged-care.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#E99855]">
+                            NDIS, Aged Care & Childcare
+                        </a>
+                        <a href="property-management.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#E99855]">
+                            Property Management
+                        </a>
+                        <a href="construction-trade.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#E99855]">
+                            Construction & Trade
+                        </a>
+                        <a href="corporate-government.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#E99855]">
+                            Corporate & Government
+                        </a>
+                        <a href="banking-financial.html" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#E99855]">
+                            Banking & Financial
+                        </a>
+                    </div>
+                </div>
+                <a href="framework.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    How it Works
+                </a>
+                <a href="testimonials.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Testimonials
+                </a>
+                <a href="why.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Why Us
+                </a>
+                <a href="#" class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] hover:from-[#d4813f] hover:to-[#4a9bb0] text-white block px-3 py-2 rounded-lg text-base font-medium mt-4">
+                    Book a Call
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function toggleMobileIndustries() {
+            const mobileIndustries = document.getElementById('mobile-industries');
+            mobileIndustries.classList.toggle('hidden');
+        }
+
+        // Scroll functionality for navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const navLinks = document.getElementById('nav-links');
+            
+            if (window.scrollY > 50) {
+                // Scrolled state - white background, show nav links
+                navbar.classList.remove('bg-black');
+                navbar.classList.add('bg-white', 'shadow-lg');
+                navLinks.classList.remove('hidden');
+                navLinks.classList.add('flex');
+            } else {
+                // Initial state - black background, hide nav links
+                navbar.classList.remove('bg-white', 'shadow-lg');
+                navbar.classList.add('bg-black');
+                navLinks.classList.remove('flex');
+                navLinks.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
