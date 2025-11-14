@@ -12,8 +12,8 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="home.html" class="text-3xl font-bold bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent hover:opacity-80 transition duration-300">
-                        Pixel Hive
+                    <a href="home.html" class="hover:opacity-80 transition duration-300">
+                        <img src="Images/logo.png" alt="Pixel Hive" class="h-12 w-auto">
                     </a>
                 </div>
                 
@@ -155,11 +155,37 @@
                 navLinks.classList.remove('hidden');
                 navLinks.classList.add('flex');
             } else {
-                // Initial state - black background, hide nav links
-                navbar.classList.remove('bg-white', 'shadow-lg');
-                navbar.classList.add('bg-black');
-                navLinks.classList.remove('flex');
-                navLinks.classList.add('hidden');
+                // Initial state - check if we're on home page
+                const isHomePage = window.location.pathname.includes('home.html') || window.location.pathname === '/';
+                
+                if (isHomePage) {
+                    // Home page: black background, hide nav links
+                    navbar.classList.remove('bg-white', 'shadow-lg');
+                    navbar.classList.add('bg-black');
+                    navLinks.classList.remove('flex');
+                    navLinks.classList.add('hidden');
+                } else {
+                    // Other pages: white background, show nav links
+                    navbar.classList.remove('bg-black');
+                    navbar.classList.add('bg-white', 'shadow-lg');
+                    navLinks.classList.remove('hidden');
+                    navLinks.classList.add('flex');
+                }
+            }
+        });
+        
+        // Initialize navigation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            const navLinks = document.getElementById('nav-links');
+            const isHomePage = window.location.pathname.includes('home.html') || window.location.pathname === '/';
+            
+            if (!isHomePage) {
+                // For non-home pages, show navigation immediately
+                navbar.classList.remove('bg-black');
+                navbar.classList.add('bg-white', 'shadow-lg');
+                navLinks.classList.remove('hidden');
+                navLinks.classList.add('flex');
             }
         });
     </script>

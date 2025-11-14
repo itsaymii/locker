@@ -404,7 +404,53 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
+                
+                // Initialize navigation after header is loaded
+                initializeNavigation();
             });
+            
+        function initializeNavigation() {
+            function toggleMobileMenu() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+            }
+
+            function toggleMobileIndustries() {
+                const mobileIndustries = document.getElementById('mobile-industries');
+                mobileIndustries.classList.toggle('hidden');
+            }
+            
+            // Make functions globally available
+            window.toggleMobileMenu = toggleMobileMenu;
+            window.toggleMobileIndustries = toggleMobileIndustries;
+
+            // Initialize navigation for non-home pages
+            const navbar = document.getElementById('navbar');
+            const navLinks = document.getElementById('nav-links');
+            
+            // Show navigation immediately for non-home pages
+            navbar.classList.remove('bg-black');
+            navbar.classList.add('bg-white', 'shadow-lg');
+            navLinks.classList.remove('hidden');
+            navLinks.classList.add('flex');
+            
+            // Scroll functionality for navbar
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    // Scrolled state - white background, show nav links
+                    navbar.classList.remove('bg-black');
+                    navbar.classList.add('bg-white', 'shadow-lg');
+                    navLinks.classList.remove('hidden');
+                    navLinks.classList.add('flex');
+                } else {
+                    // For non-home pages, keep navigation visible
+                    navbar.classList.remove('bg-black');
+                    navbar.classList.add('bg-white', 'shadow-lg');
+                    navLinks.classList.remove('hidden');
+                    navLinks.classList.add('flex');
+                }
+            });
+        }
     </script>
 </body>
 </html>

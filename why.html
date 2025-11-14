@@ -41,7 +41,7 @@
     <div id="header-container"></div>
 
     <!-- Why Pixel Hive Section -->
-    <section class="py-20 bg-black relative overflow-hidden">
+    <section class="pt-40 pb-20 bg-black relative overflow-hidden">
         <!-- Subtle Decorative Background Elements -->
         <div class="absolute top-20 left-10 w-24 h-24 bg-gradient-to-r from-[#E99855] to-[#5FB1C3] rounded-full opacity-5"></div>
         <div class="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-l from-[#5FB1C3] to-[#E99855] rounded-full opacity-5"></div>
@@ -225,9 +225,9 @@
                     </div>
                     
                     <!-- CTA Button -->
-                    <a href="#" class="inline-flex items-center bg-gradient-to-r from-[#E99855] to-[#5FB1C3] hover:from-[#d4813f] hover:to-[#4a9bb0] text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                    <a href="#" class="inline-flex items-center bg-gradient-to-r from-[#E99855] to-[#5FB1C3] hover:from-[#d4813f] hover:to-[#4a9bb0] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                         Start Your Growth Journey
-                        <svg class="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                         </svg>
                     </a>
@@ -403,7 +403,53 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
+                
+                // Initialize navigation after header is loaded
+                initializeNavigation();
             });
+            
+        function initializeNavigation() {
+            function toggleMobileMenu() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+            }
+
+            function toggleMobileIndustries() {
+                const mobileIndustries = document.getElementById('mobile-industries');
+                mobileIndustries.classList.toggle('hidden');
+            }
+            
+            // Make functions globally available
+            window.toggleMobileMenu = toggleMobileMenu;
+            window.toggleMobileIndustries = toggleMobileIndustries;
+
+            // Initialize navigation for non-home pages
+            const navbar = document.getElementById('navbar');
+            const navLinks = document.getElementById('nav-links');
+            
+            // Show navigation immediately for non-home pages
+            navbar.classList.remove('bg-black');
+            navbar.classList.add('bg-white', 'shadow-lg');
+            navLinks.classList.remove('hidden');
+            navLinks.classList.add('flex');
+            
+            // Scroll functionality for navbar
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    // Scrolled state - white background, show nav links
+                    navbar.classList.remove('bg-black');
+                    navbar.classList.add('bg-white', 'shadow-lg');
+                    navLinks.classList.remove('hidden');
+                    navLinks.classList.add('flex');
+                } else {
+                    // For non-home pages, keep navigation visible
+                    navbar.classList.remove('bg-black');
+                    navbar.classList.add('bg-white', 'shadow-lg');
+                    navLinks.classList.remove('hidden');
+                    navLinks.classList.add('flex');
+                }
+            });
+        }
     </script>
 </body>
 </html>

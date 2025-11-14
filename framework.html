@@ -23,7 +23,7 @@
     <div id="header-container"></div>
 
     <!-- Framework Section -->
-    <section class="py-20 bg-white relative overflow-hidden">
+    <section class="pt-32 pb-20 bg-white relative overflow-hidden">
         <!-- Decorative Shapes -->
         <div class="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-[#E99855] to-[#5FB1C3] rounded-full opacity-10 animate-pulse"></div>
         <div class="absolute top-40 right-20 w-20 h-20 bg-gradient-to-l from-[#5FB1C3] to-[#E99855] transform rotate-45 opacity-15"></div>
@@ -461,7 +461,53 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
+                
+                // Initialize navigation after header is loaded
+                initializeNavigation();
             });
+            
+        function initializeNavigation() {
+            function toggleMobileMenu() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+            }
+
+            function toggleMobileIndustries() {
+                const mobileIndustries = document.getElementById('mobile-industries');
+                mobileIndustries.classList.toggle('hidden');
+            }
+            
+            // Make functions globally available
+            window.toggleMobileMenu = toggleMobileMenu;
+            window.toggleMobileIndustries = toggleMobileIndustries;
+
+            // Initialize navigation for non-home pages
+            const navbar = document.getElementById('navbar');
+            const navLinks = document.getElementById('nav-links');
+            
+            // Show navigation immediately for non-home pages
+            navbar.classList.remove('bg-black');
+            navbar.classList.add('bg-white', 'shadow-lg');
+            navLinks.classList.remove('hidden');
+            navLinks.classList.add('flex');
+            
+            // Scroll functionality for navbar
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    // Scrolled state - white background, show nav links
+                    navbar.classList.remove('bg-black');
+                    navbar.classList.add('bg-white', 'shadow-lg');
+                    navLinks.classList.remove('hidden');
+                    navLinks.classList.add('flex');
+                } else {
+                    // For non-home pages, keep navigation visible
+                    navbar.classList.remove('bg-black');
+                    navbar.classList.add('bg-white', 'shadow-lg');
+                    navLinks.classList.remove('hidden');
+                    navLinks.classList.add('flex');
+                }
+            });
+        }
     </script>
 </body>
 </html>
