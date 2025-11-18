@@ -8,6 +8,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * { font-family: 'Poppins', sans-serif; }
+        .shine-hover {
+            position: relative;
+            overflow: hidden;
+        }
+        .shine-hover img {
+            transition: box-shadow 0.3s, filter 0.3s;
+        }
+        .shine-hover::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(120deg, rgba(255,255,255,0.0) 40%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.0) 60%);
+            transform: translateX(-100%) rotate(10deg);
+            transition: transform 0.6s cubic-bezier(.4,0,.2,1);
+            pointer-events: none;
+        }
+        .shine-hover:hover::before {
+            transform: translateX(100%) rotate(10deg);
+        }
+        .shine-hover:hover img {
+            box-shadow: 0 0 32px 0 rgba(233,152,85,0.25), 0 0 64px 0 rgba(95,177,195,0.18);
+            filter: brightness(1.15) saturate(1.1);
+        }
     </style>
 </head>
 <body class="bg-black">
@@ -79,14 +105,7 @@
     <!-- Hive Growth Framework Section -->
 
 <section class="relative bg-black py-24 px-4 flex flex-col items-center justify-center overflow-hidden">
-    <!-- Decorative shapes and gradient overlays -->
-    <div class="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-[#E99855] to-[#5FB1C3] rounded-full opacity-25 blur-2xl z-0 animate-pulse"></div>
-    <div class="absolute bottom-0 right-0 w-56 h-56 bg-gradient-to-tr from-[#5FB1C3] to-[#E99855] rounded-full opacity-25 blur-2xl z-0 animate-pulse"></div>
-    <div class="absolute top-1/2 left-1/2 w-40 h-40 border-8 border-[#E99855] rounded-full opacity-40 -translate-x-1/2 -translate-y-1/2 z-0 animate-spin-slow"></div>
-    <div class="absolute top-24 right-1/3 w-24 h-24 bg-[#E99855] rounded-full opacity-20 blur-lg z-0"></div>
-    <div class="absolute bottom-24 left-1/4 w-28 h-28 bg-[#5FB1C3] rounded-full opacity-20 blur-lg z-0"></div>
-    <div class="absolute top-1/4 left-1/4 w-16 h-16 border-4 border-[#5FB1C3] rounded-full opacity-30 animate-bounce z-0"></div>
-    <div class="absolute bottom-1/3 right-1/4 w-20 h-20 border-4 border-[#E99855] rounded-full opacity-30 animate-bounce z-0"></div>
+    <!-- Gradient overlay only, removed animated blurred circles -->
     <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-black via-[#23272A]/80 to-black opacity-60 z-0 pointer-events-none"></div>
     <!-- Section Title -->
     <div class="max-w-4xl w-full mx-auto text-center relative z-10 mb-16">
@@ -98,41 +117,26 @@
     </div>
     <!-- Images Gallery -->
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 max-w-6xl w-full mx-auto relative z-10">
-        <div class="flex flex-col items-center bg-gradient-to-br from-[#23272A] to-[#23272A]/80 rounded-3xl p-8 shadow-2xl border-2 border-[#E99855]/40 hover:scale-105 hover:shadow-[0_10px_40px_0_rgba(95,177,195,0.25),0_2px_8px_0_rgba(233,152,85,0.15)] hover:border-[#5FB1C3] transition-all duration-300 group">
-            <div class="w-full h-48 flex items-center justify-center mb-6 relative">
-                <img src="Images/Build The Hive.png" alt="Build The Hive" class="w-full h-48 object-contain rounded-xl shadow-md group-hover:scale-110 group-hover:rotate-2 transition-all duration-300">
-                <div class="absolute bottom-2 right-2 w-8 h-8 bg-gradient-to-br from-[#E99855] to-[#5FB1C3] rounded-full opacity-40 blur-sm"></div>
-            </div>
-            <span class="text-xl font-bold bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent mb-2">Build The Hive</span>
+    <div class="flex flex-row flex-wrap justify-center items-start gap-8 w-full mx-auto relative z-10">
+        <div class="flex flex-col items-center shine-hover">
+            <img src="Images/Build The Hive.png" alt="Build The Hive" class="w-32 sm:w-40 md:w-48 h-auto object-contain mb-2">
+            <span class="text-sm sm:text-base md:text-lg font-bold bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Build The Hive</span>
         </div>
-        <div class="flex flex-col items-center bg-gradient-to-br from-[#23272A] to-[#23272A]/80 rounded-3xl p-8 shadow-2xl border-2 border-[#E99855]/40 hover:scale-105 hover:shadow-[0_10px_40px_0_rgba(95,177,195,0.25),0_2px_8px_0_rgba(233,152,85,0.15)] hover:border-[#5FB1C3] transition-all duration-300 group">
-            <div class="w-full h-48 flex items-center justify-center mb-6 relative">
-                <img src="Images/Buzz v2.png" alt="Buzz v2" class="w-full h-48 object-contain rounded-xl shadow-md group-hover:scale-110 group-hover:rotate-2 transition-all duration-300">
-                <div class="absolute top-2 left-2 w-8 h-8 bg-gradient-to-br from-[#5FB1C3] to-[#E99855] rounded-full opacity-40 blur-sm"></div>
-            </div>
-            <span class="text-xl font-bold bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent mb-2">Buzz v2</span>
+        <div class="flex flex-col items-center shine-hover">
+            <img src="Images/Buzz v2.png" alt="Buzz v2" class="w-32 sm:w-40 md:w-48 h-auto object-contain mb-2">
+            <span class="text-sm sm:text-base md:text-lg font-bold bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Buzz v2</span>
         </div>
-        <div class="flex flex-col items-center bg-gradient-to-br from-[#23272A] to-[#23272A]/80 rounded-3xl p-8 shadow-2xl border-2 border-[#E99855]/40 hover:scale-105 hover:shadow-[0_10px_40px_0_rgba(95,177,195,0.25),0_2px_8px_0_rgba(233,152,85,0.15)] hover:border-[#5FB1C3] transition-all duration-300 group">
-            <div class="w-full h-48 flex items-center justify-center mb-6 relative">
-                <img src="Images/Join the Hive.png" alt="Join the Hive" class="w-full h-48 object-contain rounded-xl shadow-md group-hover:scale-110 group-hover:rotate-2 transition-all duration-300">
-                <div class="absolute bottom-2 left-2 w-8 h-8 bg-gradient-to-br from-[#E99855] to-[#5FB1C3] rounded-full opacity-40 blur-sm"></div>
-            </div>
-            <span class="text-xl font-bold bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent mb-2">Join the Hive</span>
+        <div class="flex flex-col items-center shine-hover">
+            <img src="Images/Join the Hive.png" alt="Join the Hive" class="w-32 sm:w-40 md:w-48 h-auto object-contain mb-2">
+            <span class="text-sm sm:text-base md:text-lg font-bold bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Join the Hive</span>
         </div>
-        <div class="flex flex-col items-center bg-gradient-to-br from-[#23272A] to-[#23272A]/80 rounded-3xl p-8 shadow-2xl border-2 border-[#E99855]/40 hover:scale-105 hover:shadow-[0_10px_40px_0_rgba(95,177,195,0.25),0_2px_8px_0_rgba(233,152,85,0.15)] hover:border-[#5FB1C3] transition-all duration-300 group">
-            <div class="w-full h-48 flex items-center justify-center mb-6 relative">
-                <img src="Images/Scout.png" alt="Scout" class="w-full h-48 object-contain rounded-xl shadow-md group-hover:scale-110 group-hover:rotate-2 transition-all duration-300">
-                <div class="absolute top-2 right-2 w-8 h-8 bg-gradient-to-br from-[#5FB1C3] to-[#E99855] rounded-full opacity-40 blur-sm"></div>
-            </div>
-            <span class="text-xl font-bold bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent mb-2">Scout</span>
+        <div class="flex flex-col items-center shine-hover">
+            <img src="Images/Scout.png" alt="Scout" class="w-32 sm:w-40 md:w-48 h-auto object-contain mb-2">
+            <span class="text-sm sm:text-base md:text-lg font-bold bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Scout</span>
         </div>
-        <div class="flex flex-col items-center bg-gradient-to-br from-[#23272A] to-[#23272A]/80 rounded-3xl p-8 shadow-2xl border-2 border-[#E99855]/40 hover:scale-105 hover:shadow-[0_10px_40px_0_rgba(95,177,195,0.25),0_2px_8px_0_rgba(233,152,85,0.15)] hover:border-[#5FB1C3] transition-all duration-300 group">
-            <div class="w-full h-48 flex items-center justify-center mb-6 relative">
-                <img src="Images/Thrive v2.png" alt="Thrive v2" class="w-full h-48 object-contain rounded-xl shadow-md group-hover:scale-110 group-hover:rotate-2 transition-all duration-300">
-                <div class="absolute bottom-2 right-2 w-8 h-8 bg-gradient-to-br from-[#E99855] to-[#5FB1C3] rounded-full opacity-40 blur-sm"></div>
-            </div>
-            <span class="text-xl font-bold bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent mb-2">Thrive v2</span>
+        <div class="flex flex-col items-center shine-hover">
+            <img src="Images/Thrive v2.png" alt="Thrive v2" class="w-32 sm:w-40 md:w-48 h-auto object-contain mb-2">
+            <span class="text-sm sm:text-base md:text-lg font-bold bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Thrive v2</span>
         </div>
     </div>
 </section>

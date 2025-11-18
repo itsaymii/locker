@@ -19,9 +19,15 @@
                 
                 <!-- Navigation Links and Book a Call Button -->
                 <div class="hidden md:flex items-center space-x-6">
-                    <div id="nav-links" class="hidden items-center space-x-4">
+                    <div id="nav-links" class="flex items-center space-x-4">
                         <a href="home.html" class="text-gray-700 hover:text-blue-600 px-2 py-2 text-sm font-medium transition duration-300">
                             Home
+                        </a>
+                        <a href="services.html" class="text-gray-700 hover:text-blue-600 px-2 py-2 text-sm font-medium transition duration-300">
+                            Services
+                        </a>
+                        <a href="about.html" class="text-gray-700 hover:text-blue-600 px-2 py-2 text-sm font-medium transition duration-300">
+                            About Us
                         </a>
                         <!-- Industries Dropdown -->
                         <div class="relative group">
@@ -59,20 +65,14 @@
                         <a href="framework.html" class="text-gray-700 hover:text-blue-600 px-2 py-2 text-sm font-medium transition duration-300">
                             How it Works
                         </a>
-                        <a href="testimonials.html" class="text-gray-700 hover:text-blue-600 px-2 py-2 text-sm font-medium transition duration-300">
-                            Testimonials
-                        </a>
-                        <a href="why.html" class="text-gray-700 hover:text-blue-600 px-2 py-2 text-sm font-medium transition duration-300">
-                            Why Us
-                        </a>
                     </div>
                     <a href="#" class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] hover:from-[#d4813f] hover:to-[#4a9bb0] text-white px-6 py-2 rounded-lg text-md font-medium transition duration-300 shadow-md hover:shadow-lg ml-8">
-                        Book a Call
+                        Book a Discovery Call Now
                     </a>
                 </div>
                 
                 <!-- Mobile menu button -->
-                <div class="md:hidden">
+                <div class="flex md:hidden">
                     <button type="button" class="bg-gray-200 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" onclick="toggleMobileMenu()">
                         <span class="sr-only">Open main menu</span>
                         <!-- Menu icon -->
@@ -85,10 +85,16 @@
         </div>
         
         <!-- Mobile menu -->
-        <div class="md:hidden hidden" id="mobile-menu">
+        <div class="block md:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50">
                 <a href="home.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
                     Home
+                </a>
+                <a href="services.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Services
+                </a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    About Us
                 </a>
                 <!-- Mobile Industries Dropdown -->
                 <div class="relative">
@@ -119,14 +125,8 @@
                 <a href="framework.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
                     How it Works
                 </a>
-                <a href="testimonials.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
-                    Testimonials
-                </a>
-                <a href="why.html" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
-                    Why Us
-                </a>
                 <a href="#" class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] hover:from-[#d4813f] hover:to-[#4a9bb0] text-white block px-3 py-2 rounded-lg text-base font-medium mt-4">
-                    Book a Call
+                    Book a Discovery Call Now
                 </a>
             </div>
         </div>
@@ -135,7 +135,11 @@
     <script>
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
+            if (window.innerWidth < 768) {
+                mobileMenu.classList.toggle('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
         }
 
         function toggleMobileIndustries() {
@@ -143,49 +147,35 @@
             mobileIndustries.classList.toggle('hidden');
         }
 
-        // Scroll functionality for navbar
+        // Responsive navbar logic
+        function handleNavbar() {
+            const navLinks = document.getElementById('nav-links');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (window.innerWidth >= 768) {
+                // Desktop: show nav links, hide mobile menu
+                navLinks.classList.remove('hidden');
+                navLinks.classList.add('flex');
+                mobileMenu.classList.add('hidden');
+            } else {
+                // Mobile: hide nav links, show menu button, mobile menu toggled by button only
+                navLinks.classList.remove('flex');
+                navLinks.classList.add('hidden');
+                // Do not force mobileMenu hidden here, let toggleMobileMenu control it
+            }
+        }
+
+        window.addEventListener('resize', handleNavbar);
+        document.addEventListener('DOMContentLoaded', handleNavbar);
+
+        // Navbar color on scroll
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
-            const navLinks = document.getElementById('nav-links');
-            
             if (window.scrollY > 50) {
-                // Scrolled state - white background, show nav links
                 navbar.classList.remove('bg-black');
                 navbar.classList.add('bg-white', 'shadow-lg');
-                navLinks.classList.remove('hidden');
-                navLinks.classList.add('flex');
             } else {
-                // Initial state - check if we're on home page
-                const isHomePage = window.location.pathname.includes('home.html') || window.location.pathname === '/';
-                
-                if (isHomePage) {
-                    // Home page: black background, hide nav links
-                    navbar.classList.remove('bg-white', 'shadow-lg');
-                    navbar.classList.add('bg-black');
-                    navLinks.classList.remove('flex');
-                    navLinks.classList.add('hidden');
-                } else {
-                    // Other pages: white background, show nav links
-                    navbar.classList.remove('bg-black');
-                    navbar.classList.add('bg-white', 'shadow-lg');
-                    navLinks.classList.remove('hidden');
-                    navLinks.classList.add('flex');
-                }
-            }
-        });
-        
-        // Initialize navigation on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbar = document.getElementById('navbar');
-            const navLinks = document.getElementById('nav-links');
-            const isHomePage = window.location.pathname.includes('home.html') || window.location.pathname === '/';
-            
-            if (!isHomePage) {
-                // For non-home pages, show navigation immediately
-                navbar.classList.remove('bg-black');
-                navbar.classList.add('bg-white', 'shadow-lg');
-                navLinks.classList.remove('hidden');
-                navLinks.classList.add('flex');
+                navbar.classList.remove('bg-white', 'shadow-lg');
+                navbar.classList.add('bg-black');
             }
         });
     </script>
