@@ -22,201 +22,320 @@
 </head>
 <body>
     <div id="navbar"></div>
+    
+        <section id="home" class="relative min-h-[600px] md:min-h-[680px] lg:h-[741px] bg-cover bg-center overflow-hidden" style="background-image: url('Images/hero-image.png');">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent"></div>
 
-    <section id="home" class="relative bg-blue-50 h-[750px]">
-  <div class="absolute inset-0">
-    <img src="Images/hero-image.png" alt="Inclusive interaction" class="w-full h-full object-cover object-top" />
-    <div class="absolute inset-0 bg-black bg-opacity-20"></div>
-  </div>
+            <div class="relative max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 h-full flex flex-col justify-center items-center text-center py-20 sm:py-24 lg:py-0">
+                <h1 class="text-white text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 max-w-[900px]">
+                    Empowering Lives Through<br />
+                    <span class="text-[gold]">Compassionate Support</span>
+                </h1>
 
-  <div class="relative z-10 flex items-center justify-center h-full">
-    <div class="text-center text-white px-6">
-      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
-        Empowering Lives Through <br> <span style="color: #FFD700;">Compassionate Support</span>
-      </h1>
-    <p class="text-lg md:text-xl mb-8">
-      Quality NDIS services designed to help you achieve your goals, <br> increase independence, and participate fully in your community.
-    </p>
-    <div class="flex justify-center gap-4 flex-wrap">
-      <a href="#" class="text-white font-semibold px-6 py-3 rounded-lg shadow-md transition" style="background-color: #CE0019;" onmouseover="this.style.backgroundColor='#A0001A'" onmouseout="this.style.backgroundColor='#CE0019'">
-        Learn More
-      </a>
-      <a href="#" class="bg-transparent text-white font-semibold px-6 py-3 rounded-lg border-2 border-white hover:bg-white hover:text-gray-800 transition">
-        Contact Us
-      </a>
-    </div>
-  </div>
-</section>
+                <p class="text-white text-lg sm:text-xl md:text-2xl font-semibold mb-4 max-w-[876px]">
+                    At Latitude Quality Care, we believe everyone deserves the chance to live with independence, dignity, and choice.
+                </p>
 
-    <section id="services" class="py-16 px-6" style="background-color: #f9f9f9;">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl lg:text-4xl font-bold mb-6">
-                <span style="color: #363636;">Our</span> <span style="color: #F15A29;">Services</span>
-            </h2>
-            <p class="text-lg md:text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12">
-                We provide comprehensive NDIS services tailored to your individual needs, helping you achieve your goals and live life to the fullest.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                    <div class="h-48 bg-gray-200">
-                        <img src="Images/group.png" alt="Group/Centre Activities" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 text-left flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 whitespace-nowrap">Group/Centre Activities</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed flex-grow">
-                            This is to promote socialisation while offering both worker facilitated and self-directed capacity…
-                        </p>
-                        <button class="bg-transparent text-red-600 border-2 border-red-600 px-4 py-2 rounded-md font-semibold hover:bg-red-600 hover:text-white transition duration-300 mt-auto">
-                            Read More
-                        </button>
+                <p class="text-white text-base md:text-lg mb-8 max-w-[795px] leading-relaxed">
+                    As a trusted NDIS provider in Melbourne, our goal is to support you in achieving your personal goals, building new skills, and becoming more confident in everyday life. We deliver high-quality, person-centred care designed around your needs — so you can live life on your own terms and participate fully in your community.
+                </p>
+
+                <a href="ndis.html#contact" class="inline-flex w-full sm:w-auto justify-center bg-white text-[#ce0019] px-10 sm:px-12 py-4 rounded-xl hover:bg-gray-100 transition-colors font-medium text-lg shadow-lg">
+                    Contact Us
+                </a>
+            </div>
+        </section>
+
+    <section id="services" class="bg-[#f7f7f7] py-20 px-4 md:px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <h2 class="text-4xl font-bold text-[#1f1f1f]">Our <span class="text-[#F15A29]">Services</span></h2>
+                <p class="text-gray-600 text-base md:text-lg">
+                    Our team provides a wide range of NDIS support services to help you live independently and confidently. Each service is flexible and tailored to suit your goals and lifestyle.
+                </p>
+            </div>
+
+            <div id="servicesCarousel" class="relative mt-12">
+                <button type="button" data-prev aria-label="Previous service" class="flex absolute left-0 sm:-left-10 lg:-left-16 xl:-left-20 top-1/2 -translate-y-1/2 -translate-x-1/2 sm:translate-x-0 h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#F15A29] bg-white text-[#F15A29] shadow-lg transition hover:bg-[#F15A29] hover:text-white z-10">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+
+                <div class="overflow-hidden px-10 sm:px-0">
+                    <div data-track class="flex gap-6 transition-transform duration-500 ease-out">
+                        <div class="service-card flex-shrink-0 w-full md:w-[calc(50%_-_12px)] lg:w-[calc(33.333%_-_16px)]">
+                            <article class="h-full rounded-xl border border-gray-100 bg-white shadow-md transition-shadow duration-300 hover:shadow-xl flex flex-col overflow-hidden">
+                                <div class="h-52 overflow-hidden">
+                                    <img src="Images/group.png" alt="Group and centre activities" class="h-full w-full object-cover" />
+                                </div>
+                                <div class="flex flex-col gap-4 px-6 pt-6 pb-8 flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900">Group/Centre Activities</h3>
+                                    <p class="text-sm text-gray-600 flex-1">
+                                        Social connection and supported programs that build skills through shared experiences with peers.
+                                    </p>
+                                    <a href="group.html" class="inline-flex items-center justify-center rounded-lg border border-[#ce0019] px-5 py-2 text-sm font-semibold text-[#ce0019] transition hover:bg-[#ce0019] hover:text-white">
+                                        Read More
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="service-card flex-shrink-0 w-full md:w-[calc(50%_-_12px)] lg:w-[calc(33.333%_-_16px)]">
+                            <article class="h-full rounded-xl border border-gray-100 bg-white shadow-md transition-shadow duration-300 hover:shadow-xl flex flex-col overflow-hidden">
+                                <div class="h-52 overflow-hidden">
+                                    <img src="Images/participate.png" alt="Participate community support" class="h-full w-full object-cover" />
+                                </div>
+                                <div class="flex flex-col gap-4 px-6 pt-6 pb-8 flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900">Participate Community</h3>
+                                    <p class="text-sm text-gray-600 flex-1">
+                                        Supported community outings that encourage confidence, friendships, and a strong sense of belonging.
+                                    </p>
+                                    <a href="participate.html" class="inline-flex items-center justify-center rounded-lg border border-[#ce0019] px-5 py-2 text-sm font-semibold text-[#ce0019] transition hover:bg-[#ce0019] hover:text-white">
+                                        Read More
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="service-card flex-shrink-0 w-full md:w-[calc(50%_-_12px)] lg:w-[calc(33.333%_-_16px)]">
+                            <article class="h-full rounded-xl border border-gray-100 bg-white shadow-md transition-shadow duration-300 hover:shadow-xl flex flex-col overflow-hidden">
+                                <div class="h-52 overflow-hidden">
+                                    <img src="Images/household.png" alt="Household task assistance" class="h-full w-full object-cover" />
+                                </div>
+                                <div class="flex flex-col gap-4 px-6 pt-6 pb-8 flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900">Household Tasks</h3>
+                                    <p class="text-sm text-gray-600 flex-1">
+                                        Practical help with cooking, cleaning, and organising so home life stays comfortable and safe.
+                                    </p>
+                                    <a href="household.html" class="inline-flex items-center justify-center rounded-lg border border-[#ce0019] px-5 py-2 text-sm font-semibold text-[#ce0019] transition hover:bg-[#ce0019] hover:text-white">
+                                        Read More
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="service-card flex-shrink-0 w-full md:w-[calc(50%_-_12px)] lg:w-[calc(33.333%_-_16px)]">
+                            <article class="h-full rounded-xl border border-gray-100 bg-white shadow-md transition-shadow duration-300 hover:shadow-xl flex flex-col overflow-hidden">
+                                <div class="h-52 overflow-hidden">
+                                    <img src="Images/development.png" alt="Development of life skills" class="h-full w-full object-cover" />
+                                </div>
+                                <div class="flex flex-col gap-4 px-6 pt-6 pb-8 flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900">Development-Life Skills</h3>
+                                    <p class="text-sm text-gray-600 flex-1">
+                                        Coaching that builds daily routines, problem-solving, and independence at your own pace.
+                                    </p>
+                                    <a href="development.html" class="inline-flex items-center justify-center rounded-lg border border-[#ce0019] px-5 py-2 text-sm font-semibold text-[#ce0019] transition hover:bg-[#ce0019] hover:text-white">
+                                        Read More
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="service-card flex-shrink-0 w-full md:w-[calc(50%_-_12px)] lg:w-[calc(33.333%_-_16px)]">
+                            <article class="h-full rounded-xl border border-gray-100 bg-white shadow-md transition-shadow duration-300 hover:shadow-xl flex flex-col overflow-hidden">
+                                <div class="h-52 overflow-hidden">
+                                    <img src="Images/personal.png" alt="Assist personal activities" class="h-full w-full object-cover" />
+                                </div>
+                                <div class="flex flex-col gap-4 px-6 pt-6 pb-8 flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900">Assist Personal Activities</h3>
+                                    <p class="text-sm text-gray-600 flex-1">
+                                        Respectful personal care that supports daily hygiene, dressing, and routines with dignity.
+                                    </p>
+                                    <a href="assist-personal.html" class="inline-flex items-center justify-center rounded-lg border border-[#ce0019] px-5 py-2 text-sm font-semibold text-[#ce0019] transition hover:bg-[#ce0019] hover:text-white">
+                                        Read More
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="service-card flex-shrink-0 w-full md:w-[calc(50%_-_12px)] lg:w-[calc(33.333%_-_16px)]">
+                            <article class="h-full rounded-xl border border-gray-100 bg-white shadow-md transition-shadow duration-300 hover:shadow-xl flex flex-col overflow-hidden">
+                                <div class="h-52 overflow-hidden">
+                                    <img src="Images/assist.png" alt="Assist travel and transport" class="h-full w-full object-cover" />
+                                </div>
+                                <div class="flex flex-col gap-4 px-6 pt-6 pb-8 flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900">Assist Travel &amp; Transport</h3>
+                                    <p class="text-sm text-gray-600 flex-1">
+                                        Reliable transport assistance to appointments, programs, and community activities.
+                                    </p>
+                                    <a href="assist-travel.html" class="inline-flex items-center justify-center rounded-lg border border-[#ce0019] px-5 py-2 text-sm font-semibold text-[#ce0019] transition hover:bg-[#ce0019] hover:text-white">
+                                        Read More
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="service-card flex-shrink-0 w-full md:w-[calc(50%_-_12px)] lg:w-[calc(33.333%_-_16px)]">
+                            <article class="h-full rounded-xl border border-gray-100 bg-white shadow-md transition-shadow duration-300 hover:shadow-xl flex flex-col overflow-hidden">
+                                <div class="h-52 overflow-hidden">
+                                    <img src="Images/task.png" alt="Daily tasks shared living" class="h-full w-full object-cover" />
+                                </div>
+                                <div class="flex flex-col gap-4 px-6 pt-6 pb-8 flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900">Daily Tasks/Shared Living</h3>
+                                    <p class="text-sm text-gray-600 flex-1">
+                                        Round-the-clock shared living support that balances independence and everyday guidance.
+                                    </p>
+                                    <a href="daily.html" class="inline-flex items-center justify-center rounded-lg border border-[#ce0019] px-5 py-2 text-sm font-semibold text-[#ce0019] transition hover:bg-[#ce0019] hover:text-white">
+                                        Read More
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="service-card flex-shrink-0 w-full md:w-[calc(50%_-_12px)] lg:w-[calc(33.333%_-_16px)]">
+                            <article class="h-full rounded-xl border border-gray-100 bg-white shadow-md transition-shadow duration-300 hover:shadow-xl flex flex-col overflow-hidden">
+                                <div class="h-52 overflow-hidden">
+                                    <img src="Images/innov.png" alt="Innovative community participation" class="h-full w-full object-cover" />
+                                </div>
+                                <div class="flex flex-col gap-4 px-6 pt-6 pb-8 flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900">Innovative Community Participation</h3>
+                                    <p class="text-sm text-gray-600 flex-1">
+                                        Specialist programs that spark creativity, leadership, and new ways to engage in community life.
+                                    </p>
+                                    <a href="innov-community.html" class="inline-flex items-center justify-center rounded-lg border border-[#ce0019] px-5 py-2 text-sm font-semibold text-[#ce0019] transition hover:bg-[#ce0019] hover:text-white">
+                                        Read More
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="service-card flex-shrink-0 w-full md:w-[calc(50%_-_12px)] lg:w-[calc(33.333%_-_16px)]">
+                            <article class="h-full rounded-xl border border-gray-100 bg-white shadow-md transition-shadow duration-300 hover:shadow-xl flex flex-col overflow-hidden">
+                                <div class="h-52 overflow-hidden">
+                                    <img src="Images/life.png" alt="Life stage transition planning" class="h-full w-full object-cover" />
+                                </div>
+                                <div class="flex flex-col gap-4 px-6 pt-6 pb-8 flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900">Life Stage Transition</h3>
+                                    <p class="text-sm text-gray-600 flex-1">
+                                        Guidance through major life changes with tailored planning, mentoring, and coordination.
+                                    </p>
+                                    <a href="lifestage.html" class="inline-flex items-center justify-center rounded-lg border border-[#ce0019] px-5 py-2 text-sm font-semibold text-[#ce0019] transition hover:bg-[#ce0019] hover:text-white">
+                                        Read More
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="service-card flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+                            <article class="h-full rounded-xl border border-gray-100 bg-white shadow-md transition-shadow duration-300 hover:shadow-xl flex flex-col overflow-hidden">
+                                <div class="h-52 overflow-hidden">
+                                    <img src="Images/accomodation.png" alt="Accommodation and tenancy assistance" class="h-full w-full object-cover" />
+                                </div>
+                                <div class="flex flex-col gap-4 px-6 pt-6 pb-8 flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900">Accommodation &amp; Tenancy</h3>
+                                    <p class="text-sm text-gray-600 flex-1">
+                                        Help to secure, set up, and maintain safe housing that matches your support needs and goals.
+                                    </p>
+                                    <a href="accomodation.html" class="inline-flex items-center justify-center rounded-lg border border-[#ce0019] px-5 py-2 text-sm font-semibold text-[#ce0019] transition hover:bg-[#ce0019] hover:text-white">
+                                        Read More
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                    <div class="h-48 bg-gray-200">
-                        <img src="Images/participate.png" alt="Personal Care" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 text-left flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 whitespace-nowrap">Participate Community</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed flex-grow">
-                            Assisting participants to participate in group-based community, social and recreational activities...
-                        </p>
-                        <button class="bg-transparent text-red-600 border-2 border-red-600 px-4 py-2 rounded-md font-semibold hover:bg-red-600 hover:text-white transition duration-300 mt-auto">
-                            Read More
-                        </button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                    <div class="h-48 bg-gray-200">
-                        <img src="Images/household.png" alt="Community Access" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 text-left flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 whitespace-nowrap">Household Tasks</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed flex-grow">
-                            Assistance with household tasks enables participants to maintain their living environment and promote independence.
-                        </p>
-                        <button class="bg-transparent text-red-600 border-2 border-red-600 px-4 py-2 rounded-md font-semibold hover:bg-red-600 hover:text-white transition duration-300 mt-auto">
-                            Read More
-                        </button>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                    <div class="h-48 bg-gray-200">
-                        <img src="Images/development.png" alt="Support Coordination" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6 text-left flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-gray-800 mb-3 whitespace-nowrap">Development-Life Skills</h3>
-                        <p class="text-gray-600 mb-4 leading-relaxed flex-grow">
-                            Development of daily living and life skills focuses on training and development activities undertaken…
-                        </p>
-                        <button class="bg-transparent text-red-600 border-2 border-red-600 px-4 py-2 rounded-md font-semibold hover:bg-red-600 hover:text-white transition duration-300 mt-auto">
-                            Read More
-                        </button>
-                    </div>
-                </div>
+                <button type="button" data-next aria-label="Next service" class="flex absolute right-0 sm:-right-10 lg:-right-16 xl:-right-20 top-1/2 -translate-y-1/2 translate-x-1/2 sm:translate-x-0 h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-[#F15A29] bg-white text-[#F15A29] shadow-lg transition hover:bg-[#F15A29] hover:text-white z-10">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
 
-    <section class="py-12 md:py-16 px-4 md:px-6" style="background-color: #F97316;">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                <div class="text-white order-2 lg:order-1">
-                    <h2 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6 leading-tight text-center lg:text-left transform hover:scale-105 transition-all duration-300">
-                        <span class="inline-block hover:animate-pulse">Why Choose</span> 
-                        <span style="color: #FFD700; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);" class="inline-block hover:animate-bounce">Latitude</span><br>
-                        <span style="color: #FFD700; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);" class="inline-block hover:animate-bounce animation-delay-150">Quality Care?</span>
-                    </h2>
-                    <p class="text-sm md:text-base lg:text-lg leading-relaxed mb-6 md:mb-8 text-center lg:text-left">
-                        We are committed to providing exceptional support services that empower you to live independently and achieve your personal goals.
-                    </p>
-                    
-                    <ul class="space-y-3 md:space-y-4">
-                        <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
-                            <div class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 mr-3 md:mr-4 mt-1 group-hover:animate-spin">
-                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-all duration-300" style="color: #FFD700; filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Develop an understanding of the specific needs of each person.</span>
-                        </li>
-                        
-                        <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
-                            <div class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 mr-3 md:mr-4 mt-1 group-hover:animate-pulse">
-                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-all duration-300" style="color: #FFD700; filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Be flexible in our approach to dealing with our clients</span>
-                        </li>
-                        
-                        <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
-                            <div class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 mr-3 md:mr-4 mt-1 group-hover:animate-bounce">
-                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-all duration-300" style="color: #FFD700; filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Always conduct business in a sound, ethical and fair manner</span>
-                        </li>
-                        
-                        <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
-                            <div class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 mr-3 md:mr-4 mt-1 group-hover:animate-spin">
-                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-all duration-300" style="color: #FFD700; filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Employ staff who are qualified and experienced for their role</span>
-                        </li>
-                        
-                        <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
-                            <div class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 mr-3 md:mr-4 mt-1 group-hover:animate-pulse">
-                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-all duration-300" style="color: #FFD700; filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Protect stakeholder's rights to privacy</span>
-                        </li>
-                        
-                        <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
-                            <div class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 mr-3 md:mr-4 mt-1 group-hover:animate-bounce">
-                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-all duration-300" style="color: #FFD700; filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Ensure the accuracy and integrity of the information we keep about our stakeholders</span>
-                        </li>
-                        
-                        <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
-                            <div class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 mr-3 md:mr-4 mt-1 group-hover:animate-spin">
-                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-all duration-300" style="color: #FFD700; filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Provide clear information on our fees, charges and refunds prior to entering into an agreement</span>
-                        </li>
-                        
-                        <li class="flex items-start group hover:transform hover:translateX-2 transition-all duration-300 hover:bg-white hover:bg-opacity-10 rounded-lg p-2 hover:shadow-lg">
-                            <div class="flex-shrink-0 w-5 h-5 md:w-6 md:h-6 mr-3 md:mr-4 mt-1 group-hover:animate-pulse">
-                                <svg class="w-5 h-5 md:w-6 md:h-6 transition-all duration-300" style="color: #FFD700; filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <span class="text-white leading-relaxed text-sm md:text-base group-hover:text-yellow-200 transition-colors duration-300">Treat all people fairly and equitably</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="order-1 lg:order-2 mb-8 lg:mb-0">
-                    <div class="flex justify-center lg:justify-end">
-                        <div class="w-full max-w-sm md:max-w-md lg:max-w-lg">
-                            <img src="Images/looking.png" alt="Looking" class="w-full h-auto rounded-lg shadow-lg">
-                        </div>
-                    </div>
+    <section class="py-16 px-4 md:px-6" style="background-color: #F97316;">
+        <div class="max-w-6xl mx-auto lg:flex lg:items-center lg:gap-16 xl:gap-20">
+            <div class="lg:w-1/2 text-white text-center lg:text-left">
+                <p class="text-xs md:text-sm uppercase tracking-[0.4em] mb-3" style="color: rgba(255,255,255,0.8);">Why Choose</p>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+                    Why Choose <span style="color: #FFD65A;">Latitude Quality Care?</span>
+                </h2>
+                <p class="text-base md:text-lg leading-relaxed mb-8" style="color: rgba(255,255,255,0.92);">
+                    We don’t just provide support — we build meaningful relationships based on trust, respect, and understanding. Every person we work with is unique, and our approach reflects that.
+                </p>
+                <p class="text-base md:text-lg font-semibold mb-6" style="color: rgba(255,255,255,0.92);">We promise to:</p>
+                <ul class="space-y-3 text-left mx-auto max-w-xl">
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full" style="background-color: rgba(255,214,90,0.2); color: #FFD65A;">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-base md:text-lg" style="color: rgba(255,255,255,0.9);">Understand your individual goals and support needs.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full" style="background-color: rgba(255,214,90,0.2); color: #FFD65A;">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-base md:text-lg" style="color: rgba(255,255,255,0.9);">Be flexible, reliable, and responsive in your care.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full" style="background-color: rgba(255,214,90,0.2); color: #FFD65A;">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-base md:text-lg" style="color: rgba(255,255,255,0.9);">Conduct all business ethically, fairly, and transparently.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full" style="background-color: rgba(255,214,90,0.2); color: #FFD65A;">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-base md:text-lg" style="color: rgba(255,255,255,0.9);">Employ qualified, compassionate, and experienced support staff.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full" style="background-color: rgba(255,214,90,0.2); color: #FFD65A;">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-base md:text-lg" style="color: rgba(255,255,255,0.9);">Respect your privacy and confidentiality at all times.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full" style="background-color: rgba(255,214,90,0.2); color: #FFD65A;">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-base md:text-lg" style="color: rgba(255,255,255,0.9);">Maintain accuracy and integrity in all stakeholder information.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full" style="background-color: rgba(255,214,90,0.2); color: #FFD65A;">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-base md:text-lg" style="color: rgba(255,255,255,0.9);">Provide clear and upfront details on fees, charges, and agreements.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-1 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full" style="background-color: rgba(255,214,90,0.2); color: #FFD65A;">
+                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span class="text-base md:text-lg" style="color: rgba(255,255,255,0.9);">Treat all people with fairness, dignity, and equality.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="lg:w-1/2 mt-10 lg:mt-0 flex justify-center">
+                <div class="w-full max-w-sm sm:max-w-md">
+                    <img src="Images/looking.png" alt="Team supporting client" class="w-full rounded-[32px] shadow-xl border-4 border-white/20">
                 </div>
             </div>
+        </div>
+        <div class="max-w-3xl mx-auto text-center mt-12">
+            <p class="text-base md:text-lg mb-6" style="color: rgba(255,255,255,0.9);">
+                Because at Latitude Quality Care — your wellbeing is at the heart of everything we do.
+            </p>
+            <a href="#contact" class="inline-flex w-full sm:w-auto items-center justify-center rounded-full px-8 py-3 text-base font-semibold transition-colors duration-300" style="background-color: #F7F3FF; color: #F97316;">
+                Contact Us Today
+            </a>
         </div>
     </section>
 
@@ -306,6 +425,97 @@
     <div id="footer"></div>
 
     <script>
+        function initServicesCarousel() {
+            const carousel = document.getElementById('servicesCarousel');
+            if (!carousel) {
+                return;
+            }
+
+            const track = carousel.querySelector('[data-track]');
+            const cards = track ? Array.from(track.querySelectorAll('.service-card')) : [];
+            const prevBtn = carousel.querySelector('[data-prev]');
+            const nextBtn = carousel.querySelector('[data-next]');
+
+            if (!track || cards.length === 0) {
+                return;
+            }
+
+            let currentIndex = 0;
+            let cardsPerView = getCardsPerView();
+
+            function getCardsPerView() {
+                if (window.innerWidth >= 1024) {
+                    return 3;
+                }
+                if (window.innerWidth >= 768) {
+                    return 2;
+                }
+                return 1;
+            }
+
+            function clampIndex() {
+                const maxIndex = Math.max(0, cards.length - cardsPerView);
+                if (currentIndex > maxIndex) {
+                    currentIndex = maxIndex;
+                }
+                if (currentIndex < 0) {
+                    currentIndex = 0;
+                }
+            }
+
+            function applyDisabledState(button, disabled) {
+                if (!button) {
+                    return;
+                }
+                button.disabled = disabled;
+                button.classList.toggle('opacity-40', disabled);
+                button.classList.toggle('cursor-not-allowed', disabled);
+                button.classList.toggle('pointer-events-none', disabled);
+            }
+
+            function updatePosition() {
+                clampIndex();
+                const styles = getComputedStyle(track);
+                const gap = parseFloat(styles.gap || styles.columnGap || 0) || 0;
+                const cardWidth = cards[0].getBoundingClientRect().width + gap;
+                track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+                applyDisabledState(prevBtn, currentIndex === 0);
+                const maxIndex = Math.max(0, cards.length - cardsPerView);
+                applyDisabledState(nextBtn, currentIndex >= maxIndex);
+            }
+
+            function handleResize() {
+                const updatedPerView = getCardsPerView();
+                if (updatedPerView !== cardsPerView) {
+                    cardsPerView = updatedPerView;
+                    clampIndex();
+                }
+                updatePosition();
+            }
+
+            prevBtn?.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex -= 1;
+                    updatePosition();
+                }
+            });
+
+            nextBtn?.addEventListener('click', () => {
+                const maxIndex = Math.max(0, cards.length - cardsPerView);
+                if (currentIndex < maxIndex) {
+                    currentIndex += 1;
+                    updatePosition();
+                }
+            });
+
+            window.addEventListener('resize', handleResize);
+
+            requestAnimationFrame(updatePosition);
+        }
+    </script>
+
+    <script>
         function loadHTML(elementId, file) {
             fetch(file)
                 .then(response => response.text())
@@ -347,6 +557,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadHTML('navbar', 'navbar.html');
             loadHTML('footer', 'footer.html');
+            initServicesCarousel();
             
             document.addEventListener('click', function(e) {
                 if (e.target.matches('a[href^="#"]')) {
