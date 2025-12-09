@@ -1,133 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accommodation/Tenancy Services - Latitude Quality Care</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#007bff',
-                        'primary-dark': '#0056b3',
-                        'footer-bg': '#484848',
-                        'brand-orange': '#F15A29'
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Latitude Quality Care - Accommodation & Tenancy Support</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: "#CE0019",
+              orange: "#F15A29",
+              gold: "#FFD700",
+            },
+          },
+          fontFamily: {
+            inter: ["Inter", "sans-serif"],
+            poppins: ["Poppins", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
 </head>
-<body>
-    <div id="navbar"></div>
+<body class="bg-white font-inter text-gray-900">
+  <div id="navbar"></div>
 
-    <!-- Hero Section -->
-    <section class="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]" style="background: linear-gradient(135deg, #BF283B 0%, #F15A29 100%);">
-        <div class="relative z-10 flex items-center justify-start h-full">
-            <div class="text-left text-white px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 2xl:px-40">
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 md:mb-4 drop-shadow-lg leading-tight">
-                    <span style="color: white;">Accommodation & </span><span style="color: #FFD700;">Tenancy <br> Support</span>    
-                </h1>
-                <p class="text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl leading-relaxed">
-                    Expert support to help you find, secure, and maintain your ideal living situation with confidence and independence.
-                </p>
-                <div class="mt-4 md:mt-6">
-                    <a href="#contact" class="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-black text-sm sm:text-base transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1" style="background-color: #FFD700;">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path>
-                        </svg>
-                        <span class="hidden sm:inline">Get support today</span>
-                        <span class="sm:hidden">Get support</span>
-                    </a>
-                </div>
-            </div>
+  <!-- Hero Section -->
+  <section
+    id="home"
+    class="w-full bg-gradient-to-r from-brand-red to-brand-orange pt-40 pb-20 lg:pt-48 lg:pb-24"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <h1 class="font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
+          <span class="text-white">Accommodation &amp; </span>
+          <span class="text-brand-gold">
+            Tenancy
+            <br />
+            Support
+          </span>
+        </h1>
+        <p class="text-xl text-white leading-relaxed max-w-2xl">
+          Find a place to call home — with guidance every step of the way. We
+          understand how important it is to feel safe, secure, and comfortable
+          in your own home.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Support You Section -->
+  <section class="w-full bg-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/fe52354ee0e383eef2ce9965c129c5ad022c29a2?width=934"
+            alt="Support team helping clients"
+            class="w-full rounded-3xl shadow-lg"
+          />
         </div>
-    </section>
-
-    <!-- Content Section -->
-    <section class="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-center">
-                <!-- Left Column - Content -->
-                <div class="order-2 lg:order-1">
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-                        <span style="color: #363636;">Accommodation/</span><span style="color: #DC2626;">Tenancy</span>
-                    </h2>
-                    <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                        This includes support to assist participants to achieve their individual Accommodation and Tenancy goals such as assisting participants to overcome barriers that impact a current tenancy or supporting participants to explore and obtain alternative housing.
-                    </p>
-                </div>
-
-                <!-- Right Column - Image -->
-                <div class="order-1 lg:order-2 flex justify-center">
-                    <div class="w-full max-w-sm sm:max-w-md md:max-w-lg">
-                        <img src="Images/accomodation.png" alt="Accommodation Services" class="w-full h-auto rounded-lg shadow-lg">
-                    </div>
-                </div>
-            </div>
+        <div>
+          <h2 class="font-bold text-4xl leading-tight text-brand-red mb-6">
+            How We Support You
+          </h2>
+          <p class="text-base leading-relaxed text-black">
+            Our team provides personalised assistance to help you navigate the
+            housing journey. Whether you're looking for new accommodation,
+            managing rental responsibilities, or facing challenges in your
+            current tenancy, our experienced team is here to support you every
+            step of the way.
+          </p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <div id="footer"></div>
+  <!-- Services Section -->
+  <section id="services" class="w-full bg-gray-50 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service Card 1 -->
+        <div
+          class="bg-white rounded-3xl shadow-[0_2px_10px_rgba(0,0,0,0.15)] p-8 flex flex-col items-start hover:scale-105 transition-transform"
+        >
+          <div class="mb-6">
+            <div
+              class="w-16 h-16 rounded-full bg-gradient-to-b from-brand-red to-brand-orange shadow-md flex items-center justify-center"
+            >
+              <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 11l8-6 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6 10v9h4v-5h4v5h4v-9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-xl text-brand-red mb-3">Housing Options</h3>
+          <p class="text-xs leading-5 text-gray-600">
+            Explore and understand different housing options available under the
+            NDIS
+          </p>
+        </div>
 
-    <script>
-        function loadHTML(elementId, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(data, 'text/html');
-                    const bodyContent = doc.body.innerHTML;
-                    document.getElementById(elementId).innerHTML = bodyContent;
-                    
-                    if (elementId === 'navbar') {
-                        initNavbarScripts();
-                    }
-                })
-                .catch(error => console.error('Error loading file:', error));
-        }
+        <!-- Service Card 2 -->
+        <div
+          class="bg-white rounded-3xl shadow-[0_2px_10px_rgba(0,0,0,0.15)] p-8 flex flex-col items-start hover:scale-105 transition-transform"
+        >
+          <div class="mb-6">
+            <div
+              class="w-16 h-16 rounded-full bg-gradient-to-b from-brand-red to-brand-orange shadow-md flex items-center justify-center"
+            >
+              <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15c0 1.1.9 2 2 2h2l3 3v-5h3a2 2 0 002-2V8a2 2 0 00-2-2H7a2 2 0 00-2 2v7z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.5 11h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8.5 9h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-xl text-brand-red mb-3">
+            Communication Support
+          </h3>
+          <p class="text-xs leading-5 text-gray-600">
+            Communicate effectively with landlords, property managers, and
+            housing providers
+          </p>
+        </div>
 
-        function initNavbarScripts() {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
+        <!-- Service Card 3 -->
+        <div
+          class="bg-white rounded-3xl shadow-[0_2px_10px_rgba(0,0,0,0.15)] p-8 flex flex-col items-start hover:scale-105 transition-transform"
+        >
+          <div class="mb-6">
+            <div
+              class="w-16 h-16 rounded-full bg-gradient-to-b from-brand-red to-brand-orange shadow-md flex items-center justify-center"
+            >
+              <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 4h12v16H6V4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                <path d="M9 8h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M9 12h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M9 16h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M12 4V2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-xl text-brand-red mb-3">Tenancy Rights</h3>
+          <p class="text-xs leading-5 text-gray-600">
+            Understand your tenancy rights and responsibilities as a tenant
+          </p>
+        </div>
 
-            const mobileServicesToggle = document.getElementById('mobile-services-toggle');
-            const mobileServicesMenu = document.getElementById('mobile-services-menu');
-            const mobileServicesArrow = document.getElementById('mobile-services-arrow');
-            
-            if (mobileServicesToggle && mobileServicesMenu && mobileServicesArrow) {
-                mobileServicesToggle.addEventListener('click', () => {
-                    mobileServicesMenu.classList.toggle('hidden');
-                    mobileServicesArrow.classList.toggle('rotate-180');
-                });
-            }
-        }
+        <!-- Service Card 4 -->
+        <div
+          class="bg-white rounded-3xl shadow-[0_2px_10px_rgba(0,0,0,0.15)] p-8 flex flex-col items-start hover:scale-105 transition-transform"
+        >
+          <div class="mb-6">
+            <div
+              class="w-16 h-16 rounded-full bg-gradient-to-b from-brand-red to-brand-orange shadow-md flex items-center justify-center"
+            >
+              <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 17l3-6 2 3 3-6 4 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M4 20h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M4 4h6l2 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-xl text-brand-red mb-3">Overcome Barriers</h3>
+          <p class="text-xs leading-5 text-gray-600">
+            Address challenges that may affect your ability to maintain a
+            tenancy
+          </p>
+        </div>
 
-        document.addEventListener('DOMContentLoaded', function() {
-            loadHTML('navbar', 'navbar.html');
-            loadHTML('footer', 'footer.html');
-            
-            document.addEventListener('click', function(e) {
-                if (e.target.matches('a[href^="#"]')) {
-                    e.preventDefault();
-                    const target = document.querySelector(e.target.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
+        <!-- Service Card 5 -->
+        <div
+          class="bg-white rounded-3xl shadow-[0_2px_10px_rgba(0,0,0,0.15)] p-8 flex flex-col items-start hover:scale-105 transition-transform"
+        >
+          <div class="mb-6">
+            <div
+              class="w-16 h-16 rounded-full bg-gradient-to-b from-brand-red to-brand-orange shadow-md flex items-center justify-center"
+            >
+              <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 18V9a2 2 0 012-2h8a2 2 0 012 2v9" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+                <path d="M9 13h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M9 16h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M8 5l1-1h6l1 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-xl text-brand-red mb-3">Living Skills</h3>
+          <p class="text-xs leading-5 text-gray-600">
+            Develop essential skills like budgeting, cleanliness, and
+            communication
+          </p>
+        </div>
+
+        <!-- Service Card 6 -->
+        <div
+          class="bg-white rounded-3xl shadow-[0_2px_10px_rgba(0,0,0,0.15)] p-8 flex flex-col items-start hover:scale-105 transition-transform"
+        >
+          <div class="mb-6">
+            <div
+              class="w-16 h-16 rounded-full bg-gradient-to-b from-brand-red to-brand-orange shadow-md flex items-center justify-center"
+            >
+              <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 12l8-6 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M6 11v9h3v-5h6v5h3v-9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M9 20v-4h6v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7 9l5-4 5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <h3 class="font-bold text-xl text-brand-red mb-3">
+            Community Housing
+          </h3>
+          <p class="text-xs leading-5 text-gray-600">
+            Access community housing or supported accommodation when needed
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why It Matters Section -->
+  <section class="w-full bg-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="bg-gradient-to-r from-brand-red to-brand-orange rounded-[48px] px-8 py-16 lg:px-16 lg:py-20 text-center"
+      >
+        <h2 class="font-bold text-4xl text-white mb-8">Why It Matters</h2>
+        <p class="font-medium text-base leading-relaxed text-white max-w-3xl mx-auto mb-12">
+          Finding and maintaining suitable housing can be challenging, but you
+          don't have to do it. With Latitude Quality Care, you get
+          compassionate, professional guidance designed to make the process
+          simple and stress-free. We're here to help you create a living space
+          where you feel safe, stable, and empowered to thrive.
+        </p>
+        <a
+          href="#contact"
+          class="inline-block bg-white text-brand-red font-semibold text-base px-12 py-4 rounded-[999px] hover:shadow-2xl transition-all hover:scale-105"
+        >
+          Get Support Today
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script>
+    function loadHTML(elementId, file) {
+      fetch(file)
+        .then((response) => response.text())
+        .then((data) => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(data, "text/html");
+          document.getElementById(elementId).innerHTML = doc.body.innerHTML;
+
+          if (elementId === "navbar") {
+            initNavbarScripts();
+          }
+        })
+        .catch((error) => console.error("Error loading file:", error));
+    }
+
+    function initNavbarScripts() {
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
         });
-    </script>
+      }
 
+      const mobileServicesToggle = document.getElementById(
+        "mobile-services-toggle"
+      );
+      const mobileServicesMenu = document.getElementById(
+        "mobile-services-menu"
+      );
+      const mobileServicesArrow = document.getElementById(
+        "mobile-services-arrow"
+      );
+
+      if (mobileServicesToggle && mobileServicesMenu && mobileServicesArrow) {
+        mobileServicesToggle.addEventListener("click", () => {
+          mobileServicesMenu.classList.toggle("hidden");
+          mobileServicesArrow.classList.toggle("rotate-180");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadHTML("navbar", "navbar.html");
+      loadHTML("footer", "footer.html");
+
+      document.addEventListener("click", (event) => {
+        if (event.target.matches('a[href^="#"]')) {
+          event.preventDefault();
+          const target = document.querySelector(event.target.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>

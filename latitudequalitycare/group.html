@@ -1,130 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group/Centre Activities - Latitude Quality Care</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#007bff',
-                        'primary-dark': '#0056b3',
-                        'footer-bg': '#484848',
-                        'brand-orange': '#F15A29'
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Latitude Quality Care - Group/Centre Activities</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: "#CE0019",
+              orange: "#F15A29",
+              gold: "#FFD700",
+            },
+          },
+          fontFamily: {
+            inter: ["Inter", "sans-serif"],
+            poppins: ["Poppins", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
 </head>
-<body>
-    <div id="navbar"></div>
+<body class="bg-white font-inter text-gray-900">
+  <div id="navbar"></div>
 
-    <section class="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]" style="background: linear-gradient(135deg, #BF283B 0%, #F15A29 100%);">
-        <div class="relative z-10 flex items-center justify-start h-full">
-            <div class="text-left text-white px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 2xl:px-40">
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 md:mb-4 drop-shadow-lg leading-tight">
-                    <span style="color: white;">Group/Centre </span><span style="color: #FFD700;">Activities <br> Support</span>    
-                </h1>
-                <p class="text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl leading-relaxed">
-                    Engaging group activities designed to build social connections, develop skills, and promote community participation.
+  <!-- Hero Section -->
+  <section
+    id="home"
+    class="w-full bg-gradient-to-r from-brand-red to-brand-orange pt-40 pb-20 lg:pt-48 lg:pb-24"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <h1 class="font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
+          <span class="text-white">Group/Centre</span>
+          <span class="text-brand-gold"> Activities</span>
+        </h1>
+        <p class="text-xl text-white leading-relaxed max-w-3xl">
+          Connect, learn, and grow in a safe, supportive environment. We believe
+          social connection is key to living a fulfilling and balanced life.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Offer Section -->
+  <section class="w-full bg-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <h2 class="font-bold text-4xl leading-tight text-brand-red mb-6">
+            What We Offer
+          </h2>
+          <p class="text-base leading-relaxed text-black mb-6">
+            Our programs are flexible and inclusive, offering both
+            worker-facilitated sessions and self-directed capacity building
+            activities. Each activity is tailored to your goals, abilities, and
+            interests — helping you grow at your own pace.
+          </p>
+          <div class="border-l-4 border-brand-orange bg-gray-50 p-6 rounded-r-lg">
+            <p class="text-sm font-semibold leading-relaxed text-black">
+              Our programs are designed to encourage independence, teamwork, and
+              personal growth while building lasting friendships and confidence.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/177d46f54d6d693f5af78aaa176325f0027424eb?width=1034"
+            alt="Group activities participants"
+            class="w-full rounded-3xl shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Approach Section -->
+  <section class="w-full bg-gray-50 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div>
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/7602e46d21dc04f3089376f192ff594009825217?width=1034"
+            alt="Supportive group environment"
+            class="w-full rounded-3xl shadow-lg"
+          />
+        </div>
+        <div>
+          <h2 class="font-bold text-4xl leading-tight text-brand-red mb-6">
+            Our Approach
+          </h2>
+          <p class="text-sm leading-relaxed text-black mb-8">
+            We focus on creating a safe, inclusive, and empowering environment
+            where participants can connect, learn, and thrive. Our qualified
+            support workers provide guidance and encouragement while allowing you
+            to make choices, explore your interests, and develop new capabilities.
+          </p>
+
+          <!-- Approach Cards Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Card 1 -->
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-14 h-14 rounded-full bg-gradient-to-b from-brand-red to-brand-orange shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center flex-shrink-0"
+              >
+                <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 17l4.5-5 3 3L19 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12 4l1.1 2.3 2.5.3-1.9 1.7.5 2.4-2.2-1.2-2.2 1.2.5-2.4-1.9-1.7 2.5-.3L12 4z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-base text-brand-red mb-1">
+                  Build Confidence
+                </h3>
+                <p class="text-sm leading-tight text-gray-600">
+                  Celebrate every win and build self-belief through supported challenges
                 </p>
-                <div class="mt-4 md:mt-6">
-                    <a href="#contact" class="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-black text-sm sm:text-base transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1" style="background-color: #FFD700;">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path>
-                        </svg>
-                        <span class="hidden sm:inline">Get support today</span>
-                        <span class="sm:hidden">Get support</span>
-                    </a>
-                </div>
+              </div>
             </div>
-        </div>
-    </section>
 
-    <section class="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-center">
-                <div class="order-2 lg:order-1">
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-                        <span style="color: #363636;">Group/Centre </span><span style="color: #DC2626;">Activities</span>
-                    </h2>
-                    <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                        This is to promote socialisation while offering both worker facilitated and self-directed capacity building activities.
-
-                    </p>
-                </div>
-
-                <div class="order-1 lg:order-2 flex justify-center">
-                    <div class="w-full max-w-sm sm:max-w-md md:max-w-lg">
-                        <img src="Images/group.png" alt="Group Activities" class="w-full h-auto rounded-lg shadow-lg">
-                    </div>
-                </div>
+            <!-- Card 2 -->
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-14 h-14 rounded-full bg-gradient-to-b from-brand-red to-brand-orange shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center flex-shrink-0"
+              >
+                <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 10a3 3 0 116 0v1h-1.5a2.5 2.5 0 00-2.5 2.5V16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M17 10a3 3 0 10-6 0v1h1.5A2.5 2.5 0 0115 13.5V16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M5 16.5A2.5 2.5 0 017.5 14h9A2.5 2.5 0 0119 16.5V18H5v-1.5z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-base text-brand-red mb-1">
+                  Grow Friendships
+                </h3>
+                <p class="text-sm leading-tight text-gray-600">
+                  Connect with peers, practice teamwork, and build supportive circles
+                </p>
+              </div>
             </div>
+
+            <!-- Card 3 -->
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-14 h-14 rounded-full bg-gradient-to-b from-brand-red to-brand-orange shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center flex-shrink-0"
+              >
+                <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 9a3 3 0 116 0c0 1.7-.7 3-2 3s-2-.3-2-1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M12 12v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                  <path d="M11 20h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                  <path d="M8 9a4 4 0 018 0c0 1.7-.7 3.1-2 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-base text-brand-red mb-1">
+                  Learn Creatively
+                </h3>
+                <p class="text-sm leading-tight text-gray-600">
+                  Try new ideas, explore hobbies, and discover skills in safe spaces
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-14 h-14 rounded-full bg-gradient-to-b from-brand-red to-brand-orange shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center flex-shrink-0"
+              >
+                <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 4h10v4a4 4 0 01-4 4v5l-2-1-2 1v-5a4 4 0 01-4-4V4z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9 4V2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                  <path d="M15 4V2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-base text-brand-red mb-1">
+                  Celebrate Progress
+                </h3>
+                <p class="text-sm leading-tight text-gray-600">
+                  Recognise achievements big and small to stay motivated and proud
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <div id="footer"></div>
+  <!-- Why Choose Section -->
+  <section class="w-full bg-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-300 rounded-4xl px-8 py-16 lg:px-16 lg:py-20 text-center"
+      >
+        <h2 class="font-bold text-4xl text-white mb-8">
+          Why Choose Latitude Quality Care
+        </h2>
+        <p class="font-medium text-xl leading-relaxed text-white max-w-4xl mx-auto mb-12">
+          We're more than just an NDIS provider — we're a community that values
+          connection, inclusion, and growth. With Latitude Quality Care, you'll
+          enjoy programs that are fun, meaningful, and built around your
+          individuality.
+        </p>
+        <a
+          href="#contact"
+          class="inline-block bg-white text-brand-orange font-semibold text-base px-12 py-4 rounded-3xl hover:shadow-2xl transition-all hover:scale-105"
+        >
+          Join Our Activities Today
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        function loadHTML(elementId, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(data, 'text/html');
-                    const bodyContent = doc.body.innerHTML;
-                    document.getElementById(elementId).innerHTML = bodyContent;
-                    
-                    if (elementId === 'navbar') {
-                        initNavbarScripts();
-                    }
-                })
-                .catch(error => console.error('Error loading file:', error));
-        }
+  <div id="footer"></div>
 
-        function initNavbarScripts() {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
+  <script>
+    function loadHTML(elementId, file) {
+      fetch(file)
+        .then((response) => response.text())
+        .then((data) => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(data, "text/html");
+          document.getElementById(elementId).innerHTML = doc.body.innerHTML;
 
-            const mobileServicesToggle = document.getElementById('mobile-services-toggle');
-            const mobileServicesMenu = document.getElementById('mobile-services-menu');
-            const mobileServicesArrow = document.getElementById('mobile-services-arrow');
-            
-            if (mobileServicesToggle && mobileServicesMenu && mobileServicesArrow) {
-                mobileServicesToggle.addEventListener('click', () => {
-                    mobileServicesMenu.classList.toggle('hidden');
-                    mobileServicesArrow.classList.toggle('rotate-180');
-                });
-            }
-        }
+          if (elementId === "navbar") {
+            initNavbarScripts();
+          }
+        })
+        .catch((error) => console.error("Error loading file:", error));
+    }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            loadHTML('navbar', 'navbar.html');
-            loadHTML('footer', 'footer.html');
-            
-            document.addEventListener('click', function(e) {
-                if (e.target.matches('a[href^="#"]')) {
-                    e.preventDefault();
-                    const target = document.querySelector(e.target.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
+    function initNavbarScripts() {
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
         });
-    </script>
+      }
 
+      const mobileServicesToggle = document.getElementById(
+        "mobile-services-toggle"
+      );
+      const mobileServicesMenu = document.getElementById(
+        "mobile-services-menu"
+      );
+      const mobileServicesArrow = document.getElementById(
+        "mobile-services-arrow"
+      );
+
+      if (mobileServicesToggle && mobileServicesMenu && mobileServicesArrow) {
+        mobileServicesToggle.addEventListener("click", () => {
+          mobileServicesMenu.classList.toggle("hidden");
+          mobileServicesArrow.classList.toggle("rotate-180");
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadHTML("navbar", "navbar.html");
+      loadHTML("footer", "footer.html");
+
+      document.addEventListener("click", (event) => {
+        if (event.target.matches('a[href^="#"]')) {
+          event.preventDefault();
+          const target = document.querySelector(event.target.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>

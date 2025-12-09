@@ -5,127 +5,343 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Participate Community - Latitude Quality Care</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#007bff',
-                        'primary-dark': '#0056b3',
-                        'footer-bg': '#484848',
-                        'brand-orange': '#F15A29'
-                    }
-                }
-            }
+    <style>
+        /* Custom gradient colors */
+        .gradient-primary {
+            background: linear-gradient(to right, #bf283b, #f15a29);
         }
-    </script>
+        .gradient-red {
+            background: linear-gradient(to bottom, #CE0019, #F15A29);
+        }
+        .gradient-cta {
+            background: linear-gradient(to right, #ce0019, #f15a29);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-white min-h-screen">
     <div id="navbar"></div>
 
     <!-- Hero Section -->
-    <section class="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]" style="background: linear-gradient(135deg, #BF283B 0%, #F15A29 100%);">
-        <div class="relative z-10 flex items-center justify-start h-full">
-            <div class="text-left text-white px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 2xl:px-40">
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 md:mb-4 drop-shadow-lg leading-tight">
-                    <span style="color: white;">Participate </span><span style="color: #FFD700;">Community <br> Support</span>    
-                </h1>
-                <p class="text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl leading-relaxed">
-                    Connect with your local community through meaningful activities, events, and experiences that build independence and social connections.                </p>
-                <div class="mt-4 md:mt-6">
-                    <a href="#contact" class="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-black text-sm sm:text-base transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1" style="background-color: #FFD700;">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path>
-                        </svg>
-                        <span class="hidden sm:inline">Get support today</span>
-                        <span class="sm:hidden">Get support</span>
-                    </a>
-                </div>
-            </div>
+    <div class="gradient-primary py-16 md:py-20 lg:py-24">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+                Participate <span class="text-yellow-400">Community</span>
+            </h1>
+            <p class="text-white text-lg md:text-xl max-w-[873px]">
+                Be part of your community — with confidence and connection. We believe everyone deserves the opportunity to be an active part of their local community.
+            </p>
         </div>
-    </section>
+    </div>
 
-    <!-- Content Section -->
-    <section class="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-center">
-                <!-- Left Column - Content -->
+    <!-- What's Included Section -->
+    <div class="bg-[#f9f9f9] py-16 md:py-20 lg:py-24">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="order-2 lg:order-1">
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-                        <span style="color: #363636;">Participate </span><span style="color: #DC2626;">Community</span>
-                    </h2>
-                    <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                        Assisting participants to participate in group-based community, social and recreational activities.
-                    </p>
+                    <img 
+                        src="https://via.placeholder.com/600x345?text=Community+Participation" 
+                        alt="Community participation" 
+                        class="w-full h-[345px] object-cover rounded-[20px]"
+                    >
                 </div>
-
-                <!-- Right Column - Image -->
-                <div class="order-1 lg:order-2 flex justify-center">
-                    <div class="w-full max-w-sm sm:max-w-md md:max-w-lg">
-                        <img src="Images/participate.png" alt="Community Participation" class="w-full h-auto rounded-lg shadow-lg">
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#ce0019] mb-4">What's Included</h2>
+                    <p class="text-black text-lg mb-6">
+                        We provide tailored assistance to help you join group-based community, social, and recreational activities that promote independence, build relationships, and boost confidence
+                    </p>
+                    <div class="bg-[rgba(241,90,41,0.23)] border-l-[6px] border-[#f15a29] rounded-r-[10px] p-6">
+                        <p class="text-black text-lg">
+                            Our supports are flexible — we'll work with you to design a program that fits your interests, abilities, and goals
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Community Activities Section -->
+    <div class="py-16 md:py-20 lg:py-24 bg-white">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#ce0019] text-center mb-12">Community Activities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                
+                <!-- Activity Card 1 -->
+                <div class="bg-white rounded-[20px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                <path d="M8 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M3 11h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M12 13l.9 1.8 2 .3-1.4 1.4.3 2.1-1.8-.9-1.8.9.3-2.1-1.4-1.4 2-.3L12 13z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#ce0019] mb-2">Community Events</h3>
+                    <p class="text-[#484848]">Join local festivals, markets, and cultural celebrations</p>
+                </div>
+
+                <!-- Activity Card 2 -->
+                <div class="bg-white rounded-[20px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 7c-1.2-1.5-4-1.1-4 1.8 0 2.6 4 4.7 4 4.7s4-2.1 4-4.7c0-2.9-2.8-3.3-4-1.8z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M7 14.5l-2 2a3 3 0 004.2 4.2L12 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17 14.5l2 2a3 3 0 01-4.2 4.2L12 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.5 17L12 19.5 14.5 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#ce0019] mb-2">Volunteering</h3>
+                    <p class="text-[#484848]">Give back to your community through meaningful volunteer work</p>
+                </div>
+
+                <!-- Activity Card 3 -->
+                <div class="bg-white rounded-[20px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 5h8l-1 5a4 4 0 01-2.2 2.9L12 14l-1.8-1.1A4 4 0 018 10L7 5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                <path d="M9.5 20h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M8 9h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M15 14l2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 14l-2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#ce0019] mb-2">Sports & Recreation</h3>
+                    <p class="text-[#484848]">Participate in community sports leagues and recreational activities</p>
+                </div>
+
+                <!-- Activity Card 4 -->
+                <div class="bg-white rounded-[20px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 6h12v12H6V6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                <path d="M6 10h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M9 4v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M15 4v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M9.5 14h1.5v3H9.5z" fill="currentColor"/>
+                                <path d="M13 14h1.5v3H13z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#ce0019] mb-2">Learning Groups</h3>
+                    <p class="text-[#484848]">Join hobby groups, book clubs, and skill-sharing sessions</p>
+                </div>
+
+                <!-- Activity Card 5 -->
+                <div class="bg-white rounded-[20px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="7" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                <path d="M6 7V5a2 2 0 012-2h8a2 2 0 012 2v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 17l-1 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M18 17l1 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M9 17h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#ce0019] mb-2">Transport Support</h3>
+                    <p class="text-[#484848]">Safe and reliable transport assistance to activities</p>
+                </div>
+
+                <!-- Activity Card 6 -->
+                <div class="bg-white rounded-[20px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 9.5A4.5 4.5 0 0111.2 6h1.6A4.5 4.5 0 0119 9.5c0 1.7-.9 3.2-2.3 4.1l-2.2 1.4V17l-2.5-1.5L9.5 17v-2l-2.2-1.4A4.5 4.5 0 015 9.5z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9.5 9h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M9.5 20l2.5-1.5L14.5 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#ce0019] mb-2">Social Connections</h3>
+                    <p class="text-[#484848]">Build lasting friendships and peer relationships</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Approach Section -->
+    <div class="py-16 md:py-20 lg:py-24 bg-white">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#ce0019] mb-4">Our Approach</h2>
+                    <p class="text-black text-lg mb-8">
+                        We focus on empowerment, inclusion, and choice. Our compassionate support workers encourage you to make your own decisions, step out of your comfort zone, and build confidence in social setting
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        
+                        <!-- Feature 1 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 20v-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                        <path d="M10 20v-8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                        <path d="M14 20v-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                        <path d="M18 20v-11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                        <path d="M12 4l1.2 2.4 2.6.3-2 1.8.5 2.5-2.3-1.3-2.3 1.3.5-2.5-2-1.8 2.6-.3L12 4z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base md:text-lg font-bold text-[#ce0019] mb-1 leading-[27px]">Build Confidence</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Develop self-assurance through positive community experiences</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 16c0 1.1.9 2 2 2h2l3 3v-5h3a2 2 0 002-2V9a2 2 0 00-2-2H7a2 2 0 00-2 2v7z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M15 6V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                        <path d="M9 6V4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                        <path d="M19 11v4c0 1.1-.9 2-2 2h-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M5 11v4c0 1.1.9 2 2 2h1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base md:text-lg font-bold text-[#ce0019] mb-1 leading-[27px]">Social Skills</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Improve communication and interaction abilities</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="6.5" stroke="currentColor" stroke-width="1.6"/>
+                                        <path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 3v1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                        <path d="M21 12h-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                        <path d="M12 21v-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                        <path d="M4 12h1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base md:text-lg font-bold text-[#ce0019] mb-1 leading-[27px]">Independence</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Gain skills and confidence to navigate community spaces</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 4 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 12c1.2-1.5 4-1.2 4 1.6 0 2.5-2.4 4.4-4 5.4-1.6-1-4-2.9-4-5.4 0-2.8 2.8-3.1 4-1.6z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M6.5 12.5a3.5 3.5 0 01-.5-1.8 3.5 3.5 0 016-2.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M17.5 12.5a3.5 3.5 0 00.5-1.8 3.5 3.5 0 00-6-2.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M4.5 18a3 3 0 013-3h.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19.5 18a3 3 0 00-3-3h-.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base md:text-lg font-bold text-[#ce0019] mb-1 leading-[27px]">Belonging</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Feel valued and included as an active community member</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div>
+                    <img 
+                        src="Images/pa" 
+                        alt="Support worker with participant" 
+                        class="w-full h-[345px] object-cover rounded-[20px]"
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <div class="py-16 md:py-20 lg:py-24 bg-white">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <div class="gradient-cta rounded-[30px] px-8 md:px-12 lg:px-16 py-12 md:py-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Choose Latitude Quality Care</h2>
+                <p class="text-white text-lg max-w-[864px] mx-auto mb-8">
+                    With Latitude Quality Care, you'll always feel supported, respected, and understood.
+                    <br>
+                    We create safe and inclusive spaces for participants to connect, learn, and contribute to their communities — while building independence along the way.
+                </p>
+                <button class="bg-white text-[#ce0019] px-8 py-4 rounded-[20px] hover:bg-gray-100 transition-colors font-bold text-lg">
+                    Get Involved Today
+                </button>
+            </div>
+        </div>
+    </div>
 
     <div id="footer"></div>
 
     <script>
         function loadHTML(elementId, file) {
             fetch(file)
-                .then(response => response.text())
-                .then(data => {
+                .then((response) => response.text())
+                .then((data) => {
                     const parser = new DOMParser();
-                    const doc = parser.parseFromString(data, 'text/html');
-                    const bodyContent = doc.body.innerHTML;
-                    document.getElementById(elementId).innerHTML = bodyContent;
-                    
-                    if (elementId === 'navbar') {
+                    const doc = parser.parseFromString(data, "text/html");
+                    document.getElementById(elementId).innerHTML = doc.body.innerHTML;
+
+                    if (elementId === "navbar") {
                         initNavbarScripts();
                     }
                 })
-                .catch(error => console.error('Error loading file:', error));
+                .catch((error) => console.error("Error loading file:", error));
         }
 
         function initNavbarScripts() {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
+
             if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
                 });
             }
 
-            const mobileServicesToggle = document.getElementById('mobile-services-toggle');
-            const mobileServicesMenu = document.getElementById('mobile-services-menu');
-            const mobileServicesArrow = document.getElementById('mobile-services-arrow');
-            
+            const mobileServicesToggle = document.getElementById("mobile-services-toggle");
+            const mobileServicesMenu = document.getElementById("mobile-services-menu");
+            const mobileServicesArrow = document.getElementById("mobile-services-arrow");
+
             if (mobileServicesToggle && mobileServicesMenu && mobileServicesArrow) {
-                mobileServicesToggle.addEventListener('click', () => {
-                    mobileServicesMenu.classList.toggle('hidden');
+                mobileServicesToggle.addEventListener("click", () => {
+                    mobileServicesMenu.classList.toggle("hidden");
+                    mobileServicesArrow.classList.toggle("rotate-180");
                 });
             }
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            loadHTML('navbar', 'navbar.html');
-            loadHTML('footer', 'footer.html');
-            
-            document.addEventListener('click', function(e) {
-                if (e.target.matches('a[href^="#"]')) {
-                    e.preventDefault();
-                    const target = document.querySelector(e.target.getAttribute('href'));
+        document.addEventListener("DOMContentLoaded", () => {
+            loadHTML("navbar", "navbar.html");
+            loadHTML("footer", "footer.html");
+
+            document.addEventListener("click", (event) => {
+                if (event.target.matches('a[href^="#"]')) {
+                    event.preventDefault();
+                    const target = document.querySelector(event.target.getAttribute("href"));
                     if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
+                        target.scrollIntoView({ behavior: "smooth" });
                     }
                 }
             });
         });
     </script>
-
 </body>
 </html>

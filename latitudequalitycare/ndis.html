@@ -3,172 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NDIS Information - Latitude Quality Care</title>
+    <title>NDIS - Latitude Quality Care</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom gradient colors */
+        .gradient-commitment {
+            background: linear-gradient(to right, #ce0019 17.323%, #f15a29);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-white min-h-screen">
     <div id="navbar"></div>
 
     <!-- Hero Section -->
-    <section class="relative h-[300px] sm:h-[360px] md:h-[420px]" style="background: linear-gradient(135deg, #FBB040 0%, #F15A29 100%);">
-        <div class="relative z-10 flex items-center justify-center h-full">
-            <div class="text-center text-white px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40">
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight drop-shadow-lg">
-                    <span style="color: white;">Understanding the </span><span style="color: #FFD700;">NDIS</span>
-                </h1>
-                <p class="text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
-                    Learn about the National Disability Insurance Scheme and how Latitude Quality Care can help you access the support you need.
-                </p>
+    <div class="py-16 md:py-20 bg-white">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#bf283b] mb-6">
+                Understanding the NDIS
+            </h1>
+            <p class="text-black text-lg md:text-xl max-w-[821px] mx-auto">
+                The National Disability Insurance Scheme (NDIS) is an Australian Government initiative that provides funding to people with disability, giving them greater choice, control, and independence over the supports they receive.
+            </p>
+        </div>
+    </div>
+
+    <!-- What is the NDIS Section -->
+    <div class="py-16 md:py-20 bg-white">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                <div class="order-1 lg:order-1">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#ce0019] mb-4 leading-[25px]">What is the NDIS?</h2>
+                    <p class="text-black text-sm leading-[25px] mb-8">
+                        Through the NDIS, participants can access services that help them live life their way. The NDIS is designed to ensure people with disability get the right support, at the right time.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Feature 1 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#ffd700] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1.6"/>
+                                        <path d="M12 8v4l2 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 4v1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-[#ce0019] mb-1 leading-[25px]">Work Towards Goals</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Achieve your personal aspirations with tailored support plans</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#ffd700] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 3l7 7-2 2-7-7V3z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 7L4 13l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M4 21l3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-[#ce0019] mb-1 leading-[25px]">Build Life Skills</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Develop essential skills for everyday living and independence</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#ffd700] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 17l4-4 3 3 5-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M9 7h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-[#ce0019] mb-1 leading-[25px]">Increase Independence</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Gain confidence and autonomy in your daily activities</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 4 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#ffd700] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 10a3 3 0 116 0v1h-1.5A2.5 2.5 0 009 13.5V16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M17 10a3 3 0 10-6 0v1h1.5A2.5 2.5 0 0115 13.5V16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M5 16.5A2.5 2.5 0 017.5 14h9A2.5 2.5 0 0119 16.5V18H5v-1.5z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-[#ce0019] mb-1 leading-[25px]">Connect with Community</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Engage with your local community and build meaningful relationships</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 5 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#ffd700] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 10c-1.5-1.8-5-.6-5 2.3 0 2.6 3 4.5 5 5.6 2-1.1 5-3 5-5.6 0-2.9-3.5-4.1-5-2.3z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 10a4 4 0 018 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-[#ce0019] mb-1 leading-[25px]">Live Meaningfully</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Create a fulfilling life that reflects your values and interests</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 6 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#ffd700] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 4l6 2v6c0 4.5-3.5 8.5-6 10-2.5-1.5-6-5.5-6-10V6l6-2z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 8v4l2 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-[#ce0019] mb-1 leading-[25px]">Right Support, Right Time</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Access appropriate services when you need them most</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-2 lg:order-2">
+                    <img 
+                        src="https://via.placeholder.com/514x411?text=NDIS+Support" 
+                        alt="NDIS support" 
+                        class="w-full h-[411px] object-cover rounded-[20px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.1)]"
+                    >
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="bg-[#f9f9f9] py-24 sm:py-28 lg:py-32 px-6 sm:px-10 lg:px-16">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div class="text-left">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-5 leading-tight text-gray-900">
-                    What is the <span style="color: #F15A29;">NDIS?</span>
-                </h2>
-                <p class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4">
-                    The National Disability Insurance Scheme (NDIS) gives people with a disability greater choice over the supports they receive. The NDIS funds services that enable people to achieve their goals, increase independence, develop skills for everyday life and participate in the community.
-                </p>
-                <p class="text-base sm:text-lg text-gray-700 leading-relaxed mb-6">
-                    The NDIS is designed around you and your individual needs. It provides funding for supports and services that will help you live an ordinary life, pursue your goals, and build your capacity to participate in community and economic life.
-                </p>
-                <a href="#contact" class="inline-flex items-center px-6 py-3 rounded-lg font-semibold text-white transition-transform duration-300 shadow-lg hover:-translate-y-1" style="background-color: #BF283B;">
-                    Learn How We Can Help
-                </a>
-            </div>
-            <div class="flex justify-center">
-                <img src="Images/ndis.png" alt="NDIS support" class="w-full max-w-lg rounded-lg shadow-lg">
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white py-24 sm:py-28 lg:py-32 px-6 sm:px-10 lg:px-16">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-gray-900">
-                Who We <span style="color: #BF283B;">Are?</span>
-            </h2>
-        </div>
-
-        <div class="max-w-6xl mx-auto mt-10 bg-white shadow-xl rounded-3xl border border-gray-100">
-            <div class="px-6 sm:px-10 lg:px-16 py-10 sm:py-12 lg:py-16">
-                <div class="text-center">
-                    <p class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4 max-w-4xl mx-auto">
-                        Latitude Quality Care is an NDIS provider working with people with disability to make it easier for them to access services they need under the NDIS support service. Latitude Quality Care aims to create an environment of service provision which creates a smoother journey for all involved, including our staff and participants.                    </p>
-                    <p class="text-base sm:text-lg text-gray-700 leading-relaxed mb-4 max-w-4xl mx-auto">
-                        In order to ensure that we are meeting the needs of people with disabilities and our participants, we will be engaged with healthcare professionals, local councils, community groups and individuals. We will also engage with other NDIS providers in order to share, learn and collaborate on opportunities that enable us to strengthen the support base for people who need our services.                    </p>
-                    <p class="text-base sm:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-                        We pride ourselves on our excellence in customer service and the quality of 
-                        the staff we employ to provide services to our participants. We screen our staff rigorously throughout the recruitment process and select the ones who have required qualification, experience, clear checks and the ones who comply with all the requirements as per NDIS standards.                    </p>
+    <!-- Who We Are Section -->
+    <div class="bg-[#f9f9f9] py-16 md:py-20 lg:py-24">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#ce0019] text-center mb-4 leading-[25px]">Who We Are?</h2>
+            <p class="text-black text-sm leading-[25px] text-center mb-12 max-w-[556px] mx-auto">
+                At Latitude Quality Care, we&rsquo;re a registered NDIS provider dedicated to helping participants make the most of their NDIS plan. Our role is to make your journey with the NDIS simpler, smoother, and more empowering.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-[600px] mx-auto">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-[10px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start h-[168px]">
+                    <div class="mb-4">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-b from-[#bf283b] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 5c-1.5-1.6-5-.6-5 2.1 0 2.2 2 4 5 6 3-2 5-3.8 5-6 0-2.7-3.5-3.7-5-2.1z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 18l4-2 4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-sm font-bold text-[#ce0019] mb-2 leading-[25px]">Quality Care</h3>
+                    <p class="text-[#484848] text-[10px] leading-[15px]">Delivered with compassion and respect</p>
                 </div>
 
-                <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-300">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Participant-Centred</h3>
-                        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
-                            We listen first, tailoring supports around each person’s goals, strengths, and lifestyle.
-                        </p>
+                <!-- Card 2 -->
+                <div class="bg-white rounded-[10px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start h-[168px]">
+                    <div class="mb-4">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-b from-[#bf283b] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3l3 3h4v6a7 7 0 01-7 7 7 7 0 01-7-7V6h4l3-3z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 11l3 3 3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
                     </div>
-                    <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-300">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Collaborative Approach</h3>
-                        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
-                            Strong partnerships with allied health, community groups, and fellow providers drive better outcomes.
-                        </p>
+                    <h3 class="text-sm font-bold text-[#ce0019] mb-2 leading-[25px]">Professional Staff</h3>
+                    <p class="text-[#484848] text-[10px] leading-[15px]">Experienced and compassionate support workers</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-[10px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start h-[168px]">
+                    <div class="mb-4">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-b from-[#bf283b] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 10a3 3 0 116 0v1h-1.5A2.5 2.5 0 009 13.5V16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17 10a3 3 0 10-6 0v1h1.5A2.5 2.5 0 0115 13.5V16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5 16.5A2.5 2.5 0 017.5 14h9A2.5 2.5 0 0119 16.5V18H5v-1.5z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
                     </div>
-                    <div class="bg-gray-50 border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-300">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-3">Trusted Team</h3>
-                        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
-                            Rigorous recruitment, continual training, and NDIS-compliant practice ensure high-quality support.
-                        </p>
+                    <h3 class="text-sm font-bold text-[#ce0019] mb-2 leading-[25px]">Strong Collaboration</h3>
+                    <p class="text-[#484848] text-[10px] leading-[15px]">Working with families, carers, and communities</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-[10px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start h-[168px]">
+                    <div class="mb-4">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-b from-[#bf283b] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 6h10l1 3-6 11-6-11 1-3z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 6l3-3 3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
                     </div>
+                    <h3 class="text-sm font-bold text-[#ce0019] mb-2 leading-[25px]">Transparency</h3>
+                    <p class="text-[#484848] text-[10px] leading-[15px]">Integrity in everything we do</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="bg-[#FFD700] py-20 sm:py-24 lg:py-28 px-6 sm:px-10">
-        <div class="max-w-4xl mx-auto text-center text-gray-900">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4">
-                Is the NDIS for <span style="color: #BF283B;">You?</span>
-            </h2>
-            <p class="text-base sm:text-lg md:text-xl leading-relaxed">
-                Check if you meet the eligibility criteria for NDIS support services.
+    <!-- Is the NDIS for You Section -->
+    <div class="py-16 md:py-20 bg-white">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#ce0019] mb-4 leading-[25px]">Is the NDIS for You?</h2>
+            <p class="text-black text-sm leading-[25px] mb-6 max-w-[556px]">
+                You may be eligible for NDIS funding if you meet the following criteria:
             </p>
-        </div>
-
-        <div class="max-w-3xl mx-auto mt-12 bg-white rounded-3xl shadow-lg border border-gray-100 px-6 sm:px-10 py-10 sm:py-12 text-center">
-            <h3 class="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">
-                Eligibility Checklist
-            </h3>
-            <ul class="space-y-4 text-left text-base sm:text-lg text-gray-700 mb-8">
-                <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd"/>
+            
+            <div class="space-y-3 mb-6">
+                <div class="flex items-start gap-3">
+                    <svg class="w-[21px] h-[18px] flex-shrink-0 mt-1" fill="none" viewBox="0 0 21 18">
+                        <path d="M7 14L2 9L0.5 10.5L7 17L20.5 3.5L19 2L7 14Z" fill="#ce0019"/>
                     </svg>
-                    Are you a person living with a disability?
-                </li>
-                <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd"/>
+                    <p class="text-black text-sm leading-[20px]">You are living with a permanent or significant disability</p>
+                </div>
+                
+                <div class="flex items-start gap-3">
+                    <svg class="w-[21px] h-[18px] flex-shrink-0 mt-1" fill="none" viewBox="0 0 21 18">
+                        <path d="M7 14L2 9L0.5 10.5L7 17L20.5 3.5L19 2L7 14Z" fill="#ce0019"/>
                     </svg>
-                    Are you under 65 years of age?
-                </li>
-                <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd"/>
+                    <p class="text-black text-sm leading-[20px]">You are under 65 years of age</p>
+                </div>
+                
+                <div class="flex items-start gap-3">
+                    <svg class="w-[21px] h-[18px] flex-shrink-0 mt-1" fill="none" viewBox="0 0 21 18">
+                        <path d="M7 14L2 9L0.5 10.5L7 17L20.5 3.5L19 2L7 14Z" fill="#ce0019"/>
                     </svg>
-                    Are you a parent of a child with a developmental delay?
-                </li>
-                <li class="flex items-start">
-                    <svg class="w-5 h-5 text-green-500 mt-1 mr-3 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd"/>
+                    <p class="text-black text-sm leading-[20px]">You are an Australian citizen, permanent resident, or hold a Protected Special Category visa</p>
+                </div>
+                
+                <div class="flex items-start gap-3">
+                    <svg class="w-[21px] h-[18px] flex-shrink-0 mt-1" fill="none" viewBox="0 0 21 18">
+                        <path d="M7 14L2 9L0.5 10.5L7 17L20.5 3.5L19 2L7 14Z" fill="#ce0019"/>
                     </svg>
-                    Are you a permanent resident of Australia?
-                </li>
-            </ul>
-            <p class="text-base sm:text-lg text-gray-800 leading-relaxed mb-8">
-                If you answered yes to any of these questions, you may be eligible for NDIS support.
+                    <p class="text-black text-sm leading-[20px]">You need support to complete daily activities or participate in the community</p>
+                </div>
+            </div>
+            
+            <p class="text-black text-sm leading-[20px] mb-8 max-w-[545px]">
+                If you&rsquo;re unsure about your eligibility, our friendly team can guide you through the process and help you understand your options.
             </p>
-            <a href="#contact" class="inline-flex items-center px-6 py-3 rounded-lg font-semibold text-white transition-transform duration-300 shadow-md hover:-translate-y-1" style="background-color: #BF283B;">
-                Check Your Eligibility
-            </a>
-        </div>
-    </section>
-
-    <section class="py-20 sm:py-24 lg:py-28 px-6 sm:px-10" style="background: linear-gradient(135deg, #BF283B 0%, #F15A29 100%);">
-        <div class="max-w-4xl mx-auto text-center text-white">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4">
-                Ready to Start Your NDIS Journey?
-            </h2>
-            <p class="text-base sm:text-lg md:text-xl leading-relaxed mb-8">
-                Contact Latitude Quality Care today to learn more about our NDIS services and how we can support you in achieving your goals.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold border border-white text-white transition-transform duration-300 hover:-translate-y-1 hover:bg-white hover:text-[#BF283B]">
-                    Get Started Today
-                </a>
-                <a href="services.html" class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-white transition-transform duration-300 hover:-translate-y-1" style="background-color: #FBB040;">
-                    View Our Services
-                </a>
+            
+            <div class="flex flex-wrap gap-4">
+                <button class="bg-[#bf283b] text-white px-8 py-3 rounded-[10px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] hover:bg-[#a00215] transition-colors font-semibold text-sm leading-[20px]">
+                    Check Your Eligibility
+                </button>
+                <button class="bg-white border-2 border-[#bf283b] text-[#bf283b] px-8 py-3 rounded-[10px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.1)] hover:bg-gray-50 transition-colors font-semibold text-sm leading-[20px]">
+                    Contact For Assistance
+                </button>
             </div>
         </div>
-    </section>
+    </div>
 
+    <!-- Our Commitment Section -->
+    <div class="py-16 md:py-20 bg-white">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <div class="gradient-commitment rounded-[30px] px-8 md:px-12 lg:px-16 py-12 md:py-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-[25px]">Our Commitment</h2>
+                <p class="text-white text-lg md:text-xl leading-[30px] max-w-[864px] mx-auto mb-8">
+                    At Latitude Quality Care, we don&rsquo;t just provide support &mdash; we empower you to live with confidence, independence, and purpose. Our team is here to make navigating the NDIS easier, so you can focus on what truly matters: living your best life.
+                </p>
+                <div class="bg-[rgba(217,217,217,0.39)] rounded-[20px] py-8 px-6 max-w-[701px] mx-auto">
+                    <p class="text-white text-center font-bold leading-[30px]">
+                        &ldquo;We believe everyone deserves the opportunity to thrive &mdash; and we&rsquo;re here to help make that possible.&rdquo;
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Section -->
     <section class="relative py-24 md:py-32 lg:py-40 bg-cover bg-center bg-no-repeat" style="background-image: url('Images/laptop.png');">
-        <div class="absolute inset-0 bg-black opacity-60"></div>
-        <div class="relative z-10 container mx-auto px-4 md:px-6">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+        <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
             <div class="text-center text-white mb-16">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold -mt-8">
-                    Contact Us
-                </h2>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold">Contact Us</h2>
             </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                 <div class="text-white order-1 lg:order-1 mb-8 lg:mb-0">
                     <p class="text-base md:text-lg lg:text-xl mb-6 md:mb-8 leading-relaxed text-center lg:text-left">
                         If you have any questions you can fill out our contact form or contact us on our details below.
                     </p>
+
                     <div class="space-y-2 md:space-y-3">
                         <div class="rounded-lg p-3 md:p-4 flex items-center space-x-3 md:space-x-4 max-w-md mx-auto lg:mx-0">
                             <div class="flex-shrink-0 bg-red-600 rounded-full p-2 md:p-3">
@@ -180,7 +315,7 @@
                                 <p class="text-white font-semibold text-lg md:text-xl lg:text-2xl">0478 162 362</p>
                             </div>
                         </div>
-                        
+
                         <div class="rounded-lg p-3 md:p-4 flex items-center space-x-3 md:space-x-4 max-w-md mx-auto lg:mx-0">
                             <div class="flex-shrink-0 bg-red-600 rounded-full p-2 md:p-3">
                                 <svg class="w-5 h-5 md:w-6 md:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -193,7 +328,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="text-white order-2 lg:order-2">
                     <form class="space-y-4 md:space-y-6">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
@@ -215,7 +350,7 @@
                                 <input type="email" placeholder="Email *" class="w-full pl-8 md:pl-10 pr-3 py-2 md:py-3 text-sm md:text-base rounded-lg bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500">
                             </div>
                         </div>
-                        
+
                         <div class="relative">
                             <div class="absolute top-2 md:top-3 left-0 pl-3 flex items-start pointer-events-none">
                                 <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-400 mt-1" fill="currentColor" viewBox="0 0 20 20">
@@ -224,7 +359,7 @@
                             </div>
                             <textarea placeholder="Message *" rows="6" class="w-full pl-8 md:pl-10 pr-3 py-2 md:py-3 text-sm md:text-base rounded-lg bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 resize-none md:h-32 lg:h-40"></textarea>
                         </div>
-                        
+
                         <div class="text-center sm:text-left">
                             <button type="submit" class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 md:py-3 md:px-8 rounded-lg transition duration-300 text-base md:text-lg">
                                 Send Message
@@ -241,64 +376,56 @@
     <script>
         function loadHTML(elementId, file) {
             fetch(file)
-                .then(response => response.text())
-                .then(html => {
+                .then((response) => response.text())
+                .then((data) => {
                     const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, 'text/html');
-                    const bodyContent = doc.body.innerHTML;
-                    const target = document.getElementById(elementId);
+                    const doc = parser.parseFromString(data, "text/html");
+                    document.getElementById(elementId).innerHTML = doc.body.innerHTML;
 
-                    if (target) {
-                        target.innerHTML = bodyContent;
-
-                        if (elementId === 'navbar') {
-                            initNavbarScripts();
-                        }
-
-                        if (elementId === 'footer') {
-                            const footerEl = target.querySelector('footer');
-
-                            target.classList.remove('bg-white');
-                            target.style.backgroundColor = 'transparent';
-
-                            if (footerEl) {
-                                footerEl.classList.remove('bg-white', 'text-gray-800');
-                                footerEl.classList.add('bg-[#484848]', 'text-white');
-                                footerEl.style.backgroundColor = '#484848';
-                                footerEl.style.color = '#ffffff';
-                            }
-                        }
+                    if (elementId === "navbar") {
+                        initNavbarScripts();
                     }
                 })
-                .catch(error => console.error('Error loading file:', error));
+                .catch((error) => console.error("Error loading file:", error));
         }
 
         function initNavbarScripts() {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
 
             if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
                 });
             }
 
-            const mobileServicesToggle = document.getElementById('mobile-services-toggle');
-            const mobileServicesMenu = document.getElementById('mobile-services-menu');
-            const mobileServicesArrow = document.getElementById('mobile-services-arrow');
+            const mobileServicesToggle = document.getElementById("mobile-services-toggle");
+            const mobileServicesMenu = document.getElementById("mobile-services-menu");
+            const mobileServicesArrow = document.getElementById("mobile-services-arrow");
 
             if (mobileServicesToggle && mobileServicesMenu && mobileServicesArrow) {
-                mobileServicesToggle.addEventListener('click', () => {
-                    mobileServicesMenu.classList.toggle('hidden');
-                    mobileServicesArrow.classList.toggle('rotate-180');
+                mobileServicesToggle.addEventListener("click", () => {
+                    mobileServicesMenu.classList.toggle("hidden");
+                    mobileServicesArrow.classList.toggle("rotate-180");
                 });
             }
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            loadHTML('navbar', 'navbar.html');
-            loadHTML('footer', 'footer.html');
+        document.addEventListener("DOMContentLoaded", () => {
+            loadHTML("navbar", "navbar.html");
+            loadHTML("footer", "footer.html");
+
+            document.addEventListener("click", (event) => {
+                if (event.target.matches('a[href^="#"]')) {
+                    event.preventDefault();
+                    const target = document.querySelector(event.target.getAttribute("href"));
+                    if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                    }
+                }
+            });
         });
     </script>
+
 </body>
 </html>

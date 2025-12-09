@@ -5,119 +5,313 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Tasks/Shared Living - Latitude Quality Care</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#007bff',
-                        'primary-dark': '#0056b3',
-                        'footer-bg': '#484848',
-                        'brand-orange': '#F15A29'
-                    }
-                }
-            }
+    <style>
+        /* Custom gradient colors */
+        .gradient-hero {
+            background: linear-gradient(to right, #bf283b, #f15a29);
         }
-    </script>
+        .gradient-cta {
+            background: linear-gradient(to right, #bf283b 17.65%, #f15a29 91.314%);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-white min-h-screen">
     <div id="navbar"></div>
 
-    <section class="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]" style="background: linear-gradient(135deg, #BF283B 0%, #F15A29 100%);">
-        <div class="relative z-10 flex items-center justify-start h-full">
-            <div class="text-left text-white px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 2xl:px-40">
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 md:mb-4 drop-shadow-lg leading-tight">
-                    <span style="color: white;">Daily Tasks/ </span><span style="color: #FFD700;">Shared Living <br> Support</span>    
-                </h1>
-                <p class="text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl leading-relaxed">
-                    Comprehensive daily living support in shared accommodation environments for enhanced independence.
-                </p>
-                <div class="mt-4 md:mt-6">
-                    <a href="#contact" class="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-black text-sm sm:text-base transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1" style="background-color: #FFD700;">
-                        <svg class="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path>
-                        </svg>
-                        <span class="hidden sm:inline">Get support today</span>
-                        <span class="sm:hidden">Get support</span>
-                    </a>
-                </div>
-            </div>
+    <!-- Hero Section -->
+    <div class="gradient-hero py-16 md:py-20 lg:py-24">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Daily Tasks/<span class="text-yellow-400">Shared Living</span>
+            </h1>
+            <p class="text-white text-lg md:text-xl max-w-[873px]">
+                Build independence and confidence in a supportive shared environment. We provide the right balance of support and independence to help you thrive.
+            </p>
         </div>
-    </section>
+    </div>
 
-    <section class="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 md:px-8 lg:px-12 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-center">
-                <div class="order-2 lg:order-1">
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-                        <span style="color: #363636;">Daily Tasks/ </span><span style="color: #DC2626;">Shared Living</span>
-                    </h2>
-                    <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                        This includes assistance with and/or supervising tasks of daily life in a shared living environment, which is either temporary or ongoing, with a focus on developing the skills of each individual to live as autonomously as possible.                    </p>
-                </div>
-
-                <div class="order-1 lg:order-2 flex justify-center">
-                    <div class="w-full max-w-sm sm:max-w-md md:max-w-lg">
-                        <img src="Images/task.png" alt="Daily Tasks Shared Living Support" class="w-full h-auto rounded-lg shadow-lg">
+    <!-- How We Support You Section -->
+    <div class="bg-[#f9f9f9] py-16 md:py-20 lg:py-24">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div class="order-1 lg:order-1">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#ce0019] mb-4 leading-[25px]">How We Support You</h2>
+                    <p class="text-black text-base leading-[30px] mb-6">
+                        Our caring support workers assist with a range of daily living activities in shared accommodation settings. We help you develop practical skills and confidence needed to live more autonomously while enjoying a safe and supportive home environment.
+                    </p>
+                    <div class="bg-[rgba(241,90,41,0.23)] border-l-[6px] border-[#f15a29] rounded-r-[10px] p-6">
+                        <p class="text-black text-sm font-semibold leading-[20px]">
+                            Whether it&rsquo;s a temporary arrangement or long-term accommodation, we focus on developing independence and guiding you to take on more responsibility at your own pace.
+                        </p>
                     </div>
                 </div>
+                <div class="order-2 lg:order-2">
+                    <img 
+                        src="https://via.placeholder.com/517x345?text=Shared+Living" 
+                        alt="Shared living support" 
+                        class="w-full h-[345px] object-cover rounded-[20px]"
+                    >
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Our Personal Care Services Section -->
+    <div class="py-16 md:py-20 lg:py-24 bg-white">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#ce0019] text-center mb-12 leading-[25px]">Our Personal Care Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-[20px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 20l-6-6a3.5 3.5 0 010-5 3.5 3.5 0 015 0l1 1 1-1a3.5 3.5 0 015 0 3.5 3.5 0 010 5l-6 6z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#ce0019] mb-2 leading-[30px]">Personal Care Routines</h3>
+                    <p class="text-[#484848] text-[11px] leading-[20px]">Support with bathing, dressing, grooming, and daily hygiene routines</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-[20px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 3v6a2 2 0 002 2v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6 3v4a2 2 0 002 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                <path d="M16 3a2 2 0 012 2v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                <path d="M16 9h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                <path d="M12 3v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#ce0019] mb-2 leading-[30px]">Meal Planning & Cooking</h3>
+                    <p class="text-[#484848] text-[11px] leading-[20px]">Learn meal preparation, cooking skills, and healthy eating habits</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-[20px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 12l8-7 8 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M6 10v9a1 1 0 001 1h10a1 1 0 001-1v-9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M10 20v-5h4v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#ce0019] mb-2 leading-[30px]">Household Management</h3>
+                    <p class="text-[#484848] text-[11px] leading-[20px]">Cleaning, organizing shared spaces, and maintaining a comfortable home</p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-[20px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 7l3-2 2 2h4l2-2 3 2v11a2 2 0 01-2 2H7a2 2 0 01-2-2V7z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9 11h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                <path d="M9 15h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#ce0019] mb-2 leading-[30px]">Laundry & Organization</h3>
+                    <p class="text-[#484848] text-[11px] leading-[20px]">Managing personal belongings and household organization systems</p>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-[20px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 17l2-2h5a3 3 0 003-3 3 3 0 00-3-3h-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M13 7a3 3 0 00-6 0v5a2 2 0 01-2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M19 15l-2 2-2-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M17 17v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#ce0019] mb-2 leading-[30px]">Communication Skills</h3>
+                    <p class="text-[#484848] text-[11px] leading-[20px]">Building teamwork and communication skills with housemates</p>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-[20px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.15)] p-6 flex flex-col items-start">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                            <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 8h18v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M7 5h10l4 3H3l4-3z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9 13h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                <path d="M12 11v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#ce0019] mb-2 leading-[30px]">Budgeting & Planning</h3>
+                    <p class="text-[#484848] text-[11px] leading-[20px]">Money management, shopping skills, and daily task planning</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Approach Section -->
+    <div class="py-16 md:py-20 lg:py-24 bg-white">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div class="order-1 lg:order-1">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#ce0019] mb-4 leading-[25px]">Our Approach</h2>
+                    <p class="text-black text-sm leading-[25px] mb-8 max-w-[556px]">
+                        We focus on creating a safe, inclusive, and empowering environment where participants can connect, learn, and thrive. Our qualified support workers provide guidance and encouragement while allowing you to make choices, explore your interests, and develop new capabilities.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[750px]">
+                        
+                        <!-- Feature 1 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 12l-2-2a2 2 0 112.8-2.8L12 9l2.2-2.8A2 2 0 1117 10l-2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M7 14l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base md:text-lg font-bold text-[#ce0019] mb-1 leading-[27px]">Personalized Support</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Tailored assistance that fits your goals and comfort level</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 7l1.5 2.5 2.8.4-2 2 0.5 2.8L12 13.8 9.2 15l0.5-2.8-2-2 2.8-.4L12 7z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M5 20v-3a2 2 0 012-2h10a2 2 0 012 2v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base md:text-lg font-bold text-[#ce0019] mb-1 leading-[27px]">Skill Development</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Learn practical life skills for greater independence</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 21c-4-1.5-7-5.5-7-10.5V6l7-3 7 3v4.5c0 5-3 9-7 10.5z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M10 11l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base md:text-lg font-bold text-[#ce0019] mb-1 leading-[27px]">Safe Environment</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Secure and supportive shared living arrangements</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 4 -->
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="h-16 w-16 rounded-full bg-gradient-to-b from-[#ce0019] to-[#f15a29] shadow-[0_3px_12px_rgba(0,0,0,0.15)] flex items-center justify-center">
+                                    <svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 18l4-4-2-2 3-3 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M12 8l7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                        <path d="M12 22v-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-base md:text-lg font-bold text-[#ce0019] mb-1 leading-[27px]">Independence Focus</h4>
+                                <p class="text-[#484848] text-sm leading-[20px]">Encouraging autonomy while providing necessary support</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="order-2 lg:order-2">
+                    <img 
+                        src="https://via.placeholder.com/517x345?text=Our+Approach" 
+                        alt="Our approach" 
+                        class="w-full h-[345px] object-cover rounded-[20px]"
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <div class="py-16 md:py-20 lg:py-24 bg-white">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+            <div class="gradient-cta rounded-[30px] px-8 md:px-12 lg:px-16 py-12 md:py-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-[25px]">Why Choose Latitude Quality Care</h2>
+                <p class="text-white text-lg md:text-xl leading-[30px] max-w-[864px] mx-auto mb-8 font-medium">
+                    At Latitude Quality Care, we see shared living as more than just housing — it&rsquo;s an opportunity to connect, learn, and build a lifestyle that feels truly your own. We offer skilled and compassionate support that promotes choice, autonomy, and personal growth.
+                </p>
+                <button class="bg-white text-[#bf283b] px-8 py-4 rounded-[20px] hover:bg-gray-100 transition-colors font-semibold">
+                    Explore Shared Living
+                </button>
+            </div>
+        </div>
+    </div>
 
     <div id="footer"></div>
 
     <script>
         function loadHTML(elementId, file) {
             fetch(file)
-                .then(response => response.text())
-                .then(data => {
+                .then((response) => response.text())
+                .then((data) => {
                     const parser = new DOMParser();
-                    const doc = parser.parseFromString(data, 'text/html');
-                    const bodyContent = doc.body.innerHTML;
-                    document.getElementById(elementId).innerHTML = bodyContent;
-                    
-                    if (elementId === 'navbar') {
+                    const doc = parser.parseFromString(data, "text/html");
+                    document.getElementById(elementId).innerHTML = doc.body.innerHTML;
+
+                    if (elementId === "navbar") {
                         initNavbarScripts();
                     }
                 })
-                .catch(error => console.error('Error loading file:', error));
+                .catch((error) => console.error("Error loading file:", error));
         }
 
         function initNavbarScripts() {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
+
             if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("hidden");
                 });
             }
 
-            const mobileServicesToggle = document.getElementById('mobile-services-toggle');
-            const mobileServicesMenu = document.getElementById('mobile-services-menu');
-            const mobileServicesArrow = document.getElementById('mobile-services-arrow');
-            
+            const mobileServicesToggle = document.getElementById("mobile-services-toggle");
+            const mobileServicesMenu = document.getElementById("mobile-services-menu");
+            const mobileServicesArrow = document.getElementById("mobile-services-arrow");
+
             if (mobileServicesToggle && mobileServicesMenu && mobileServicesArrow) {
-                mobileServicesToggle.addEventListener('click', () => {
-                    mobileServicesMenu.classList.toggle('hidden');
-                    mobileServicesArrow.classList.toggle('rotate-180');
+                mobileServicesToggle.addEventListener("click", () => {
+                    mobileServicesMenu.classList.toggle("hidden");
+                    mobileServicesArrow.classList.toggle("rotate-180");
                 });
             }
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            loadHTML('navbar', 'navbar.html');
-            loadHTML('footer', 'footer.html');
-            
-            document.addEventListener('click', function(e) {
-                if (e.target.matches('a[href^="#"]')) {
-                    e.preventDefault();
-                    const target = document.querySelector(e.target.getAttribute('href'));
+        document.addEventListener("DOMContentLoaded", () => {
+            loadHTML("navbar", "navbar.html");
+            loadHTML("footer", "footer.html");
+
+            document.addEventListener("click", (event) => {
+                if (event.target.matches('a[href^="#"]')) {
+                    event.preventDefault();
+                    const target = document.querySelector(event.target.getAttribute("href"));
                     if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
+                        target.scrollIntoView({ behavior: "smooth" });
                     }
                 }
             });

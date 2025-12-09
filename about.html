@@ -37,7 +37,7 @@
     </style>
 </head>
 <body class="bg-black">
-    <div id="header-container"></div>
+    <div id="navbar-container"></div>
     <section class="relative min-h-screen flex flex-col justify-center items-center bg-black px-4 pt-32 pb-20 overflow-hidden">
         <!-- Layered abstract shapes and accent lines -->
         <div class="absolute top-0 left-0 w-80 h-80 bg-gradient-to-br from-[#E99855] to-[#5FB1C3] rounded-full opacity-20 blur-2xl z-0"></div>
@@ -252,57 +252,100 @@
     </section>
     </div>
 </section>
-</body>
-
-
-
     <div id="footer-container"></div>
+
     <script>
-        fetch('footer.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            });
+        function loadHTML(targetId, filePath, selector) {
+            fetch(filePath)
+                .then((response) => response.text())
+                .then((data) => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+                    const content = selector ? doc.querySelector(selector) : doc.body;
+                    const target = document.getElementById(targetId);
 
-              // Load header and initialize navigation like home.html
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            const parser = new DOMParser();
-            const headerDoc = parser.parseFromString(data, 'text/html');
-            const headerBody = headerDoc.body.innerHTML;
-            document.getElementById('header-container').innerHTML = headerBody;
-            initializeNavigation();
-        })
-        .catch(error => console.error('Error loading header:', error));
+                    if (target && content) {
+                        target.innerHTML = content.innerHTML;
+                    }
 
-    function initializeNavigation() {
-        window.toggleMobileMenu = function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu) {
-                mobileMenu.classList.toggle('hidden');
+                    if (targetId === "navbar-container") {
+                        initNavbarScripts();
+                    }
+                })
+                .catch((error) => console.error("Error loading file:", error));
+        }
+
+        function initNavbarScripts() {
+            const navbar = document.querySelector("#navbar");
+            const navLinks = document.getElementById("nav-links");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            if (!navbar) {
+                return;
             }
-        };
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            const navLinks = document.getElementById('nav-links');
-            if (navbar && navLinks) {
-                if (window.scrollY > 50) {
-                    navbar.classList.remove('bg-black');
-                    navbar.classList.add('bg-white', 'shadow-lg');
-                    navLinks.classList.remove('hidden');
-                    navLinks.classList.add('flex');
+
+            window.toggleMobileMenu = function () {
+                const menu = document.getElementById("mobile-menu");
+                if (!menu) {
+                    return;
+                }
+
+                if (window.innerWidth < 768) {
+                    menu.classList.toggle("hidden");
                 } else {
-                    navbar.classList.remove('bg-white', 'shadow-lg');
-                    navbar.classList.add('bg-black');
-                    navLinks.classList.remove('flex');
-                    navLinks.classList.add('hidden');
+                    menu.classList.add("hidden");
+                }
+            };
+
+            window.toggleMobileIndustries = function () {
+                const mobileIndustries = document.getElementById("mobile-industries");
+                if (mobileIndustries) {
+                    mobileIndustries.classList.toggle("hidden");
+                }
+            };
+
+            function handleNavbar() {
+                if (!navLinks || !mobileMenu) {
+                    return;
+                }
+
+                if (window.innerWidth >= 768) {
+                    navLinks.classList.remove("hidden");
+                    navLinks.classList.add("flex");
+                    mobileMenu.classList.add("hidden");
+                } else {
+                    navLinks.classList.remove("flex");
+                    navLinks.classList.add("hidden");
                 }
             }
+
+            window.addEventListener("resize", handleNavbar);
+            handleNavbar();
+
+            window.addEventListener("scroll", () => {
+                const links = document.querySelectorAll("#nav-links a, #nav-links button");
+                if (window.scrollY > 50) {
+                    navbar.classList.remove("bg-black");
+                    navbar.classList.add("bg-white", "shadow-lg");
+                    links.forEach((link) => {
+                        link.classList.remove("text-gray-700");
+                        link.classList.add("text-gray-900");
+                    });
+                } else {
+                    navbar.classList.remove("bg-white", "shadow-lg");
+                    navbar.classList.add("bg-black");
+                    links.forEach((link) => {
+                        link.classList.remove("text-gray-900");
+                        link.classList.add("text-gray-700");
+                    });
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadHTML("navbar-container", "header.html", "#navbar");
+            loadHTML("footer-container", "footer.html", "footer");
         });
-    }
     </script>
-
-
 </body>
 </html>
