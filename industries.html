@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Section</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.4; filter: blur(20px); }
+      50% { opacity: 0.6; filter: blur(30px); }
+    }
+    @keyframes gradient-x {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .float-slow { animation: float 8s ease-in-out infinite; }
+    .float-medium { animation: float 6s ease-in-out infinite; }
+    .float-fast { animation: float 4s ease-in-out infinite; }
+    .pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+    .animate-gradient-x {
+      background-size: 200% 200%;
+      animation: gradient-x 5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-24 text-center overflow-hidden">
+
+    <!-- Gradient Orbs Background -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <!-- Large gradient orbs -->
+      <div class="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-[#E99855]/20 to-[#5FB1C3]/20 rounded-full blur-3xl pulse-glow"></div>
+      <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tl from-[#5FB1C3]/20 to-[#E99855]/20 rounded-full blur-3xl pulse-glow" style="animation-delay: 2s;"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-[#E99855]/10 to-[#5FB1C3]/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Floating Shapes -->
+    <div class="absolute inset-0 pointer-events-none">
+      <!-- Top Left Area -->
+      <div class="absolute top-20 left-[8%] w-20 h-20 bg-gradient-to-br from-[#E99855]/30 to-[#5FB1C3]/30 rounded-full float-slow"></div>
+      <div class="absolute top-32 left-[15%] w-4 h-32 bg-gradient-to-b from-[#5FB1C3]/40 to-transparent rounded-full float-medium"></div>
+      <div class="absolute top-48 left-[5%] w-16 h-16 border-2 border-[#E99855]/30 rounded-2xl rotate-12 float-fast"></div>
+      
+      <!-- Top Right Area -->
+      <div class="absolute top-24 right-[10%] w-24 h-24 bg-gradient-to-br from-[#5FB1C3]/25 to-[#E99855]/25 rounded-3xl rotate-45 float-slow" style="animation-delay: 1s;"></div>
+      <div class="absolute top-40 right-[18%] w-3 h-24 bg-gradient-to-b from-[#E99855]/40 to-transparent rounded-full float-medium rotate-12"></div>
+      <div class="absolute top-16 right-[5%] w-14 h-14 border-2 border-[#5FB1C3]/40 rounded-full float-fast"></div>
+      
+      <!-- Bottom Left Area -->
+      <div class="absolute bottom-32 left-[12%] w-20 h-20 bg-gradient-to-tr from-[#E99855]/30 to-[#5FB1C3]/30 rounded-2xl -rotate-12 float-medium"></div>
+      <div class="absolute bottom-48 left-[6%] w-4 h-28 bg-gradient-to-b from-[#5FB1C3]/35 to-transparent rounded-full float-slow rotate-6"></div>
+      
+      <!-- Bottom Right Area -->
+      <div class="absolute bottom-40 right-[15%] w-18 h-18 bg-gradient-to-tl from-[#5FB1C3]/30 to-[#E99855]/30 rounded-full float-fast" style="animation-delay: 0.5s;"></div>
+      <div class="absolute bottom-28 right-[8%] w-16 h-16 border-2 border-[#E99855]/35 rounded-3xl rotate-45 float-medium"></div>
+      <div class="absolute bottom-52 right-[20%] w-3 h-20 bg-gradient-to-b from-[#E99855]/40 to-transparent rounded-full float-slow"></div>
+      
+      <!-- Middle accents -->
+      <div class="absolute top-[35%] left-[25%] w-6 h-6 bg-[#5FB1C3]/50 rounded-full float-fast" style="animation-delay: 1.5s;"></div>
+      <div class="absolute top-[45%] right-[28%] w-8 h-8 bg-[#E99855]/40 rounded-full float-slow" style="animation-delay: 2.5s;"></div>
+    </div>
+
+    <!-- Badge -->
+    <div class="mb-6 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-5 py-2.5 backdrop-blur-sm shadow-lg transition-all duration-300 hover:shadow-xl">
+      <div class="mr-3 h-2.5 w-2.5 animate-pulse rounded-full bg-[#E99855] shadow-sm"></div>
+      <span class="text-sm font-medium text-white">Aged Care, Childcare & Medical Centres</span>
+    </div>
+
+    <!-- Heading -->
+    <h1 class="max-w-5xl text-5xl font-extrabold leading-tight sm:text-6xl lg:text-7xl">
+      Helping Care Providers<br />
+      Grow With <span class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Trust, Transparency<br />
+      & Smart Systems</span>
+    </h1>
+
+    <!-- Description -->
+    <p class="mt-6 max-w-2xl text-base text-gray-400 sm:text-lg">
+      For aged care facilities, childcare centres, and medical practices — we build
+      marketing ecosystems that attract families, improve client journeys, and
+      strengthen community trust.
+    </p>
+
+    <!-- CTA -->
+    <a href="#" class="mt-10 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#E99855] to-[#5FB1C3] px-8 py-3 text-sm font-semibold text-white shadow-[0_20px_50px_rgba(233,152,85,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_25px_60px_rgba(233,152,85,0.4)]">
+      Book a Free Consultation Call
+    </a>
+
+    <!-- Bottom Preview Cards -->
+    <div class="relative mt-24 flex w-full max-w-[1400px] items-end justify-center px-4">
+
+      <!-- Left Card -->
+      <div class="relative z-0 w-[480px] -rotate-[8deg] transition-transform hover:-rotate-[6deg]">
+        <img src="Images/1.png" alt="Aged care website preview" class="w-full rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      </div>
+
+      <!-- Center Card -->
+      <div class="relative z-20 -mx-12 w-[600px] rotate-[1deg] transition-transform hover:rotate-0 hover:scale-[1.02]">
+        <img src="Images/2.png" alt="Pixel Hive hero website" class="w-full rounded-xl shadow-[0_30px_80px_rgba(0,0,0,0.6)]">
+      </div>
+
+      <!-- Right Card -->
+      <div class="relative z-0 w-[480px] rotate-[8deg] transition-transform hover:rotate-[6deg]">
+        <img src="Images/3.png" alt="Clinic marketing preview" class="w-full rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Challenges Section -->
+  <section class="relative bg-white py-24 px-6">
+    <div class="mx-auto max-w-6xl">
+      
+      <!-- Section Title -->
+      <h2 class="mb-16 text-center text-4xl font-extrabold text-black sm:text-5xl lg:text-6xl">
+        The Challenges Care<br />
+        <span class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Providers Face</span>
+      </h2>
+
+      <!-- Challenge Cards Grid -->
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        
+        <!-- Card 1 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white hover:shadow-lg">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-[#E99855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-gray-700 leading-relaxed">Families compare dozens of providers before choosing yours</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white hover:shadow-lg">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-[#E99855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-gray-700 leading-relaxed">Long waitlists but unpredictable enquiries</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white hover:shadow-lg">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-[#E99855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-gray-700 leading-relaxed">Manual admin slowing teams down</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white hover:shadow-lg">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-[#E99855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-gray-700 leading-relaxed">Follow-ups getting missed</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white hover:shadow-lg">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-[#E99855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-gray-700 leading-relaxed">Compliance-heavy communication</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white hover:shadow-lg">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-[#E99855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-gray-700 leading-relaxed">No clear system for nurturing leads</p>
+        </div>
+
+        <!-- Card 7 (centered in new row) -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white hover:shadow-lg sm:col-span-2 lg:col-span-1 lg:col-start-2">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-[#E99855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-gray-700 leading-relaxed">Websites and branding feeling outdated or "clinical"</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Solutions Section -->
+ 
+  <section class="relative bg-black py-24 px-6">
+    <div class="mx-auto max-w-6xl">
+      
+      <!-- Section Title -->
+      <div class="mb-16 text-center">
+        <h2 class="mb-6 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+          How Pixel Hive Helps Care<br />
+          <span class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Organisations</span> 
+          <span class="text-[#5FB1C3]">Grow</span>
+        </h2>
+        <p class="mx-auto max-w-3xl text-base text-gray-400 leading-relaxed sm:text-lg">
+          We bring together marketing, CRM, automations, and AI workflows into one connected ecosystem — so you can spend less time on admin and more time providing care.
+        </p>
+      </div>
+
+      <!-- Our Solutions Subtitle -->
+      <h3 class="mb-10 text-center text-2xl font-bold text-white sm:text-3xl">Our Solutions</h3>
+
+      <!-- Solutions Cards Grid -->
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        
+        <!-- Card 1 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)]">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">Full website + modern branding</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Build trust and credibility with professional design</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)]">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">Automated enquiry flows</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Build trust and credibility with professional design</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)]">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">CRM pipelines</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Build trust and credibility with professional design</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)]">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">Google & Meta ads</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Highly targeted local enquiries to grow your center</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)]">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">SEO to rank your centre in your suburb</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Get found by families searching for care in your local area</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)]">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">AI assistants to answer questions 24/7</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Respond to parent and patient enquiries instantly, any time of day</p>
+          </div>
+        </div>
+
+        <!-- Card 7 (centered in new row) -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)] sm:col-span-2 lg:col-span-1 lg:col-start-2">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">Compliance-friendly templates</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Pre-built communication templates that meet industry standards</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Pixel Hive Section -->
+  <section class="relative bg-white py-24 px-6">
+    <div class="mx-auto max-w-4xl">
+      
+      <!-- Section Title -->
+      <h2 class="mb-4 text-center text-4xl font-extrabold text-black sm:text-5xl lg:text-6xl">
+        Why <span class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Pixel Hive</span>
+      </h2>
+      
+      <p class="mb-6 text-center text-base text-gray-700 sm:text-lg">
+        Care industries need clarity, consistency, and systems that reduce stress.
+      </p>
+
+      <p class="mb-10 text-center text-base font-semibold text-gray-800">We help you:</p>
+
+      <!-- Feature List -->
+      <div class="mx-auto mb-16 max-w-lg space-y-4">
+        
+        <!-- Item 1 -->
+        <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#E99855]/40 hover:shadow-md">
+          <div class="flex-shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <p class="text-base font-medium text-gray-800">Build trust with families</p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#E99855]/40 hover:shadow-md">
+          <div class="flex-shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <p class="text-base font-medium text-gray-800">Showcase your quality of care</p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#E99855]/40 hover:shadow-md">
+          <div class="flex-shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <p class="text-base font-medium text-gray-800">Automate time-consuming admin</p>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#E99855]/40 hover:shadow-md">
+          <div class="flex-shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <p class="text-base font-medium text-gray-800">Create a predictable flow of enquiries</p>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#E99855]/40 hover:shadow-md">
+          <div class="flex-shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <p class="text-base font-medium text-gray-800">Deliver better client experiences from day one</p>
+        </div>
+
+      </div>
+
+      <!-- CTA Box -->
+      <div class="rounded-3xl bg-gradient-to-br from-gray-900 to-black p-10 text-center shadow-2xl">
+        <h3 class="mb-6 text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
+          Build a growth ecosystem that supports<br class="hidden sm:inline" />
+          your care community
+        </h3>
+        <a href="#" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#E99855] to-[#5FB1C3] px-8 py-3.5 text-base font-semibold text-white shadow-[0_20px_50px_rgba(233,152,85,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_25px_60px_rgba(233,152,85,0.4)]">
+          Book a Free Consultation Call
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Property Management Section -->
+  <section class="relative bg-black pt-24 pb-40 px-6 overflow-hidden">
+    
+    <!-- Floating Shapes -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-20 right-[15%] w-20 h-20 border-2 border-[#5FB1C3]/40 rounded-2xl rotate-45 float-slow"></div>
+      <div class="absolute top-10 right-[8%] w-16 h-16 rounded-full border-2 border-[#5FB1C3]/30 float-medium"></div>
+      <div class="absolute bottom-32 left-[10%] w-24 h-24 bg-gradient-to-br from-[#E99855]/20 to-[#5FB1C3]/20 rounded-3xl float-fast"></div>
+      <div class="absolute bottom-48 left-[5%] w-4 h-28 bg-gradient-to-b from-[#5FB1C3]/35 to-transparent rounded-full float-slow"></div>
+      <div class="absolute top-40 left-[45%] w-20 h-6 bg-[#E99855]/30 rounded-full rotate-12 float-medium"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+      
+      <!-- Left Content -->
+      <div class="space-y-8">
+        
+        <!-- Badge -->
+        <div class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-5 py-2.5 backdrop-blur-sm shadow-lg">
+          <div class="mr-3 h-2.5 w-2.5 animate-pulse rounded-full bg-[#E99855] shadow-sm"></div>
+          <span class="text-sm font-medium text-white">Property Management Firms</span>
+        </div>
+
+        <!-- Heading -->
+        <h2 class="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+          <span class="block bg-gradient-to-r from-[#E99855] via-[#F6C36C] to-[#5FB1C3] bg-clip-text text-transparent animate-gradient-x">More Landlords.</span>
+          <span class="block text-gray-400">Better Systems.</span>
+          <span class="block text-white">Less Manual Work.</span>
+        </h2>
+
+        <!-- Description -->
+        <p class="max-w-xl text-base text-gray-400 leading-relaxed sm:text-lg">
+          Pixel Hive helps property management firms grow faster with marketing, automations, and CRM systems built for high-volume operations.
+        </p>
+
+        <!-- CTA Button -->
+        <a href="#" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#E99855] to-[#5FB1C3] px-8 py-3.5 text-base font-semibold text-white shadow-[0_20px_50px_rgba(233,152,85,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_25px_60px_rgba(233,152,85,0.4)]">
+          Book a Free Consultation Call
+        </a>
+
+      </div>
+
+      <!-- Right Images -->
+      <div class="relative flex h-[380px] items-start justify-end lg:h-[420px]">
+        
+        <!-- Image Container with better positioning -->
+        <div class="relative w-full max-w-[750px] pt-32">
+          
+          <!-- Image 1 - Back Left -->
+          <div class="absolute -left-8 top-32 z-0 w-[250px] -rotate-[8deg] transition-transform duration-300 hover:-rotate-[5deg] hover:scale-105 sm:w-[300px]">
+            <img src="Images/4.png" alt="Property management website" class="w-full rounded-xl shadow-[0_25px_70px_rgba(0,0,0,0.6)]">
+          </div>
+
+          <!-- Image 2 - Center Main (highest z-index) -->
+          <div class="absolute left-1/2 top-24 z-20 w-[320px] -translate-x-1/2 rotate-[1deg] transition-transform duration-300 hover:rotate-0 hover:scale-[1.03] sm:w-[380px]">
+            <img src="Images/5.png" alt="Property listings dashboard" class="w-full rounded-xl shadow-[0_35px_90px_rgba(0,0,0,0.7)]">
+          </div>
+
+          <!-- Image 3 - Back Right -->
+          <div class="absolute -right-8 top-32 z-0 w-[250px] rotate-[8deg] transition-transform duration-300 hover:rotate-[5deg] hover:scale-105 sm:w-[300px]">
+            <img src="Images/6.png" alt="Tenant portal interface" class="w-full rounded-xl shadow-[0_25px_70px_rgba(0,0,0,0.6)]">
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Property Management Challenges Section -->
+  <section class="relative bg-white py-24 px-6">
+    <div class="mx-auto max-w-6xl">
+      
+      <!-- Section Title -->
+      <h2 class="mb-16 text-center text-4xl font-extrabold text-black sm:text-5xl lg:text-6xl">
+        The Challenges Care<br />
+        <span class="bg-gradient-to-r from-[#E99855] to-[#d4a574] bg-clip-text text-transparent">Providers</span>
+        <span class="bg-gradient-to-r from-[#5FB1C3] to-[#7bc4d1] bg-clip-text text-transparent"> Face</span>
+      </h2>
+
+      <!-- Challenge Cards Grid -->
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        
+        <!-- Card 1 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white hover:shadow-lg">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-[#E99855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-gray-700 leading-relaxed">Competing with dozens of agencies in every suburb</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white hover:shadow-lg">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-[#E99855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-gray-700 leading-relaxed">Slow lead follow-ups losing landlords</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white hover:shadow-lg">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-[#E99855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-gray-700 leading-relaxed">Manual inspection reminders</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white hover:shadow-lg">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-[#E99855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-gray-700 leading-relaxed">Outdated websites and branding</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white hover:shadow-lg">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-[#E99855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-gray-700 leading-relaxed">Disconnected systems (email, spreadsheets, phone)</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white hover:shadow-lg">
+          <div class="flex-shrink-0">
+            <svg class="h-6 w-6 text-[#E99855]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-sm font-medium text-gray-700 leading-relaxed">No automation for landlord nurture</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- How Pixel Hive Helps Section -->
+  <section class="relative bg-black py-24 px-6">
+    <div class="mx-auto max-w-6xl">
+      
+      <!-- Section Title -->
+      <div class="mb-16 text-center">
+        <h2 class="mb-4 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+          How Pixel Hive <span class="text-[#5FB1C3]">Helps</span>
+        </h2>
+        <p class="mb-3 text-base text-gray-400 sm:text-lg">We don't just do "marketing."</p>
+        <p class="text-base text-gray-300 sm:text-lg">
+          We build <span class="text-white">property management</span> 
+          <span class="text-[#5FB1C3]">growth systems:</span>
+        </p>
+      </div>
+
+      <!-- Solutions Cards Grid -->
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        
+        <!-- Card 1 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)]">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">Full website + modern branding</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Build trust and credibility with professional design</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)]">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">Automated enquiry flows</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Build trust and credibility with professional design</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)]">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">CRM pipelines</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Build trust and credibility with professional design</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)]">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">Google & Meta ads</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Highly targeted local enquiries to grow your center</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)]">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">SEO to rank your centre in your suburb</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Get found by families searching for care in your local area</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)]">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">AI assistants to answer questions 24/7</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Respond to parent and patient enquiries instantly, any time of day</p>
+          </div>
+        </div>
+
+        <!-- Card 7 (centered in new row) -->
+        <div class="group flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#E99855]/30 hover:bg-white/10 hover:shadow-[0_20px_50px_rgba(233,152,85,0.2)] sm:col-span-2 lg:col-span-1 lg:col-start-2">
+          <div class="flex-shrink-0">
+            <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <h4 class="mb-2 text-base font-semibold text-white">Compliance-friendly templates</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Pre-built communication templates that meet industry standards</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Pixel Hive Section -->
+  <section class="relative bg-white py-24 px-6">
+    <div class="mx-auto max-w-4xl">
+      
+      <!-- Section Title -->
+      <h2 class="mb-4 text-center text-4xl font-extrabold text-black sm:text-5xl lg:text-6xl">
+        Why <span class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Pixel Hive</span>
+      </h2>
+      
+      <p class="mb-3 text-center text-base text-gray-700 leading-relaxed sm:text-lg">
+        Investors want trust. Tenants want clarity.<br />
+        You need systems to deliver both at scale.
+      </p>
+
+      <p class="mb-10 text-center text-base font-semibold text-[#E99855]">Pixel Hive gives you:</p>
+
+      <!-- Feature List -->
+      <div class="mx-auto mb-16 max-w-lg space-y-4">
+        
+        <!-- Item 1 -->
+        <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#5FB1C3]/40 hover:shadow-md">
+          <div class="flex-shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <p class="text-base font-medium text-gray-800">Strong online presence</p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#5FB1C3]/40 hover:shadow-md">
+          <div class="flex-shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <p class="text-base font-medium text-gray-800">Automated communication flows</p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#5FB1C3]/40 hover:shadow-md">
+          <div class="flex-shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <p class="text-base font-medium text-gray-800">Consistent landlord enquiries</p>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#5FB1C3]/40 hover:shadow-md">
+          <div class="flex-shrink-0">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+              <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+          </div>
+          <p class="text-base font-medium text-gray-800">A streamlined property management operation</p>
+        </div>
+
+      </div>
+
+      <!-- CTA Box -->
+      <div class="rounded-3xl border-2 border-[#E99855] bg-gradient-to-br from-[#E99855]/20 via-white to-[#5FB1C3]/20 p-10 text-center shadow-xl">
+        <h3 class="mb-4 text-2xl font-bold text-black sm:text-3xl lg:text-4xl">
+          Turn your agency into a modern,<br class="hidden sm:inline" />
+          automated property <span class="bg-gradient-to-r from-[#5FB1C3] to-[#5FB1C3] bg-clip-text text-transparent">management<br class="hidden sm:inline" />
+          <span class="bg-gradient-to-r from-[#E99855] to-[#E99855] bg-clip-text text-transparent">powerhouse</span></span>
+        </h3>
+        <p class="mb-6 text-base text-gray-600">Let's build your ecosystem.</p>
+        <a href="#" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#E99855] to-[#5FB1C3] px-8 py-3.5 text-base font-semibold text-white shadow-[0_20px_50px_rgba(233,152,85,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_25px_60px_rgba(233,152,85,0.4)]">
+          Book a Free Consultation Call
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Construction & Trade Services Section -->
+<!-- Construction & Trade Services Section -->
+<section class="relative bg-black py-24 px-6 overflow-hidden">
+  <!-- Gradient Orbs Background -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <!-- Large gradient orbs -->
+      <div class="absolute -top-40 left-[10%] w-96 h-96 bg-gradient-to-br from-[#E99855]/15 to-[#5FB1C3]/15 rounded-full blur-3xl pulse-glow"></div>
+      <div class="absolute -bottom-40 right-[10%] w-96 h-96 bg-gradient-to-tl from-[#5FB1C3]/15 to-[#E99855]/15 rounded-full blur-3xl pulse-glow" style="animation-delay: 2s;"></div>
+    </div>
+<!-- End Construction & Trade Services Section -->
+    <!-- Floating Shapes -->
+    <div class="absolute inset-0 pointer-events-none">
+      <!-- Top Left Area -->
+      <div class="absolute top-20 left-[5%] w-24 h-24 bg-gradient-to-br from-[#E99855]/25 to-[#5FB1C3]/25 rounded-full float-slow"></div>
+      <div class="absolute top-32 left-[12%] w-4 h-32 bg-gradient-to-b from-[#5FB1C3]/35 to-transparent rounded-full float-medium"></div>
+      <div class="absolute top-40 left-[8%] w-20 h-20 border-2 border-[#E99855]/30 rounded-3xl rotate-12 float-fast"></div>
+      
+      <!-- Top Right Area -->
+      <div class="absolute top-16 right-[8%] w-28 h-28 bg-gradient-to-br from-[#5FB1C3]/20 to-[#E99855]/20 rounded-[32px] rotate-45 float-slow" style="animation-delay: 1s;"></div>
+      <div class="absolute top-28 right-[15%] w-3 h-24 bg-gradient-to-b from-[#E99855]/40 to-transparent rounded-full float-medium rotate-12"></div>
+      <div class="absolute top-12 right-[4%] w-16 h-16 border-2 border-[#5FB1C3]/35 rounded-full float-fast"></div>
+      
+      <!-- Bottom Left Area -->
+      <div class="absolute bottom-28 left-[10%] w-22 h-22 bg-gradient-to-tr from-[#E99855]/25 to-[#5FB1C3]/25 rounded-3xl -rotate-12 float-medium"></div>
+      <div class="absolute bottom-40 left-[5%] w-4 h-28 bg-gradient-to-b from-[#5FB1C3]/30 to-transparent rounded-full float-slow rotate-6"></div>
+      
+      <!-- Bottom Right Area -->
+      <div class="absolute bottom-32 right-[12%] w-20 h-20 bg-gradient-to-tl from-[#5FB1C3]/25 to-[#E99855]/25 rounded-full float-fast" style="animation-delay: 0.5s;"></div>
+      <div class="absolute bottom-24 right-[6%] w-18 h-18 border-2 border-[#E99855]/30 rounded-[28px] rotate-45 float-medium"></div>
+      <div class="absolute bottom-48 right-[18%] w-3 h-20 bg-gradient-to-b from-[#E99855]/35 to-transparent rounded-full float-slow"></div>
+      
+      <!-- Middle accents -->
+      <div class="absolute top-[35%] left-[20%] w-8 h-8 bg-[#5FB1C3]/40 rounded-full float-fast" style="animation-delay: 1.5s;"></div>
+      <div class="absolute top-[45%] right-[22%] w-10 h-10 bg-[#E99855]/35 rounded-full float-slow" style="animation-delay: 2.5s;"></div>
+      <div class="absolute top-[55%] left-[15%] w-6 h-20 bg-gradient-to-b from-[#E99855]/30 to-transparent rounded-full float-medium rotate-[-15deg]"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-7xl">
+      
+      <!-- Badge -->
+      <div class="mb-8 flex justify-center">
+        <div class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-5 py-2.5 backdrop-blur-sm shadow-lg">
+          <div class="mr-3 h-2.5 w-2.5 animate-pulse rounded-full bg-[#E99855] shadow-sm"></div>
+          <span class="text-sm font-medium text-white">Construction & Trade Services</span>
+        </div>
+      </div>
+
+      <div class="relative flex items-center justify-between">
+        
+        <!-- Left Images -->
+        <div class="relative hidden h-[560px] w-[360px] lg:block">
+          
+          <!-- Image 1 - Top Left -->
+          <div class="group absolute left-0 top-0 w-[340px] -rotate-[6deg] transition-all duration-500 hover:-rotate-[2deg] hover:scale-110 hover:z-30">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#E99855]/30 to-[#5FB1C3]/30 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div class="relative overflow-hidden rounded-2xl border-2 border-[#E99855]/20 transition-all duration-500 group-hover:border-[#E99855]/60">
+              <img src="Images/7.png" alt="Construction website" class="w-full shadow-[0_30px_80px_rgba(0,0,0,0.7)]">
+            </div>
+          </div>
+
+          <!-- Image 2 - Bottom Left -->
+          <div class="group absolute left-4 bottom-0 w-[340px] rotate-[4deg] transition-all duration-500 hover:rotate-[1deg] hover:scale-110 hover:z-30">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#5FB1C3]/30 to-[#E99855]/30 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div class="relative overflow-hidden rounded-2xl border-2 border-[#5FB1C3]/20 transition-all duration-500 group-hover:border-[#5FB1C3]/60">
+              <img src="Images/8.png" alt="Trade services dashboard" class="w-full shadow-[0_35px_100px_rgba(0,0,0,0.8)]">
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Center Content -->
+        <div class="flex-1 space-y-8 text-center px-6 lg:px-12">
+          
+          <!-- Heading -->
+          <h2 class="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
+            <span class="block bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">More Jobs.</span>
+            <span class="block bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Better Systems.</span>
+            <span class="block text-white">Stronger Reputation.</span>
+          </h2>
+
+          <!-- Description -->
+          <p class="mx-auto max-w-xl text-base text-gray-400 leading-relaxed sm:text-lg">
+            We help builders and trade businesses attract better clients and automate operational workflows — all in one ecosystem.
+          </p>
+
+          <!-- CTA Button -->
+          <a href="#" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#E99855] to-[#5FB1C3] px-8 py-3.5 text-base font-semibold text-white shadow-[0_20px_50px_rgba(233,152,85,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_25px_60px_rgba(233,152,85,0.4)]">
+            Book a Free Consultation Call
+          </a>
+
+        </div>
+
+        <!-- Right Images -->
+        <div class="relative hidden h-[560px] w-[360px] lg:block">
+          
+          <!-- Image 3 - Top Right -->
+          <div class="group absolute right-0 top-0 w-[340px] rotate-[6deg] transition-all duration-500 hover:rotate-[2deg] hover:scale-110 hover:z-30">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#5FB1C3]/30 to-[#E99855]/30 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div class="relative overflow-hidden rounded-2xl border-2 border-[#5FB1C3]/20 transition-all duration-500 group-hover:border-[#5FB1C3]/60">
+              <img src="Images/9.png" alt="Builder portfolio" class="w-full shadow-[0_30px_80px_rgba(0,0,0,0.7)]">
+            </div>
+          </div>
+
+          <!-- Image 4 - Bottom Right -->
+          <div class="group absolute right-4 bottom-0 w-[340px] -rotate-[4deg] transition-all duration-500 hover:-rotate-[1deg] hover:scale-110 hover:z-30">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#E99855]/30 to-[#5FB1C3]/30 blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            <div class="relative overflow-hidden rounded-2xl border-2 border-[#E99855]/20 transition-all duration-500 group-hover:border-[#E99855]/60">
+              <img src="Images/10.png" alt="Construction showcase" class="w-full shadow-[0_35px_100px_rgba(0,0,0,0.8)]">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- Care Providers Challenges Section -->
+<section class="relative bg-white py-24 px-6">
+  <div class="mx-auto max-w-6xl">
+
+    <!-- Section Title -->
+    <h2 class="mb-16 text-center text-4xl font-extrabold text-black sm:text-5xl lg:text-6xl">
+      The Challenges Care<br />
+      <span class="bg-gradient-to-r from-[#E99855] to-[#d4a574] bg-clip-text text-transparent">
+        Providers
+      </span>
+      <span class="bg-gradient-to-r from-[#5FB1C3] to-[#7bc4d1] bg-clip-text text-transparent">
+        Face
+      </span>
+    </h2>
+
+    <!-- Cards Grid -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Card 1 -->
+      <div class="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-50 px-6 py-5">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full border border-[#E99855] text-[#E99855] text-xs font-semibold">
+          !
+        </span>
+        <p class="text-sm text-gray-700">
+          Relying heavily on word-of-mouth
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-50 px-6 py-5">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full border border-[#E99855] text-[#E99855] text-xs font-semibold">
+          !
+        </span>
+        <p class="text-sm text-gray-700">
+          Inconsistent lead flow
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-50 px-6 py-5">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full border border-[#E99855] text-[#E99855] text-xs font-semibold">
+          !
+        </span>
+        <p class="text-sm text-gray-700">
+          Slow or missed follow-ups
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-50 px-6 py-5">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full border border-[#E99855] text-[#E99855] text-xs font-semibold">
+          !
+        </span>
+        <p class="text-sm text-gray-700">
+          Manual quoting & job scheduling
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-50 px-6 py-5">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full border border-[#E99855] text-[#E99855] text-xs font-semibold">
+          !
+        </span>
+        <p class="text-sm text-gray-700">
+          Outdated websites
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-50 px-6 py-5">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full border border-[#E99855] text-[#E99855] text-xs font-semibold">
+          !
+        </span>
+        <p class="text-sm text-gray-700">
+          Poor online reviews affecting trust
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Construction & Trades Solutions Section -->
+<section class="relative bg-black py-24 px-6">
+  <div class="mx-auto max-w-6xl">
+
+    <!-- Section Title -->
+    <h2 class="mb-20 text-center text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+      How Pixel Hive Helps
+      <span class="bg-gradient-to-r from-[#5FB1C3] to-[#7bc4d1] bg-clip-text text-transparent">
+        Construction & Trades
+      </span><br />
+      <span class="bg-gradient-to-r from-[#E99855] to-[#d4a574] bg-clip-text text-transparent">
+        Grow
+      </span>
+    </h2>
+
+<!-- Cards Grid -->
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <!-- Card Template -->
+  <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+    <div class="flex items-center gap-4 mb-2">
+      <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+      <h4 class="text-sm font-semibold text-white">Professional website & portfolio build</h4>
+    </div>
+    <p class="text-sm text-gray-400">Showcase your work and build credibility with a modern online presence</p>
+  </div>
+
+  <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+    <div class="flex items-center gap-4 mb-2">
+      <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+      <h4 class="text-sm font-semibold text-white">SEO to rank locally for key services</h4>
+    </div>
+    <p class="text-sm text-gray-400">Get found by homeowners searching for your trade in your area</p>
+  </div>
+
+  <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+    <div class="flex items-center gap-4 mb-2">
+      <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+      <h4 class="text-sm font-semibold text-white">Google Ads for high-intent job enquiries</h4>
+    </div>
+    <p class="text-sm text-gray-400">Target customers ready to hire for their next project</p>
+  </div>
+
+  <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+    <div class="flex items-center gap-4 mb-2">
+      <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+      <h4 class="text-sm font-semibold text-white">CRM pipelines from quote → booked job</h4>
+    </div>
+    <p class="text-sm text-gray-400">Track every enquiry and convert more leads automatically</p>
+  </div>
+
+  <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+    <div class="flex items-center gap-4 mb-2">
+      <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+      <h4 class="text-sm font-semibold text-white">Automated quoting follow-ups</h4>
+    </div>
+    <p class="text-sm text-gray-400">Keep potential clients engaged without manual chasing</p>
+  </div>
+
+  <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+    <div class="flex items-center gap-4 mb-2">
+      <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+      <h4 class="text-sm font-semibold text-white">Job management & client communication flows</h4>
+    </div>
+    <p class="text-sm text-gray-400">Streamline project updates and client messaging</p>
+  </div>
+</div>
+
+<!-- Centered Bottom Row -->
+<div class="mt-6 flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
+  <!-- Card 1 -->
+  <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm w-full sm:w-80">
+    <div class="flex items-center gap-4 mb-2">
+      <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+      <h4 class="text-sm font-semibold text-white">Review systems to build your reputation</h4>
+    </div>
+    <p class="text-sm text-gray-400">Automatically collect and showcase positive reviews</p>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm w-full sm:w-80">
+    <div class="flex items-center gap-4 mb-2">
+      <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+      <h4 class="text-sm font-semibold text-white">AI assistants for enquiries & estimate pre-qualification</h4>
+    </div>
+    <p class="text-sm text-gray-400">Answer common questions and qualify leads 24/7</p>
+  </div>
+</div>
+</div>
+</section>
+
+
+
+<section class="relative bg-black py-28 overflow-hidden">
+  <!-- Floating Shapes -->
+  <div class="absolute inset-0 pointer-events-none z-0">
+    <div class="absolute top-8 left-8 w-8 h-8 border-2 border-[#5FB1C3] rounded-full"></div>
+    <div class="absolute top-20 left-1/4 w-4 h-20 bg-gradient-to-br from-[#E99855] to-[#5FB1C3] rounded-lg rotate-12"></div>
+    <div class="absolute top-32 right-10 w-8 h-8 border-2 border-[#5FB1C3] rounded-lg"></div>
+    <div class="absolute top-16 right-1/4 w-4 h-20 bg-gradient-to-br from-[#E99855] to-[#5FB1C3] rounded-lg -rotate-12"></div>
+    <div class="absolute bottom-20 left-16 w-6 h-6 bg-gradient-to-br from-[#E99855] to-[#5FB1C3] rounded-lg"></div>
+    <div class="absolute bottom-10 right-24 w-8 h-8 bg-gradient-to-br from-[#5FB1C3] to-[#E99855] rounded-lg"></div>
+    <div class="absolute top-1/2 left-1/2 w-4 h-24 bg-gradient-to-br from-[#E99855] to-[#5FB1C3] rounded-lg rotate-45"></div>
+  </div>
+  <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center px-4">
+    <!-- Badge -->
+    <div class="mb-6 flex justify-center">
+      <span class="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-medium text-white/90 backdrop-blur-sm shadow-lg">
+        <span class="mr-2 h-2.5 w-2.5 animate-pulse rounded-full bg-[#E99855] shadow-sm"></span>
+        Corporate & Government Services
+      </span>
+    </div>
+    <!-- Headline -->
+    <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-white">
+      Enterprise Marketing & Automation Built for
+      <span class="bg-gradient-to-r from-[#5FB1C3] via-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Scale, <span class="text-[#E99855]">Compliance</span> & Performance</span>
+    </h2>
+    <p class="mb-8 text-base text-white/80 max-w-2xl mx-auto">
+      Pixel Hive supports corporate and government teams with secure, structured, end-to-end growth systems.
+    </p>
+    <!-- CTA Button -->
+    <a href="#" class="mb-12 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#E99855] to-[#5FB1C3] px-8 py-3.5 text-base font-semibold text-white shadow-[0_20px_50px_rgba(233,152,85,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_25px_60px_rgba(233,152,85,0.4)]">
+      Book a Free Consultation Call
+    </a>
+    <!-- Images Row -->
+    <div class="relative flex flex-col md:flex-row items-center justify-center gap-6 z-10">
+      <img src="Images/11.png" alt="Enterprise UI 1" class="w-full max-w-xs md:max-w-sm rounded-2xl shadow-2xl border-2 border-white/10 bg-black/30 animate-float-slow" style="margin-top: 40px; animation-delay: 0s;" />
+      <img src="Images/12.png" alt="Enterprise UI 2" class="w-full max-w-xs md:max-w-sm rounded-2xl shadow-2xl border-2 border-white/10 bg-black/30 animate-float-medium" style="animation-delay: 1.5s;" />
+      <img src="Images/13.png" alt="Enterprise UI 3" class="w-full max-w-xs md:max-w-sm rounded-2xl shadow-2xl border-2 border-white/10 bg-black/30 animate-float-fast" style="margin-top: 40px; animation-delay: 0.75s;" />
+    </div>
+  </div>
+</section>
+
+<!-- Enterprise Challenges Section -->
+<section class="relative bg-white py-24 px-6">
+  <div class="mx-auto max-w-6xl">
+    <!-- Section Title -->
+    <h2 class="mb-16 text-center text-4xl font-extrabold text-black sm:text-5xl lg:text-6xl">
+      The <span class="bg-gradient-to-r from-[#7FB1A4] via-[#C89A5B] to-[#E99855] bg-clip-text text-transparent">Challenges</span>
+    </h2>
+    <!-- Cards Grid -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Card 1 -->
+      <div class="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-50 px-6 py-5">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full border border-[#E99855] text-[#E99855] text-xs font-semibold">!</span>
+        <p class="text-sm text-gray-700">Complex internal workflows</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-50 px-6 py-5">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full border border-[#E99855] text-[#E99855] text-xs font-semibold">!</span>
+        <p class="text-sm text-gray-700">Compliance-heavy communication</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-50 px-6 py-5">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full border border-[#E99855] text-[#E99855] text-xs font-semibold">!</span>
+        <p class="text-sm text-gray-700">Slow manual processes</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-50 px-6 py-5">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full border border-[#E99855] text-[#E99855] text-xs font-semibold">!</span>
+        <p class="text-sm text-gray-700">Multi-level stakeholder approvals</p>
+      </div>
+      <!-- Card 5 -->
+      <div class="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-50 px-6 py-5">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full border border-[#E99855] text-[#E99855] text-xs font-semibold">!</span>
+        <p class="text-sm text-gray-700">Difficulty maintaining consistent messaging</p>
+      </div>
+      <!-- Card 6 -->
+      <div class="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-50 px-6 py-5">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full border border-[#E99855] text-[#E99855] text-xs font-semibold">!</span>
+        <p class="text-sm text-gray-700">Disconnected systems across departments</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- How Pixel Hive Helps Section (Enterprise) -->
+  <section class="relative bg-black py-24 px-6">
+    <div class="mx-auto max-w-6xl">
+      <!-- Section Title -->
+      <div class="mb-16 text-center">
+        <h2 class="mb-6 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+          How Pixel Hive <span class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Helps</span>
+        </h2>
+      </div>
+      <!-- Solutions Cards Grid -->
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Card 1 -->
+        <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+          <div class="flex-shrink-0">
+            <div class="h-8 w-8 rounded bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+          </div>
+          <div>
+            <h4 class="mb-1 text-base font-semibold text-white">Enterprise-grade websites & landing pages</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Build trust and credibility with professional design</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+          <div class="flex-shrink-0">
+            <div class="h-8 w-8 rounded bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+          </div>
+          <div>
+            <h4 class="mb-1 text-base font-semibold text-white">Multi-step automation workflows</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Streamline complex processes across multiple departments</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+          <div class="flex-shrink-0">
+            <div class="h-8 w-8 rounded bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+          </div>
+          <div>
+            <h4 class="mb-1 text-base font-semibold text-white">CRM for internal/team-based pipelines</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Build trust and credibility with professional design</p>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+          <div class="flex-shrink-0">
+            <div class="h-8 w-8 rounded bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+          </div>
+          <div>
+            <h4 class="mb-1 text-base font-semibold text-white">Automated onboarding & communication flows</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Highly targeted local enquiries to grow your center</p>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+          <div class="flex-shrink-0">
+            <div class="h-8 w-8 rounded bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+          </div>
+          <div>
+            <h4 class="mb-1 text-base font-semibold text-white">Secure data handling</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Enterprise-level security and compliance standards</p>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+          <div class="flex-shrink-0">
+            <div class="h-8 w-8 rounded bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+          </div>
+          <div>
+            <h4 class="mb-1 text-base font-semibold text-white">AI assistants for internal operations & public enquiries</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Handle routine questions and streamline operations 24/7</p>
+          </div>
+        </div>
+        <!-- Card 7 (full width on desktop) -->
+        <div class="sm:col-span-2 lg:col-span-3 flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm mt-2">
+          <div class="flex-shrink-0">
+            <div class="h-8 w-8 rounded bg-gradient-to-br from-[#E99855] to-[#5FB1C3]"></div>
+          </div>
+          <div>
+            <h4 class="mb-1 text-base font-semibold text-white">Professional branding & corporate content creation</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">Maintain consistent, professional messaging across all channels</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Pixel Hive Section -->
+<section class="relative bg-white py-24 px-6">
+  <div class="mx-auto max-w-4xl">
+    <!-- Section Title -->
+    <h2 class="mb-4 text-center text-4xl font-extrabold text-black sm:text-5xl lg:text-6xl">
+      Why <span class="bg-gradient-to-r from-[#E99855] to-[#5FB1C3] bg-clip-text text-transparent">Pixel Hive</span>
+    </h2>
+    <p class="mb-6 text-center text-base text-gray-700 sm:text-lg">
+      Businesses at scale need clarity, consistency, and systems that reduce stress.
+    </p>
+    <p class="mb-10 text-center text-base font-semibold text-gray-800">We help corporate teams:</p>
+    <!-- Feature List -->
+    <div class="mx-auto mb-16 max-w-lg space-y-4">
+      <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#E99855]/40 hover:shadow-md">
+        <div class="flex-shrink-0">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        <p class="text-base font-medium text-gray-800">Reduce operational bottlenecks</p>
+      </div>
+      <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#E99855]/40 hover:shadow-md">
+        <div class="flex-shrink-0">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        <p class="text-base font-medium text-gray-800">Improve community engagement</p>
+      </div>
+      <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#E99855]/40 hover:shadow-md">
+        <div class="flex-shrink-0">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        <p class="text-base font-medium text-gray-800">Simplify communication</p>
+      </div>
+      <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#E99855]/40 hover:shadow-md">
+        <div class="flex-shrink-0">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        <p class="text-base font-medium text-gray-800">Strengthen public trust</p>
+      </div>
+      <div class="flex items-center gap-4 rounded-2xl border border-[#E99855]/20 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#E99855]/40 hover:shadow-md">
+        <div class="flex-shrink-0">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#E99855] to-[#5FB1C3]">
+            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        </div>
+        <p class="text-base font-medium text-gray-800">Streamline digital operations</p>
+      </div>
+    </div>
+    <!-- CTA Box -->
+    <div class="rounded-3xl bg-gradient-to-br from-gray-900 to-black p-10 text-center shadow-2xl">
+      <h3 class="mb-6 text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
+        Build a modern, automated corporate ecosystem with Pixel Hive.
+      </h3>
+      <a href="#" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#E99855] to-[#5FB1C3] px-8 py-3.5 text-base font-semibold text-white shadow-[0_20px_50px_rgba(233,152,85,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_25px_60px_rgba(233,152,85,0.4)]">
+        Book a Free Consultation Call
+      </a>
+    </div>
+  </div>
+</section>
+</body>
+</html>
