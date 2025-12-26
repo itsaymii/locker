@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights & Career | Pixel Hive</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Gradient Styles */
+    .brand-gradient-text {
+      background: linear-gradient(to right, #E59A5D, #76B1B8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .brand-gradient-bg {
+      background: linear-gradient(to right, #E59A5D, #76B1B8);
+    }
+
+    /* Animation */
+    .article-img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* FONT FIXES: Ito ang nagpapagaya sa picture */
+    .tight-heading {
+      letter-spacing: -0.05em; /* Ginagawang siksik ang mga letra */
+      line-height: 1.05;      /* Pinagdidikit ang mga lines ng text */
+    }
+    .sub-heading {
+      letter-spacing: -0.02em;
+    }
+  </style>
+</head>
+<body class="bg-white text-[#111827] font-sans antialiased">
+
+  <section class="relative py-24 px-6 overflow-hidden border-b border-gray-100">
+    
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-20 left-[15%] w-14 h-14 border-2 border-[#76B1B8] opacity-20 rounded-full"></div>
+      <div class="absolute top-40 left-[4%] w-4 h-20 bg-[#E59A5D] rotate-[45deg] rounded-full opacity-60"></div>
+      <div class="absolute top-12 right-[25%] w-12 h-12 border-2 border-[#E59A5D] opacity-30 rounded-full"></div>
+      <div class="absolute bottom-[20%] right-[3%] w-14 h-14 brand-gradient-bg rotate-[15deg] opacity-70 rounded-2xl shadow-lg"></div>
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto">
+      
+      <div class="text-center mb-10">
+        <h2 class="text-[52px] md:text-[64px] font-[800] tight-heading mb-6">
+          Insights & <span class="brand-gradient-text">Resources</span>
+        </h2>
+        <p class="text-[#6B7280] text-[17px] font-medium max-w-2xl mx-auto sub-heading">
+          Expert insights on growth, automation, and building successful digital ecosystems.
+        </p>
+      </div>
+
+      <div class="flex justify-end mb-16">
+        <button class="px-8 py-3.5 rounded-2xl brand-gradient-bg text-white font-[800] text-[15px] shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          Add new Highlight
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        
+        <div class="group cursor-pointer">
+          <div class="overflow-hidden rounded-[2.5rem] mb-8 shadow-sm border border-[#F3F4F6] aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000" class="article-img w-full h-full object-cover group-hover:scale-110">
+          </div>
+          <h3 class="text-[24px] font-[800] tight-heading mb-4 group-hover:text-[#76B1B8] transition-colors">
+            Why Automation is the Future of Marketing
+          </h3>
+          <p class="text-[#6B7280] text-[15px] leading-relaxed mb-6 font-medium sub-heading">
+            Discover how AI-powered automation systems are revolutionizing how businesses attract, convert, and retain clients.
+          </p>
+          <a href="#" class="inline-block text-[13px] font-[800] tracking-[0.25em] text-[#111827] uppercase border-b-[3px] border-[#111827] pb-1 hover:text-[#E59A5D] hover:border-[#E59A5D] transition-all">
+            Read More
+          </a>
+        </div>
+
+        <div class="group cursor-pointer">
+          <div class="overflow-hidden rounded-[2.5rem] mb-8 shadow-sm border border-[#F3F4F6] aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1000" class="article-img w-full h-full object-cover group-hover:scale-110">
+          </div>
+          <h3 class="text-[24px] font-[800] tight-heading mb-4 group-hover:text-[#76B1B8] transition-colors">
+            Scaling Your Agency with Modern Systems
+          </h3>
+          <p class="text-[#6B7280] text-[15px] leading-relaxed mb-6 font-medium sub-heading">
+            Learn the core infrastructure needed to scale your operations without adding massive overhead.
+          </p>
+          <a href="#" class="inline-block text-[13px] font-[800] tracking-[0.25em] text-[#111827] uppercase border-b-[3px] border-[#111827] pb-1 hover:text-[#E59A5D] hover:border-[#E59A5D] transition-all">
+            Read More
+          </a>
+        </div>
+
+        <div class="group cursor-pointer">
+          <div class="overflow-hidden rounded-[2.5rem] mb-8 shadow-sm border border-[#F3F4F6] aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000" class="article-img w-full h-full object-cover group-hover:scale-110">
+          </div>
+          <h3 class="text-[24px] font-[800] tight-heading mb-4 group-hover:text-[#76B1B8] transition-colors">
+            Building a Culture of High Execution
+          </h3>
+          <p class="text-[#6B7280] text-[15px] leading-relaxed mb-6 font-medium sub-heading">
+            How to hire and manage teams that value ownership and curiosity over titles and busy work.
+          </p>
+          <a href="#" class="inline-block text-[13px] font-[800] tracking-[0.25em] text-[#111827] uppercase border-b-[3px] border-[#111827] pb-1 hover:text-[#E59A5D] hover:border-[#E59A5D] transition-all">
+            Read More
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-black py-28 px-6 text-white overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center mb-10">
+        <h2 class="text-[52px] md:text-[64px] font-[800] tight-heading mb-6">
+          Career <span class="brand-gradient-text">Opportunities</span>
+        </h2>
+        <p class="text-[#9CA3AF] text-[17px] font-medium mb-12 sub-heading">
+          Explore roles and discover what it's like to work with us.
+        </p>
+      </div>
+
+      <div class="flex justify-end mb-16">
+        <button class="px-8 py-3.5 rounded-2xl brand-gradient-bg text-white font-[800] text-[15px] shadow-lg hover:scale-105 transition-transform">
+          Add new Career Post
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        
+        <div class="group cursor-pointer">
+          <div class="overflow-hidden rounded-[2.5rem] mb-6 aspect-[4/3] border border-[#1F2937]">
+            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1000" class="article-img w-full h-full object-cover group-hover:scale-110">
+          </div>
+          <h3 class="text-[24px] font-[800] tight-heading mb-3">Join Our SEO Team</h3>
+          <p class="text-[#9CA3AF] text-[15px] mb-5 font-medium leading-relaxed sub-heading">Own organic growth strategies across multiple industries.</p>
+          <a href="#" class="inline-block text-[13px] font-[800] tracking-[0.25em] text-white uppercase border-b-2 border-white pb-1 hover:text-[#76B1B8] hover:border-[#76B1B8] transition-all">
+            DISCOVER
+          </a>
+        </div>
+
+        <div class="group cursor-pointer">
+          <div class="overflow-hidden rounded-[2.5rem] mb-6 aspect-[4/3] border border-[#1F2937]">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1000" class="article-img w-full h-full object-cover group-hover:scale-110">
+          </div>
+          <h3 class="text-[24px] font-[800] tight-heading mb-3">Automation Engineer</h3>
+          <p class="text-[#9CA3AF] text-[15px] mb-5 font-medium leading-relaxed sub-heading">Build systems that save thousands of hours for our clients.</p>
+          <a href="#" class="inline-block text-[13px] font-[800] tracking-[0.25em] text-white uppercase border-b-2 border-white pb-1 hover:text-[#76B1B8] hover:border-[#76B1B8] transition-all">
+            DISCOVER
+          </a>
+        </div>
+
+        <div class="group cursor-pointer">
+          <div class="overflow-hidden rounded-[2.5rem] mb-6 aspect-[4/3] border border-[#1F2937]">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" class="article-img w-full h-full object-cover group-hover:scale-110">
+          </div>
+          <h3 class="text-[24px] font-[800] tight-heading mb-3">Creative Strategist</h3>
+          <p class="text-[#9CA3AF] text-[15px] mb-5 font-medium leading-relaxed sub-heading">Blend data and design to create high-converting assets.</p>
+          <a href="#" class="inline-block text-[13px] font-[800] tracking-[0.25em] text-white uppercase border-b-2 border-white pb-1 hover:text-[#76B1B8] hover:border-[#76B1B8] transition-all">
+            DISCOVER
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
