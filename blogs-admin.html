@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Blogs Admin</title>
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .brand-gradient-text {
+      background: linear-gradient(to right, #E59A5D, #76B1B8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .brand-gradient-bg {
+      background: linear-gradient(135deg, #E59A5D 0%, #76B1B8 100%);
+    }
+    .glass-card {
+      background: rgba(30, 30, 30, 0.7);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      border: 1.5px solid rgba(255,255,255,0.08);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .glass-card:hover {
+      box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+      transform: translateY(-4px) scale(1.01);
+    }
+    .delete-btn {
+      background: linear-gradient(90deg, #E59A5D, #76B1B8);
+      color: #fff;
+      border: none;
+      border-radius: 9999px;
+      padding: 0.5rem 1.2rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 1rem;
+      margin-left: auto;
+      display: block;
+      box-shadow: 0 2px 8px 0 rgba(229,154,93,0.10);
+    }
+    .delete-btn:hover {
+      background: linear-gradient(90deg, #76B1B8, #E59A5D);
+      transform: scale(1.05);
+    }
+    .preview-label {
+      color: #76B1B8;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      margin-top: 2rem;
+      display: block;
+      letter-spacing: 0.05em;
+    }
+    .shape {
+      position: fixed;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.5;
+      filter: blur(1px);
+    }
+    .shape1 { top: -40px; left: 40px; width: 80px; height: 80px; border-radius: 50%; border: 3px solid #76B1B8; }
+    .shape2 { top: 60px; right: 80px; width: 60px; height: 60px; border-radius: 50%; border: 3px solid #E59A5D; }
+    .shape3 { bottom: 0; left: 0; width: 120px; height: 120px; border-radius: 30px; background: linear-gradient(135deg, #E59A5D 0%, #76B1B8 100%); }
+    .shape4 { bottom: 0; right: 0; width: 100px; height: 100px; border-radius: 30px; background: #76B1B8; }
+    .shape5 { top: 40%; left: 10%; width: 60px; height: 60px; border-radius: 50%; border: 3px solid #E59A5D; }
+    .shape6 { bottom: 20%; right: 12%; width: 50px; height: 50px; border-radius: 50%; border: 3px solid #76B1B8; }
+  </style>
+</head>
+<body class="bg-[#0B0B0B] min-h-screen flex flex-col items-center py-10 antialiased">
+  <!-- Decorative shapes outside the main container -->
+  <div class="pointer-events-none select-none">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
+    <div class="shape shape5"></div>
+    <div class="shape shape6"></div>
+  </div>
+  <section class="relative w-full max-w-2xl mb-12 z-10">
+    <h1 class="text-4xl font-bold mb-8 text-center tracking-tight text-white">Blogs <span class="brand-gradient-text">Admin</span></h1>
+    <form class="glass-card p-8 w-full" id="blogForm" enctype="multipart/form-data">
+      <div class="mb-6">
+        <label class="block mb-2 font-semibold text-white">Blog Title</label>
+        <input type="text" name="title" class="w-full border border-[#222] bg-[#222] text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#76B1B8]" required />
+      </div>
+      <div class="mb-6">
+        <label class="block mb-2 font-semibold text-white">Content</label>
+        <textarea name="content" class="w-full border border-[#222] bg-[#222] text-white rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#E59A5D]" required></textarea>
+      </div>
+      <div class="mb-6">
+        <label class="block mb-2 font-semibold text-white">Image</label>
+        <input type="file" name="image" accept="image/*" class="w-full text-white" id="blogImageInput" />
+      </div>
+      <span class="preview-label">Live Preview</span>
+      <div id="livePreview" class="glass-card p-6 mb-8"></div>
+      <button type="submit" class="brand-gradient-bg text-white px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition-transform">Add Blog</button>
+    </form>
+  </section>
+  <section class="w-full max-w-2xl">
+    <h2 class="text-2xl font-bold mb-6 text-white">Blog Posts</h2>
+    <ul id="blogList" class="grid grid-cols-1 gap-6"></ul>
+  </section>
+  <script>
+    // Load blogs from localStorage if available
+    let blogs = [];
+    if (localStorage.getItem('pixelhive_blogs')) {
+      blogs = JSON.parse(localStorage.getItem('pixelhive_blogs'));
+    }
+    const imageInput = document.getElementById('blogImageInput');
+    const livePreview = document.getElementById('livePreview');
+    const list = document.getElementById('blogList');
+    const form = document.getElementById('blogForm');
+
+    // Live preview state
+    let previewTitle = '';
+    let previewContent = '';
+    let previewImage = '';
+
+      function updatePreview() {
+        livePreview.innerHTML = `
+          <div class="flex flex-col items-start">
+            ${previewImage ? `<img src="${previewImage}" alt="Preview" class="w-full aspect-[4/3] object-cover rounded-[2.5rem] mb-6 shadow-sm border border-[#F3F4F6]" />` : `<div class='w-full aspect-[4/3] rounded-[2.5rem] mb-6 bg-[#222] flex items-center justify-center text-[#444] text-xl border border-[#F3F4F6]'>Image Preview</div>`}
+            <h3 class="text-[24px] font-extrabold mb-3 leading-tight" style="font-family: 'Poppins',sans-serif;">${previewTitle || '<span class=\'text-[#666]\'>Blog Title</span>'}</h3>
+            <p class="text-[#6B7280] text-[15px] leading-relaxed mb-6 font-medium" style="font-family: 'Poppins',sans-serif;">${previewContent || '<span class=\'text-[#444]\'>Blog content preview...</span>'}</p>
+            <a href="#" class="inline-block text-[13px] font-extrabold tracking-[0.25em] text-[#111827] uppercase border-b-[3px] border-[#111827] pb-1 hover:text-[#E59A5D] hover:border-[#E59A5D] transition-all" style="font-family: 'Poppins',sans-serif;">READ MORE</a>
+          </div>
+        `;
+      }
+
+    form.title.addEventListener('input', e => {
+      previewTitle = e.target.value;
+      updatePreview();
+    });
+    form.content.addEventListener('input', e => {
+      previewContent = e.target.value;
+      updatePreview();
+    });
+    imageInput.addEventListener('change', function() {
+      if (imageInput.files && imageInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          previewImage = evt.target.result;
+          updatePreview();
+        };
+        reader.readAsDataURL(imageInput.files[0]);
+      } else {
+        previewImage = '';
+        updatePreview();
+      }
+    });
+    updatePreview();
+
+    form.onsubmit = function(e) {
+      e.preventDefault();
+      const title = form.title.value;
+      const content = form.content.value;
+      let imageUrl = '';
+      if (imageInput.files && imageInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          imageUrl = evt.target.result;
+          blogs.unshift({ title, content, imageUrl });
+          localStorage.setItem('pixelhive_blogs', JSON.stringify(blogs));
+          render();
+        };
+        reader.readAsDataURL(imageInput.files[0]);
+      } else {
+        blogs.unshift({ title, content, imageUrl: '' });
+        localStorage.setItem('pixelhive_blogs', JSON.stringify(blogs));
+        render();
+      }
+      form.reset();
+      previewTitle = '';
+      previewContent = '';
+      previewImage = '';
+      updatePreview();
+    };
+
+    function deleteBlog(idx) {
+      if (confirm('Delete this blog post?')) {
+        blogs.splice(idx, 1);
+        localStorage.setItem('pixelhive_blogs', JSON.stringify(blogs));
+        render();
+      }
+    }
+
+    function render() {
+      list.innerHTML = blogs.map((b, i) => `
+        <li class='glass-card p-8 text-white relative'>
+          <div class="flex items-center mb-2">
+            <div class="w-6 h-6 mr-3 brand-gradient-bg rounded-lg"></div>
+            <span class='text-lg font-bold'>${b.title}</span>
+          </div>
+          ${b.imageUrl ? `<img src="${b.imageUrl}" alt="Blog Image" class="w-full max-h-48 object-cover rounded-xl mb-4 border border-[#222] shadow-lg" />` : ''}
+          <div class='text-[#9CA3AF] text-sm mb-2'>${b.content}</div>
+          <button class="delete-btn" onclick="deleteBlog(${i})">Delete</button>
+        </li>
+      `).join('');
+    }
+    render();
+  </script>
+</body>
+</html>
