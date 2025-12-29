@@ -20,12 +20,51 @@
 </head>
 <body class="bg-white antialiased">
 
-<section class="relative w-full h-[400px] overflow-hidden">
-  <div class="absolute inset-0 flex items-start justify-center pt-24 z-10">
-    <button class="px-10 py-3 rounded-full text-white text-[14px] font-semibold brand-gradient-bg shadow-lg hover:scale-105 transition-transform">
-      Careers at Pixel Hive
-    </button>
+<section class="relative w-full flex flex-col items-center justify-center bg-white overflow-hidden mb-[-200px]">
+  
+  <div class="absolute inset-0 pointer-events-none z-0">
+    <div class="hidden md:block absolute top-20 left-1/4 w-16 h-16 border-2 border-[#76B1B8] rounded-full opacity-40"></div>
+    <div class="hidden md:block absolute top-10 right-24 w-16 h-16 border-2 border-[#E59A5D] rounded-full opacity-40"></div>
+    <div class="absolute top-1/4 left-10 w-8 h-8 rotate-12 bg-gradient-to-br from-[#E59A5D] to-[#76B1B8] rounded-lg opacity-60"></div>
+    <div class="absolute bottom-1/4 right-10 w-12 h-12 rotate-12 bg-[#76B1B8] rounded-lg opacity-50"></div>
+    <div class="absolute top-1/2 left-10 w-4 h-20 bg-[#E59A5D] rotate-45 rounded-full opacity-40"></div>
+    <div class="absolute bottom-20 left-1/3 w-8 h-8 bg-[#76B1B8] rotate-12 rounded-lg opacity-40"></div>
+    <div class="absolute top-1/3 right-10 w-4 h-16 bg-[#E59A5D] rotate-12 rounded-full opacity-40"></div>
+    <div class="absolute bottom-20 right-1/4 w-16 h-16 border-2 border-[#76B1B8] rounded-lg opacity-30"></div>
   </div>
+
+  <div class="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl">
+    
+    <div class="mb-8 pt-[150px]">
+      <span class="inline-block px-8 py-2 rounded-full text-white text-[15px] font-semibold bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] shadow-lg">
+        Careers at Pixel Hive
+      </span>
+    </div>
+
+    <h1 class="text-[40px] md:text-[64px] font-extrabold mb-0 leading-tight text-[#111] tracking-tight">
+      Build the Future of
+    </h1>
+    <h2 class="text-[38px] md:text-[60px] font-extrabold mb-8 tracking-tight" style="color: #B29A7A;">
+      Automated Growth
+    </h2>
+
+    <div class="space-y-4 max-w-2xl">
+      <p class="text-[18px] md:text-[20px] text-[#222] font-semibold">
+        Pixel Hive isn't your typical marketing agency.
+      </p>
+      <p class="text-[16px] md:text-[18px] text-gray-600 leading-relaxed">
+        We build growth ecosystems. Combining marketing, CRM, automation, AI, and strategy to help businesses scale <span class="font-bold italic text-[#76B1B8]">smarter, not harder.</span>
+      </p>
+      <p class="text-[16px] md:text-[18px] font-bold text-[#111] pt-6">
+        If you're ambitious, curious, and excited by tech, systems, and real-world impact, you'll feel right at home here.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="relative w-full h-[400px] overflow-hidden">
+  <!-- Removed button, now handled above as heading -->
 
   <div class="absolute top-10 left-32 w-8 h-8 rounded-full border-2 border-[#76B1B8] opacity-40"></div>
   <div class="absolute top-12 left-1/4 w-2 h-10 bg-[#E59A5D] rotate-45 rounded-full"></div>
@@ -143,7 +182,24 @@
       <div class="accordion-item bg-white border-[1.5px] border-[#D1E5E8] rounded-[2.2rem] overflow-hidden shadow-sm transition-all hover:border-[#76B1B8]">
         <div class="accordion-header flex items-center justify-between p-7 cursor-pointer group">
           <div class="flex items-center">
-            <div class="w-16 h-16 brand-gradient-bg rounded-2xl shrink-0 mr-6 shadow-sm"></div>
+            <!-- Icon for Interns (Marketing / Automation / Design) -->
+            <div class="w-16 h-16 rounded-full shrink-0 mr-6 shadow-sm flex items-center justify-center border-4" style="border-image: linear-gradient(135deg, #E59A5D, #76B1B8) 1; background: white;">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="10" fill="white"/>
+                <path d="M16 10V22" stroke="url(#paint0_linear)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M10 16H22" stroke="url(#paint1_linear)" stroke-width="2.5" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="paint0_linear" x1="16" y1="10" x2="16" y2="22" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E59A5D"/>
+                    <stop offset="1" stop-color="#76B1B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint1_linear" x1="10" y1="16" x2="22" y2="16" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E59A5D"/>
+                    <stop offset="1" stop-color="#76B1B8"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
             <div>
               <h3 class="text-[20px] font-bold text-[#111827]">Interns (Marketing / Automation / Design)</h3>
               <div class="flex items-center gap-6 mt-1.5 text-[13px] text-[#9CA3AF] font-medium">
@@ -193,7 +249,24 @@
       <div class="accordion-item bg-white border-[1.5px] border-[#D1E5E8] rounded-[2.2rem] overflow-hidden shadow-sm transition-all hover:border-[#76B1B8]">
         <div class="accordion-header flex items-center justify-between p-7 cursor-pointer group">
           <div class="flex items-center">
-            <div class="w-16 h-16 brand-gradient-bg rounded-2xl shrink-0 mr-6 shadow-sm"></div>
+            <!-- Icon for SEO Specialist -->
+            <div class="w-16 h-16 rounded-full shrink-0 mr-6 shadow-sm flex items-center justify-center border-4" style="border-image: linear-gradient(135deg, #E59A5D, #76B1B8) 1; background: white;">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="10" fill="white"/>
+                <path d="M12 20L20 12" stroke="url(#paint2_linear)" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="16" cy="16" r="4" stroke="url(#paint3_linear)" stroke-width="2" fill="none"/>
+                <defs>
+                  <linearGradient id="paint2_linear" x1="12" y1="20" x2="20" y2="12" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E59A5D"/>
+                    <stop offset="1" stop-color="#76B1B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint3_linear" x1="12" y1="16" x2="20" y2="16" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E59A5D"/>
+                    <stop offset="1" stop-color="#76B1B8"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
             <div>
               <h3 class="text-[20px] font-bold text-[#111827]">SEO Specialist</h3>
               <div class="flex items-center gap-6 mt-1.5 text-[13px] text-[#9CA3AF] font-medium">
@@ -245,7 +318,24 @@
       <div class="accordion-item bg-white border-[1.5px] border-[#D1E5E8] rounded-[2.2rem] overflow-hidden shadow-sm transition-all hover:border-[#76B1B8]">
         <div class="accordion-header flex items-center justify-between p-7 cursor-pointer group">
           <div class="flex items-center">
-            <div class="w-16 h-16 brand-gradient-bg rounded-2xl shrink-0 mr-6 shadow-sm"></div>
+            <!-- Icon for CRM & Automation Specialist -->
+            <div class="w-16 h-16 rounded-full shrink-0 mr-6 shadow-sm flex items-center justify-center border-4" style="border-image: linear-gradient(135deg, #E59A5D, #76B1B8) 1; background: white;">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="10" fill="white"/>
+                <rect x="12" y="12" width="8" height="8" rx="2" stroke="url(#paint4_linear)" stroke-width="2.5" fill="none"/>
+                <path d="M16 14V18" stroke="url(#paint5_linear)" stroke-width="2" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="paint4_linear" x1="12" y1="12" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E59A5D"/>
+                    <stop offset="1" stop-color="#76B1B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint5_linear" x1="16" y1="14" x2="16" y2="18" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E59A5D"/>
+                    <stop offset="1" stop-color="#76B1B8"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
             <div>
               <h3 class="text-[20px] font-bold text-[#111827]">CRM & Automation Specialist</h3>
               <div class="flex items-center gap-6 mt-1.5 text-[13px] text-[#9CA3AF] font-medium">
@@ -298,7 +388,29 @@
       <div class="accordion-item bg-white border-[1.5px] border-[#D1E5E8] rounded-[2.2rem] overflow-hidden shadow-sm transition-all hover:border-[#76B1B8]">
         <div class="accordion-header flex items-center justify-between p-7 cursor-pointer group">
           <div class="flex items-center">
-            <div class="w-16 h-16 brand-gradient-bg rounded-2xl shrink-0 mr-6 shadow-sm"></div>
+            <!-- Icon for Sales Specialist -->
+            <div class="w-16 h-16 rounded-full shrink-0 mr-6 shadow-sm flex items-center justify-center border-4" style="border-image: linear-gradient(135deg, #E59A5D, #76B1B8) 1; background: white;">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="10" fill="white"/>
+                <path d="M12 20L20 12" stroke="url(#paint6_linear)" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="16" cy="16" r="4" stroke="url(#paint7_linear)" stroke-width="2" fill="none"/>
+                <rect x="14" y="14" width="4" height="4" rx="1" stroke="url(#paint8_linear)" stroke-width="2" fill="none"/>
+                <defs>
+                  <linearGradient id="paint6_linear" x1="12" y1="20" x2="20" y2="12" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E59A5D"/>
+                    <stop offset="1" stop-color="#76B1B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint7_linear" x1="12" y1="16" x2="20" y2="16" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E59A5D"/>
+                    <stop offset="1" stop-color="#76B1B8"/>
+                  </linearGradient>
+                  <linearGradient id="paint8_linear" x1="14" y1="14" x2="18" y2="18" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E59A5D"/>
+                    <stop offset="1" stop-color="#76B1B8"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
             <div>
               <h3 class="text-[20px] font-bold text-[#111827]">Sales Specialist</h3>
               <div class="flex items-center gap-6 mt-1.5 text-[13px] text-[#9CA3AF] font-medium">
