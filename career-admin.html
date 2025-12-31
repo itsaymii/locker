@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Career Admin Panel</title>
+                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+                <script src="https://cdn.tailwindcss.com"></script>
+                <style>
+                    body, .font-sans { font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; }
+                </style>
+        <script>
+            
+            // CRUD for Why Work Here cards and Roles
+            document.addEventListener('DOMContentLoaded', function () {
+                // Sidebar logic (unchanged)
+                const sections = [
+                    'career-section',
+                    'why-section',
+                    'role-section',
+                    'apply-section'
+                ];
+                const links = document.querySelectorAll('.sidebar-link');
+                function showSection(id) {
+                    sections.forEach(sec => {
+                        const el = document.getElementById(sec);
+                        if (el) {
+                            if (sec === id) {
+                                el.classList.remove('hidden');
+                            } else {
+                                el.classList.add('hidden');
+                            }
+                        }
+                    });
+                    links.forEach(link => {
+                        const href = link.getAttribute('href').replace('#', '');
+                        if (href === id) {
+                            link.classList.add('bg-[#2a3f4d]', 'text-white');
+                            link.classList.remove('text-gray-300');
+                        } else {
+                            link.classList.remove('bg-[#2a3f4d]', 'text-white');
+                            link.classList.add('text-gray-300');
+                        }
+                    });
+                }
+                links.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = this.getAttribute('href').replace('#', '');
+                        showSection(target);
+                        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+                    });
+                });
+                showSection('career-section');
+
+                // --- Why Work Here CRUD (unchanged) ---
+                const defaultCards = [
+                    { title: 'Work on real client growth systems not busy work', desc: 'Build meaningful solutions that actually drive business results.' },
+                    { title: 'Exposure to AI, automation, CRM, and modern marketing stacks', desc: 'Learn cutting-edge tools and technologies that shape the future.' },
+                    { title: 'Remote-first culture with flexible work arrangements', desc: 'Work from anywhere, anytime — we trust you to deliver.' },
+                    { title: 'Clear growth pathways and skill development', desc: 'Continuous learning opportunities and clear career progression.' },
+                    { title: 'Collaborative, supportive, no-ego team culture', desc: 'Work with talented people who genuinely want you to succeed.' }
+                ];
+                function getCards() {
+                    const data = localStorage.getItem('whyWorkHereCards');
+                    if (data) { try { return JSON.parse(data); } catch { return defaultCards; } }
+                    return defaultCards;
+                }
+                function setCards(cards) { localStorage.setItem('whyWorkHereCards', JSON.stringify(cards)); }
+                function renderCards() {
+                    const container = document.querySelector('#why-section .grid');
+                    const cards = getCards();
+                    container.innerHTML = '';
+                    cards.forEach((card, idx) => {
+                        const cardDiv = document.createElement('div');
+                        cardDiv.className = 'bg-black rounded-2xl p-8 border border-[#222] flex flex-col h-full relative';
+                        cardDiv.innerHTML = `
+                            <div class="flex items-start justify-between mb-7">
+                                <div class="w-12 h-12 brand-gradient-bg rounded-xl"></div>
+                                <div class="flex gap-3 text-white/80 text-lg">
+                                    <button class="edit-btn hover:text-[#E59A5D] transition-colors" title="Edit" data-idx="${idx}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                                    </button>
+                                    <button class="delete-btn hover:text-[#E0595D] transition-colors" title="Delete" data-idx="${idx}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <h3 class="text-[20px] font-semibold mb-2 text-white leading-snug tracking-tight card-title">${card.title.replace(/\n/g, '<br>')}</h3>
+                            <p class="text-[15px] text-[#b0b8c1] leading-relaxed font-medium card-desc">${card.desc}</p>
+                        `;
+                        container.appendChild(cardDiv);
+                    });
+                    // Add event listeners for edit/delete
+                    container.querySelectorAll('.edit-btn').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const idx = +this.dataset.idx;
+                            showEditForm(idx);
+                        });
+                    });
+                    container.querySelectorAll('.delete-btn').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const idx = +this.dataset.idx;
+                            if (confirm('Delete this card?')) {
+                                const cards = getCards();
+                                cards.splice(idx, 1);
+                                setCards(cards);
+                                renderCards();
+                            }
+                        });
+                    });
+                }
+                function showEditForm(idx) {
+                    const container = document.querySelector('#why-section .grid');
+                    const cards = getCards();
+                    const card = cards[idx];
+                    container.children[idx].innerHTML = `
+                        <div class="flex items-start justify-between mb-7">
+                            <div class="w-12 h-12 brand-gradient-bg rounded-xl"></div>
+                        </div>
+                        <input type="text" class="w-full mb-2 p-2 rounded bg-[#181818] text-white border border-[#333] card-title-input" value="${card.title.replace(/"/g, '&quot;')}">
+                        <textarea class="w-full mb-4 p-2 rounded bg-[#181818] text-white border border-[#333] card-desc-input" rows="3">${card.desc}</textarea>
+                        <div class="flex gap-2">
+                            <button class="save-btn px-4 py-2 bg-[#E59A5D] text-white rounded hover:opacity-90">Save</button>
+                            <button class="cancel-btn px-4 py-2 bg-[#222] text-white rounded hover:opacity-80">Cancel</button>
+                        </div>
+                    `;
+                    container.children[idx].querySelector('.save-btn').addEventListener('click', function() {
+                        const newTitle = container.children[idx].querySelector('.card-title-input').value;
+                        const newDesc = container.children[idx].querySelector('.card-desc-input').value;
+                        cards[idx] = { title: newTitle, desc: newDesc };
+                        setCards(cards);
+                        renderCards();
+                    });
+                    container.children[idx].querySelector('.cancel-btn').addEventListener('click', function() {
+                        renderCards();
+                    });
+                }
+                document.querySelector('#why-section button.bg-gradient-to-r').addEventListener('click', function() {
+                    const cards = getCards();
+                    cards.push({ title: 'New Benefit Title', desc: 'Benefit description here.' });
+                    setCards(cards);
+                    renderCards();
+                });
+                renderCards();
+
+                // --- Roles CRUD ---
+                const defaultRoles = [
+                    { icon: '🎓', title: 'Interns (Marketing / Automation / Design)', location: 'Remote/Hybrid', type: 'Internship', status: 'Active' },
+                    { icon: '🔍', title: 'SEO Specialist', location: 'Remote', type: 'Full-time / Part-time', status: 'Active' },
+                    { icon: '⚙️', title: 'CRM & Automation Specialist', location: 'Remote', type: 'Full-time / Part-time', status: 'Active' },
+                    { icon: '💼', title: 'Sales Specialist', location: 'Remote', type: 'Full-time / Part-time', status: 'Active' }
+                ];
+                function getRoles() {
+                    const data = localStorage.getItem('careerRoles');
+                    if (data) { try { return JSON.parse(data); } catch { return defaultRoles; } }
+                    return defaultRoles;
+                }
+                function setRoles(roles) { localStorage.setItem('careerRoles', JSON.stringify(roles)); }
+                function renderRoles() {
+                    const tbody = document.querySelector('#role-section table tbody');
+                    const roles = getRoles();
+                    tbody.innerHTML = '';
+                    roles.forEach((role, idx) => {
+                        const tr = document.createElement('tr');
+                        tr.className = 'border-t border-gray-100 hover:bg-[#f7fafc] transition-colors';
+                                                tr.innerHTML = `
+                                                    <td class="px-6 py-4 font-semibold flex items-center gap-3">
+                                                        ${role.icon && role.icon.startsWith('data:image')
+                                                            ? `<img src="${role.icon}" alt="icon" class="w-8 h-8 rounded-full object-cover border border-[#E59A5D]/40" />`
+                                                            : `<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#E59A5D]/20 text-[#E59A5D] text-xl">${role.icon || '💼'}</span>`}
+                                                        <span>${role.title}</span>
+                                                    </td>
+                          <td class="px-6 py-4 text-gray-600">${role.location}</td>
+                          <td class="px-6 py-4 text-gray-600">${role.type}</td>
+                          <td class="px-6 py-4">
+                            <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">${role.status}</span>
+                          </td>
+                          <td class="px-6 py-4">
+                            <div class="flex gap-2">
+                              <button class="role-edit-btn p-2 hover:bg-[#E59A5D]/10 rounded-full transition-colors" title="Edit" data-idx="${idx}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                              </button>
+                              <button class="role-delete-btn p-2 hover:bg-[#E0595D]/10 rounded-full transition-colors" title="Delete" data-idx="${idx}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                              </button>
+                            </div>
+                          </td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                    // Edit
+                    tbody.querySelectorAll('.role-edit-btn').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const idx = +this.dataset.idx;
+                            showRoleEditForm(idx);
+                        });
+                    });
+                    // Delete
+                    tbody.querySelectorAll('.role-delete-btn').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                            const idx = +this.dataset.idx;
+                            if (confirm('Delete this role?')) {
+                                const roles = getRoles();
+                                roles.splice(idx, 1);
+                                setRoles(roles);
+                                renderRoles();
+                            }
+                        });
+                    });
+                }
+                function showRoleEditForm(idx) {
+                                        const tbody = document.querySelector('#role-section table tbody');
+                                        const roles = getRoles();
+                                        const role = roles[idx];
+                                        const tr = tbody.children[idx];
+                                        // Helper to join array to textarea
+                                        function arr(val) { return Array.isArray(val) ? val.join('\n') : (val||''); }
+                                        tr.innerHTML = `
+                                            <td colspan="5" class="px-6 py-4 bg-gray-50" style="vertical-align:top;">
+                                                <div class="grid grid-cols-2 gap-4">
+                                                    <div>
+                                                        <label class="block text-xs mb-1">Icon Image</label>
+                                                        <input type="file" accept="image/*" class="role-icon-input mb-2" />
+                                                        <div class="mt-1">
+                                                            ${role.icon && role.icon.startsWith('data:image')
+                                                                ? `<img src="${role.icon}" alt="icon" class="w-12 h-12 rounded-full object-cover border border-[#E59A5D]/40" />`
+                                                                : role.icon ? `<span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#E59A5D]/20 text-[#E59A5D] text-2xl">${role.icon}</span>` : ''}
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <label class="block text-xs mb-1">Status</label>
+                                                        <input type="text" class="w-full rounded bg-gray-100 border border-gray-300 px-2 py-1 mb-2" value="${role.status ? role.status.replace(/"/g, '&quot;') : ''}" />
+                                                    </div>
+                                                    <div class="col-span-2">
+                                                        <label class="block text-xs mb-1">Title</label>
+                                                        <input type="text" class="w-full rounded bg-gray-100 border border-gray-300 px-2 py-1 mb-2" value="${role.title ? role.title.replace(/"/g, '&quot;') : ''}" />
+                                                    </div>
+                                                    <div>
+                                                        <label class="block text-xs mb-1">Location</label>
+                                                        <input type="text" class="w-full rounded bg-gray-100 border border-gray-300 px-2 py-1 mb-2" value="${role.location ? role.location.replace(/"/g, '&quot;') : ''}" />
+                                                    </div>
+                                                    <div>
+                                                        <label class="block text-xs mb-1">Type</label>
+                                                        <input type="text" class="w-full rounded bg-gray-100 border border-gray-300 px-2 py-1 mb-2" value="${role.type ? role.type.replace(/"/g, '&quot;') : ''}" />
+                                                    </div>
+                                                    <div class="col-span-2">
+                                                        <label class="block text-xs mb-1">Why this role matters</label>
+                                                        <textarea class="w-full rounded bg-gray-100 border border-gray-300 px-2 py-1 mb-2" rows="2">${role.why ? role.why.replace(/</g,'&lt;') : ''}</textarea>
+                                                    </div>
+                                                    <div class="col-span-2">
+                                                        <label class="block text-xs mb-1">What you'll do (one per line)</label>
+                                                        <textarea class="w-full rounded bg-gray-100 border border-gray-300 px-2 py-1 mb-2" rows="3">${arr(role.what)}</textarea>
+                                                    </div>
+                                                    <div class="col-span-2">
+                                                        <label class="block text-xs mb-1">What we're looking for (one per line)</label>
+                                                        <textarea class="w-full rounded bg-gray-100 border border-gray-300 px-2 py-1 mb-2" rows="3">${arr(role.looking)}</textarea>
+                                                    </div>
+                                                    <div class="col-span-2">
+                                                        <label class="block text-xs mb-1">Bonus points (one per line, optional)</label>
+                                                        <textarea class="w-full rounded bg-gray-100 border border-gray-300 px-2 py-1 mb-2" rows="2">${arr(role.bonus)}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="flex gap-2 mt-4">
+                                                    <button class="role-save-btn px-4 py-2 bg-[#E59A5D] text-white rounded hover:opacity-90">Save</button>
+                                                    <button class="role-cancel-btn px-4 py-2 bg-[#222] text-white rounded hover:opacity-80">Cancel</button>
+                                                </div>
+                                            </td>
+                                        `;
+                                        tr.querySelector('.role-save-btn').addEventListener('click', function() {
+                                                const inputs = tr.querySelectorAll('input, textarea');
+                                                let icon = role.icon || '';
+                                                const fileInput = tr.querySelector('.role-icon-input');
+                                                if (fileInput && fileInput.files && fileInput.files[0]) {
+                                                    const reader = new FileReader();
+                                                    reader.onload = function(e) {
+                                                        icon = e.target.result;
+                                                        saveRole();
+                                                    };
+                                                    reader.readAsDataURL(fileInput.files[0]);
+                                                } else {
+                                                    icon = inputs[0].value || icon;
+                                                    saveRole();
+                                                }
+                                                function saveRole() {
+                                                    const status = inputs[1].value;
+                                                    const title = inputs[2].value;
+                                                    const location = inputs[3].value;
+                                                    const type = inputs[4].value;
+                                                    const why = inputs[5].value;
+                                                    const what = inputs[6].value.split('\n').map(s=>s.trim()).filter(Boolean);
+                                                    const looking = inputs[7].value.split('\n').map(s=>s.trim()).filter(Boolean);
+                                                    const bonus = inputs[8].value.split('\n').map(s=>s.trim()).filter(Boolean);
+                                                    roles[idx] = { icon, title, location, type, status, why, what, looking, bonus };
+                                                    setRoles(roles);
+                                                    renderRoles();
+                                                }
+                                        });
+                                        tr.querySelector('.role-cancel-btn').addEventListener('click', function() {
+                                                renderRoles();
+                                        });
+                }
+                // Add Role
+                document.querySelector('#role-section button.bg-gradient-to-r').addEventListener('click', function() {
+                    const roles = getRoles();
+                    roles.push({ icon: '💼', title: 'New Role', location: '', type: '', status: 'Active' });
+                    setRoles(roles);
+                    renderRoles();
+                });
+                renderRoles();
+            });
+        </script>
+</head>
+<body>
+    <div class="flex min-h-screen bg-gray-50 font-sans">
+        <!-- Sidebar -->
+        <aside class="w-52 bg-[#1a1a1a] text-white p-6 flex flex-col">
+            <div class="mb-12">
+                <h1 class="text-xl mb-1">Career Page</h1>
+                <p class="text-sm text-gray-400">Admin Panel</p>
+            </div>
+            
+            <nav class="space-y-2 flex-1">
+                <a href="#career-section" class="sidebar-link block w-full text-left px-4 py-3 rounded transition-colors text-gray-300 hover:text-white hover:bg-[#252525]">
+                    Career Section
+                </a>
+                <a href="#why-section" class="sidebar-link block w-full text-left px-4 py-3 rounded transition-colors text-gray-300 hover:text-white hover:bg-[#252525]">
+                    Why Work Here Section
+                </a>
+                <a href="#role-section" class="sidebar-link block w-full text-left px-4 py-3 rounded transition-colors text-gray-300 hover:text-white hover:bg-[#252525]">
+                    Role Section
+                </a>
+                <a href="#apply-section" class="sidebar-link block w-full text-left px-4 py-3 rounded transition-colors text-gray-300 hover:text-white hover:bg-[#252525]">
+                    Apply Section
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <!-- Career Section -->
+            <div id="career-section">
+                <div class="flex items-start justify-between mb-8">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-1">Career</h2>
+                        <p class="text-gray-600">Manage your careers page hero section and content</p>
+                    </div>
+                    <button id="career-edit-btn" class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] text-white rounded-lg hover:opacity-90 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                        Edit Content
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6">
+                                        <!-- Dynamic Career Fields -->
+                                        <script>
+                                        // Render career fields from localStorage or default
+                                        (function() {
+                                            const defaultFields = [
+                                                'Careers at Pixel Hive',
+                                                'Build the Future of',
+                                                'Automated Growth',
+                                                "Pixel Hive isn't your typical marketing agency.",
+                                                'We build growth ecosystems. Combining marketing, CRM, automation, AI, and strategy to help businesses scale smarter, not harder.',
+                                                "If you're ambitious, curious, and excited by tech, systems, and real-world impact, you'll feel right at home here."
+                                            ];
+                                            let fields = defaultFields;
+                                            const data = localStorage.getItem('careerSectionFields');
+                                            if (data) {
+                                                try {
+                                                    const arr = JSON.parse(data);
+                                                    if (Array.isArray(arr) && arr.length === 6) {
+                                                        fields = arr.map((v, i) => v && v.trim() ? v : defaultFields[i]);
+                                                    }
+                                                } catch {}
+                                            }
+                                            const html = `
+                                                <div class="border border-gray-300 rounded-2xl p-6 bg-white">
+                                                    <h3 class="mb-6 flex items-center gap-2">
+                                                        <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                                                        Header Content
+                                                    </h3>
+                                                    <div class="space-y-4">
+                                                        <div>
+                                                            <label class="block text-sm mb-2">Badge Text</label>
+                                                            <input type="text" value="${fields[0].replace(/&/g,'&amp;').replace(/"/g,'&quot;')}" placeholder="Careers at Pixel Hive" class="w-full px-4 py-2 bg-gray-100 border border-gray-200 rounded-lg text-sm" />
+                                                        </div>
+                                                        <div>
+                                                            <label class="block text-sm mb-2">Title</label>
+                                                            <input type="text" value="${fields[1].replace(/&/g,'&amp;').replace(/"/g,'&quot;')}" placeholder="Build the Future of" class="w-full px-4 py-2 bg-gray-100 border border-gray-200 rounded-lg text-sm" />
+                                                        </div>
+                                                        <div>
+                                                            <label class="block text-sm mb-2">Subtitle</label>
+                                                            <input type="text" value="${fields[2].replace(/&/g,'&amp;').replace(/"/g,'&quot;')}" placeholder="Automated Growth" class="w-full px-4 py-2 bg-gray-100 border border-gray-200 rounded-lg text-sm" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="border border-gray-300 rounded-2xl p-6 bg-white">
+                                                    <h3 class="mb-6 flex items-center gap-2">
+                                                        <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                                                        Header Content
+                                                    </h3>
+                                                    <div class="space-y-4">
+                                                        <div>
+                                                            <label class="block text-sm mb-2">Main Description</label>
+                                                            <textarea placeholder="We build growth ecosystems. Combining marketing, CRM, automation, AI, and strategy to help businesses scale smarter, not harder." class="w-full px-4 py-2 bg-gray-100 border border-gray-200 rounded-lg text-sm h-24 resize-none">${fields[4]}</textarea>
+                                                        </div>
+                                                        <div>
+                                                            <label class="block text-sm mb-2">Call to Action (Bold)</label>
+                                                            <textarea placeholder="If you love problem-solving, crave real-world tech, business, and real impact, you'll feel right at home here." class="w-full px-4 py-2 bg-gray-100 border border-gray-200 rounded-lg text-sm h-24 resize-none">${fields[5]}</textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="border border-gray-300 rounded-2xl p-6 bg-white col-span-2">
+                                                    <h3 class="mb-6 flex items-center gap-2">
+                                                        <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                                                        Description (Intro)
+                                                    </h3>
+                                                    <div>
+                                                        <label class="block text-sm mb-2">First Line</label>
+                                                        <textarea placeholder="Pixel Hive isn't your typical marketing agency." class="w-full px-4 py-2 bg-gray-100 border border-gray-200 rounded-lg text-sm h-20 resize-none">${fields[3]}</textarea>
+                                                    </div>
+                                                </div>
+                                            `;
+                                            document.currentScript.insertAdjacentHTML('afterend', html);
+                                        })();
+                                        </script>
+                </div>
+            </div>
+
+            <!-- Why Work Here Section (Hidden by default) -->
+            <div id="why-section" class="hidden">
+                <div class="flex items-start justify-between mb-8">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-1">Why Work Here</h2>
+                        <p class="text-gray-600">Manage company benefits and culture highlights</p>
+                    </div>
+                    <button class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] text-white rounded-lg hover:opacity-90 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                        Add Benefit
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6">
+                    <!-- Benefit Card 1 -->
+                    <div class="bg-black rounded-2xl p-8 border border-[#222] flex flex-col h-full relative">
+                        <div class="flex items-start justify-between mb-7">
+                            <div class="w-12 h-12 brand-gradient-bg rounded-xl"></div>
+                            <div class="flex gap-3 text-white/80 text-lg">
+                                <button class="hover:text-[#E59A5D] transition-colors" title="Edit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                                </button>
+                                <button class="hover:text-[#E0595D] transition-colors" title="Delete">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="text-[20px] font-semibold mb-2 text-white leading-snug tracking-tight">Work on real client growth systems<br>not busy work</h3>
+                        <p class="text-[15px] text-[#b0b8c1] leading-relaxed font-medium">Build meaningful solutions that actually drive business results</p>
+                    </div>
+
+                    <!-- Benefit Card 2 -->
+                    <div class="bg-black rounded-2xl p-8 border border-[#222] flex flex-col h-full relative">
+                        <div class="flex items-start justify-between mb-7">
+                            <div class="w-12 h-12 brand-gradient-bg rounded-xl"></div>
+                            <div class="flex gap-3 text-white/80 text-lg">
+                                <button class="hover:text-[#E59A5D] transition-colors" title="Edit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                                </button>
+                                <button class="hover:text-[#E0595D] transition-colors" title="Delete">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="text-[20px] font-semibold mb-2 text-white leading-snug tracking-tight">Exposure to AI, automation, CRM,<br>and modern marketing stacks</h3>
+                        <p class="text-[15px] text-[#b0b8c1] leading-relaxed font-medium">Learn cutting-edge tools and technologies that shape the future</p>
+                    </div>
+
+                    <!-- Benefit Card 3 -->
+                    <div class="bg-black rounded-2xl p-8 border border-[#222] flex flex-col h-full relative">
+                        <div class="flex items-start justify-between mb-7">
+                            <div class="w-12 h-12 brand-gradient-bg rounded-xl"></div>
+                            <div class="flex gap-3 text-white/80 text-lg">
+                                <button class="hover:text-[#E59A5D] transition-colors" title="Edit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                                </button>
+                                <button class="hover:text-[#E0595D] transition-colors" title="Delete">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="text-[20px] font-semibold mb-2 text-white leading-snug tracking-tight">Remote-first culture with flexible<br>work arrangements</h3>
+                        <p class="text-[15px] text-[#b0b8c1] leading-relaxed font-medium">Work from anywhere, anytime — we trust you to deliver</p>
+                    </div>
+
+                    <!-- Benefit Card 4 -->
+                    <div class="bg-black rounded-2xl p-8 border border-[#222] flex flex-col h-full relative">
+                        <div class="flex items-start justify-between mb-7">
+                            <div class="w-12 h-12 brand-gradient-bg rounded-xl"></div>
+                            <div class="flex gap-3 text-white/80 text-lg">
+                                <button class="hover:text-[#E59A5D] transition-colors" title="Edit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                                </button>
+                                <button class="hover:text-[#E0595D] transition-colors" title="Delete">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="text-[20px] font-semibold mb-2 text-white leading-snug tracking-tight">Clear growth pathways and skill<br>development</h3>
+                        <p class="text-[15px] text-[#b0b8c1] leading-relaxed font-medium">Continuous learning opportunities and clear career progression</p>
+                    </div>
+
+                    <!-- Benefit Card 5 -->
+                    <div class="bg-black rounded-2xl p-8 border border-[#222] flex flex-col h-full relative">
+                        <div class="flex items-start justify-between mb-7">
+                            <div class="w-12 h-12 brand-gradient-bg rounded-xl"></div>
+                            <div class="flex gap-3 text-white/80 text-lg">
+                                <button class="hover:text-[#E59A5D] transition-colors" title="Edit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                                </button>
+                                <button class="hover:text-[#E0595D] transition-colors" title="Delete">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="text-[20px] font-semibold mb-2 text-white leading-snug tracking-tight">Collaborative, supportive, no-ego<br>team culture</h3>
+                        <p class="text-[15px] text-[#b0b8c1] leading-relaxed font-medium">Work with talented people who genuinely want you to succeed</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roles Section (Hidden by default) -->
+            <div id="role-section" class="hidden">
+                                <div class="flex items-start justify-between mb-8">
+                                        <div>
+                                                <h2 class="text-3xl font-bold mb-1">Roles</h2>
+                                                <p class="text-gray-600">Manage job openings and positions</p>
+                                        </div>
+                                        <button class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] text-white rounded-lg shadow hover:opacity-90 transition-opacity">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                                                Add Role
+                                        </button>
+                                </div>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full bg-white rounded-2xl shadow border border-gray-200">
+                                        <thead>
+                                            <tr class="bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] text-white">
+                                                <th class="text-left px-6 py-4 rounded-tl-2xl">Role</th>
+                                                <th class="text-left px-6 py-4">Location</th>
+                                                <th class="text-left px-6 py-4">Type</th>
+                                                <th class="text-left px-6 py-4">Status</th>
+                                                <th class="text-left px-6 py-4 rounded-tr-2xl">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-t border-gray-100 hover:bg-[#f7fafc] transition-colors">
+                                                <td class="px-6 py-4 font-semibold flex items-center gap-3">
+                                                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#E59A5D]/20 text-[#E59A5D] text-xl">🎓</span>
+                                                    Interns (Marketing / Automation / Design)
+                                                </td>
+                                                <td class="px-6 py-4 text-gray-600">Remote/Hybrid</td>
+                                                <td class="px-6 py-4 text-gray-600">Internship</td>
+                                                <td class="px-6 py-4">
+                                                    <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">Active</span>
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    <div class="flex gap-2">
+                                                        <button class="p-2 hover:bg-[#E59A5D]/10 rounded-full transition-colors" title="Edit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                                                        </button>
+                                                        <button class="p-2 hover:bg-[#E0595D]/10 rounded-full transition-colors" title="Delete">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-t border-gray-100 hover:bg-[#f7fafc] transition-colors">
+                                                <td class="px-6 py-4 font-semibold flex items-center gap-3">
+                                                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#76B1B8]/20 text-[#76B1B8] text-xl">🔍</span>
+                                                    SEO Specialist
+                                                </td>
+                                                <td class="px-6 py-4 text-gray-600">Remote</td>
+                                                <td class="px-6 py-4 text-gray-600">Full-time / Part-time</td>
+                                                <td class="px-6 py-4">
+                                                    <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">Active</span>
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    <div class="flex gap-2">
+                                                        <button class="p-2 hover:bg-[#E59A5D]/10 rounded-full transition-colors" title="Edit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                                                        </button>
+                                                        <button class="p-2 hover:bg-[#E0595D]/10 rounded-full transition-colors" title="Delete">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-t border-gray-100 hover:bg-[#f7fafc] transition-colors">
+                                                <td class="px-6 py-4 font-semibold flex items-center gap-3">
+                                                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#B29A7A]/20 text-[#B29A7A] text-xl">⚙️</span>
+                                                    CRM & Automation Specialist
+                                                </td>
+                                                <td class="px-6 py-4 text-gray-600">Remote</td>
+                                                <td class="px-6 py-4 text-gray-600">Full-time / Part-time</td>
+                                                <td class="px-6 py-4">
+                                                    <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">Active</span>
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    <div class="flex gap-2">
+                                                        <button class="p-2 hover:bg-[#E59A5D]/10 rounded-full transition-colors" title="Edit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                                                        </button>
+                                                        <button class="p-2 hover:bg-[#E0595D]/10 rounded-full transition-colors" title="Delete">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="border-t border-gray-100 hover:bg-[#f7fafc] transition-colors">
+                                                <td class="px-6 py-4 font-semibold flex items-center gap-3">
+                                                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#222]/20 text-[#222] text-xl">💼</span>
+                                                    Sales Specialist
+                                                </td>
+                                                <td class="px-6 py-4 text-gray-600">Remote</td>
+                                                <td class="px-6 py-4 text-gray-600">Full-time / Part-time</td>
+                                                <td class="px-6 py-4">
+                                                    <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">Active</span>
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    <div class="flex gap-2">
+                                                        <button class="p-2 hover:bg-[#E59A5D]/10 rounded-full transition-colors" title="Edit">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                                                        </button>
+                                                        <button class="p-2 hover:bg-[#E0595D]/10 rounded-full transition-colors" title="Delete">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+            </div>
+
+            <!-- Apply Section (Hidden by default) -->
+            <div id="apply-section" class="hidden">
+                <div class="flex items-start justify-between mb-8">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-1">Application</h2>
+                        <p class="text-gray-600">Manage the steps candidates go through when applying</p>
+                    </div>
+                    <button class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] text-white rounded-lg hover:opacity-90 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                        Edit Content
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6 mb-6">
+                    <!-- Header Content Card -->
+                    <div class="border border-gray-300 rounded-2xl p-6 bg-white">
+                        <h3 class="mb-6 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                            Header Content
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm mb-2">Title</label>
+                                <input
+                                    type="text"
+                                    placeholder="Apply Now"
+                                    class="w-full px-4 py-2 bg-gray-100 border border-gray-200 rounded-lg text-sm"
+                                />
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm mb-2">Introduction</label>
+                                <textarea
+                                    placeholder="Send your CV and a short introduction telling us..."
+                                    class="w-full px-4 py-2 bg-gray-100 border border-gray-200 rounded-lg text-sm h-24 resize-none"
+                                ></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Information Card -->
+                    <div class="border border-gray-300 rounded-2xl p-6 bg-white">
+                        <h3 class="mb-6 flex items-center gap-2">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                            Information
+                        </h3>
+                        
+                        <div>
+                            <label class="block text-sm mb-2">Information</label>
+                            <textarea
+                                placeholder="• The role you're applying for&#10;• Why you want to work at Pixel Hive&#10;• Any relevant experience or portfolio links"
+                                class="w-full px-4 py-2 bg-gray-100 border border-gray-200 rounded-lg text-sm h-32 resize-none"
+                            ></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call To Action Card -->
+                <div class="border border-gray-300 rounded-2xl p-6 bg-white">
+                    <h3 class="mb-6 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                        Call To Action
+                    </h3>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm mb-2">Button</label>
+                            <input
+                                type="text"
+                                placeholder="open@pixelhive.com.au"
+                                class="w-full px-4 py-2 bg-gray-100 border border-gray-200 rounded-lg text-sm"
+                            />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm mb-2">Text</label>
+                            <input
+                                type="text"
+                                placeholder="We're always open to great talent — even if the role you want isn't listed yet."
+                                class="w-full px-4 py-2 bg-gray-100 border border-gray-200 rounded-lg text-sm"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </main>
+    <script>
+    // Make career section fields readonly until Edit Content is clicked, and save to localStorage
+    document.addEventListener('DOMContentLoaded', function () {
+        const section = document.getElementById('career-section');
+        if (!section) return;
+        // Field selectors in order: badge, title, subtitle, mainDesc, cta, intro
+        const selectors = [
+            'input[placeholder="Careers at Pixel Hive"]',
+            'input[placeholder="Build the Future of"]',
+            'input[placeholder="Automated Growth"]',
+            'textarea[placeholder*="growth ecosystems"]',
+            'textarea[placeholder*="problem-solving"]',
+            'textarea[placeholder*="typical marketing agency"]'
+        ];
+        function getFields() {
+            return selectors.map(sel => section.querySelector(sel));
+        }
+        function setInputsReadonly(readonly) {
+            getFields().forEach(el => {
+                if (!el) return;
+                el.readOnly = readonly;
+                if (readonly) {
+                    el.classList.add('bg-gray-100');
+                    el.classList.remove('bg-white');
+                } else {
+                    el.classList.remove('bg-gray-100');
+                    el.classList.add('bg-white');
+                }
+            });
+        }
+        function loadCareerFields() {
+            const data = localStorage.getItem('careerSectionFields');
+            if (!data) return;
+            try {
+                const arr = JSON.parse(data);
+                getFields().forEach((el, i) => { if (el && arr[i] !== undefined) el.value = arr[i]; });
+            } catch {}
+        }
+        function saveCareerFields() {
+            const arr = getFields().map(el => el ? el.value : '');
+            localStorage.setItem('careerSectionFields', JSON.stringify(arr));
+        }
+        // Initial state
+        setInputsReadonly(true);
+        loadCareerFields();
+        // Edit button logic
+        const btn = document.getElementById('career-edit-btn');
+        let saveBtn = null;
+        if (btn) {
+            btn.addEventListener('click', function () {
+                setInputsReadonly(false);
+                // Add Save button if not present
+                if (!saveBtn) {
+                    saveBtn = document.createElement('button');
+                    saveBtn.textContent = 'Save';
+                    saveBtn.className = 'ml-4 px-4 py-2 bg-[#76B1B8] text-white rounded-lg hover:opacity-90 transition-opacity';
+                    btn.parentNode.appendChild(saveBtn);
+                    saveBtn.addEventListener('click', function () {
+                        setInputsReadonly(true);
+                        saveCareerFields();
+                        saveBtn.remove();
+                        saveBtn = null;
+                    });
+                }
+            });
+        }
+    });
+    </script>
+    </div>
+</body>
+</html>
