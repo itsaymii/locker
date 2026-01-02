@@ -401,50 +401,68 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <section class="relative bg-black py-24 px-6 text-center text-white overflow-hidden">
-  
-  <div class="relative z-10 max-w-3xl mx-auto">
-    
+  <div class="relative z-10 max-w-3xl mx-auto" id="career-apply-dynamic"></div>
+</section>
+<script>
+// Dynamically render apply section from localStorage (admin)
+document.addEventListener('DOMContentLoaded', function () {
+  const container = document.getElementById('career-apply-dynamic');
+  if (!container) return;
+  const defaultFields = [
+    'Apply Now',
+    'Send your CV and a short introduction telling us:',
+    [
+      "The role you're applying for",
+      "Why you want to work at Pixel Hive",
+      "Any relevant experience or portfolio links"
+    ],
+    'operations@pixelhive.com.au',
+    "We're always open to great talent — even if the role you want isn't listed yet."
+  ];
+  let fields = defaultFields;
+  const data = localStorage.getItem('careerApplyFields');
+  if (data) {
+    try {
+      const arr = JSON.parse(data);
+      if (Array.isArray(arr) && arr.length === 5) {
+        fields = [
+          arr[0] && arr[0].trim() ? arr[0] : defaultFields[0],
+          arr[1] && arr[1].trim() ? arr[1] : defaultFields[1],
+          (arr[2] && arr[2].trim() ? arr[2].split('\n').map(s=>s.trim()).filter(Boolean) : defaultFields[2]),
+          arr[3] && arr[3].trim() ? arr[3] : defaultFields[3],
+          arr[4] && arr[4].trim() ? arr[4] : defaultFields[4],
+        ];
+      }
+    } catch {}
+  }
+  container.innerHTML = `
     <h2 class="text-[52px] md:text-[64px] font-extrabold tracking-tighter leading-tight mb-12">
       How to <span class="brand-gradient-text">Apply</span>
     </h2>
-
-    <p class="text-[#D1D5DB] text-lg mb-8 font-medium">
-      Send your CV and a short introduction telling us:
-    </p>
-
+    <p class="text-[#D1D5DB] text-lg mb-8 font-medium">${fields[1]}</p>
     <div class="inline-block text-left mb-12">
       <ul class="space-y-4 text-[16px] md:text-[18px]">
-        <li class="flex items-center">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#76B1B8] mr-4"></span>
-          <span class="text-[#9CA3AF]">The role you're applying for</span>
-        </li>
-        <li class="flex items-center">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#E59A5D] mr-4"></span>
-          <span class="text-[#9CA3AF]">Why you want to work at Pixel Hive</span>
-        </li>
-        <li class="flex items-center">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#E59A5D] mr-4"></span>
-          <span class="text-[#9CA3AF]">Any relevant experience or portfolio links</span>
-        </li>
+        ${fields[2].map((item,i) => `
+          <li class="flex items-center">
+            <span class="w-1.5 h-1.5 rounded-full ${i===0?"bg-[#76B1B8]":"bg-[#E59A5D]"} mr-4"></span>
+            <span class="text-[#9CA3AF]">${item}</span>
+          </li>
+        `).join('')}
       </ul>
     </div>
-
     <div class="mb-12">
-      <a href="mailto:operations@pixelhive.com.au" 
+      <a href="mailto:${fields[3]}" 
          class="inline-flex items-center justify-center gap-4 px-10 py-5 rounded-2xl brand-gradient-bg hover:scale-105 transition-transform duration-300 shadow-lg">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
-        <span class="text-white font-bold text-lg tracking-wide">operations@pixelhive.com.au</span>
+        <span class="text-white font-bold text-lg tracking-wide">${fields[3]}</span>
       </a>
     </div>
-
-    <p class="text-[#6B7280] text-sm md:text-base font-medium italic">
-      We're always open to great talent — even if the role you want isn't listed yet.
-    </p>
-
-  </div>
-</section>
+    <p class="text-[#6B7280] text-sm md:text-base font-medium italic">${fields[4]}</p>
+  `;
+});
+</script>
 
 </body>
 </html>

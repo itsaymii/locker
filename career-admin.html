@@ -8,6 +8,11 @@
                 <script src="https://cdn.tailwindcss.com"></script>
                 <style>
                     body, .font-sans { font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; }
+@media (max-width: 767px) {
+  #sidebar { position: fixed; top: 0; left: 0; height: 100vh; z-index: 40; }
+  #sidebar-overlay { display: block; }
+  .sidebar-link { width: 100%; text-align: center; }
+}
                 </style>
         <script>
             
@@ -311,33 +316,30 @@
             });
         </script>
 </head>
-<body>
-    <div class="flex min-h-screen bg-gray-50 font-sans">
-        <!-- Sidebar -->
-        <aside class="w-52 bg-[#1a1a1a] text-white p-6 flex flex-col">
-            <div class="mb-12">
-                <h1 class="text-xl mb-1">Career Page</h1>
-                <p class="text-sm text-gray-400">Admin Panel</p>
-            </div>
-            
-            <nav class="space-y-2 flex-1">
-                <a href="#career-section" class="sidebar-link block w-full text-left px-4 py-3 rounded transition-colors text-gray-300 hover:text-white hover:bg-[#252525]">
-                    Career Section
-                </a>
-                <a href="#why-section" class="sidebar-link block w-full text-left px-4 py-3 rounded transition-colors text-gray-300 hover:text-white hover:bg-[#252525]">
-                    Why Work Here Section
-                </a>
-                <a href="#role-section" class="sidebar-link block w-full text-left px-4 py-3 rounded transition-colors text-gray-300 hover:text-white hover:bg-[#252525]">
-                    Role Section
-                </a>
-                <a href="#apply-section" class="sidebar-link block w-full text-left px-4 py-3 rounded transition-colors text-gray-300 hover:text-white hover:bg-[#252525]">
-                    Apply Section
-                </a>
-            </nav>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="flex-1 p-8">
+<body class="bg-[#f7fafc] min-h-screen">
+  <div id="sidebar-overlay" class="fixed inset-0 bg-black/40 z-30 hidden md:hidden"></div>
+  <div class="flex flex-col md:flex-row min-h-screen">
+    <!-- Topbar for mobile -->
+    <div class="flex md:hidden items-center justify-between bg-[#222] text-white px-4 py-3 z-40">
+      <h1 class="text-xl font-bold tracking-tight">Career Admin</h1>
+      <button id="sidebar-toggle" class="focus:outline-none" aria-label="Open sidebar">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <!-- Responsive Sidebar/Topbar -->
+    <aside id="sidebar" class="fixed md:static top-0 left-0 h-full w-64 bg-[#222] text-white flex-col py-8 px-6 z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out md:flex md:relative md:translate-x-0 md:w-64 md:h-auto md:py-8 md:px-6 flex md:flex-col">
+      <div class="flex items-center justify-between mb-8 md:mb-10">
+        <h1 class="text-xl md:text-2xl font-bold tracking-tight">Career Admin</h1>
+        <button id="sidebar-close" class="md:hidden text-gray-400 hover:text-white text-2xl" aria-label="Close sidebar">&times;</button>
+      </div>
+      <nav class="flex flex-col gap-2">
+        <a href="#career-section" class="sidebar-link bg-[#2a3f4d] text-white rounded-lg px-3 md:px-4 py-2 font-medium transition-colors text-sm md:text-base">Career Overview</a>
+        <a href="#why-section" class="sidebar-link text-gray-300 rounded-lg px-3 md:px-4 py-2 font-medium transition-colors text-sm md:text-base">Why Work Here</a>
+        <a href="#role-section" class="sidebar-link text-gray-300 rounded-lg px-3 md:px-4 py-2 font-medium transition-colors text-sm md:text-base">Roles</a>
+        <a href="#apply-section" class="sidebar-link text-gray-300 rounded-lg px-3 md:px-4 py-2 font-medium transition-colors text-sm md:text-base">Applications</a>
+      </nav>
+    </aside>
+    <main class="flex-1 p-4 md:p-10 w-full">
             <!-- Career Section -->
             <div id="career-section">
                 <div class="flex items-start justify-between mb-8">
@@ -435,98 +437,12 @@
                         <h2 class="text-3xl font-bold mb-1">Why Work Here</h2>
                         <p class="text-gray-600">Manage company benefits and culture highlights</p>
                     </div>
-                    <button class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] text-white rounded-lg hover:opacity-90 transition-opacity">
+                    <button id="add-benefit-btn" class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] text-white rounded-lg hover:opacity-90 transition-opacity">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
                         Add Benefit
                     </button>
                 </div>
-
-                <div class="grid grid-cols-3 gap-6">
-                    <!-- Benefit Card 1 -->
-                    <div class="bg-black rounded-2xl p-8 border border-[#222] flex flex-col h-full relative">
-                        <div class="flex items-start justify-between mb-7">
-                            <div class="w-12 h-12 brand-gradient-bg rounded-xl"></div>
-                            <div class="flex gap-3 text-white/80 text-lg">
-                                <button class="hover:text-[#E59A5D] transition-colors" title="Edit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
-                                </button>
-                                <button class="hover:text-[#E0595D] transition-colors" title="Delete">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                        <h3 class="text-[20px] font-semibold mb-2 text-white leading-snug tracking-tight">Work on real client growth systems<br>not busy work</h3>
-                        <p class="text-[15px] text-[#b0b8c1] leading-relaxed font-medium">Build meaningful solutions that actually drive business results</p>
-                    </div>
-
-                    <!-- Benefit Card 2 -->
-                    <div class="bg-black rounded-2xl p-8 border border-[#222] flex flex-col h-full relative">
-                        <div class="flex items-start justify-between mb-7">
-                            <div class="w-12 h-12 brand-gradient-bg rounded-xl"></div>
-                            <div class="flex gap-3 text-white/80 text-lg">
-                                <button class="hover:text-[#E59A5D] transition-colors" title="Edit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
-                                </button>
-                                <button class="hover:text-[#E0595D] transition-colors" title="Delete">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                        <h3 class="text-[20px] font-semibold mb-2 text-white leading-snug tracking-tight">Exposure to AI, automation, CRM,<br>and modern marketing stacks</h3>
-                        <p class="text-[15px] text-[#b0b8c1] leading-relaxed font-medium">Learn cutting-edge tools and technologies that shape the future</p>
-                    </div>
-
-                    <!-- Benefit Card 3 -->
-                    <div class="bg-black rounded-2xl p-8 border border-[#222] flex flex-col h-full relative">
-                        <div class="flex items-start justify-between mb-7">
-                            <div class="w-12 h-12 brand-gradient-bg rounded-xl"></div>
-                            <div class="flex gap-3 text-white/80 text-lg">
-                                <button class="hover:text-[#E59A5D] transition-colors" title="Edit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
-                                </button>
-                                <button class="hover:text-[#E0595D] transition-colors" title="Delete">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                        <h3 class="text-[20px] font-semibold mb-2 text-white leading-snug tracking-tight">Remote-first culture with flexible<br>work arrangements</h3>
-                        <p class="text-[15px] text-[#b0b8c1] leading-relaxed font-medium">Work from anywhere, anytime — we trust you to deliver</p>
-                    </div>
-
-                    <!-- Benefit Card 4 -->
-                    <div class="bg-black rounded-2xl p-8 border border-[#222] flex flex-col h-full relative">
-                        <div class="flex items-start justify-between mb-7">
-                            <div class="w-12 h-12 brand-gradient-bg rounded-xl"></div>
-                            <div class="flex gap-3 text-white/80 text-lg">
-                                <button class="hover:text-[#E59A5D] transition-colors" title="Edit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
-                                </button>
-                                <button class="hover:text-[#E0595D] transition-colors" title="Delete">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                        <h3 class="text-[20px] font-semibold mb-2 text-white leading-snug tracking-tight">Clear growth pathways and skill<br>development</h3>
-                        <p class="text-[15px] text-[#b0b8c1] leading-relaxed font-medium">Continuous learning opportunities and clear career progression</p>
-                    </div>
-
-                    <!-- Benefit Card 5 -->
-                    <div class="bg-black rounded-2xl p-8 border border-[#222] flex flex-col h-full relative">
-                        <div class="flex items-start justify-between mb-7">
-                            <div class="w-12 h-12 brand-gradient-bg rounded-xl"></div>
-                            <div class="flex gap-3 text-white/80 text-lg">
-                                <button class="hover:text-[#E59A5D] transition-colors" title="Edit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
-                                </button>
-                                <button class="hover:text-[#E0595D] transition-colors" title="Delete">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                        <h3 class="text-[20px] font-semibold mb-2 text-white leading-snug tracking-tight">Collaborative, supportive, no-ego<br>team culture</h3>
-                        <p class="text-[15px] text-[#b0b8c1] leading-relaxed font-medium">Work with talented people who genuinely want you to succeed</p>
-                    </div>
-                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" id="why-cards-grid"></div>
             </div>
 
             <!-- Roles Section (Hidden by default) -->
@@ -731,72 +647,157 @@
         </main>
     </main>
     <script>
-    // Make career section fields readonly until Edit Content is clicked, and save to localStorage
-    document.addEventListener('DOMContentLoaded', function () {
-        const section = document.getElementById('career-section');
-        if (!section) return;
-        // Field selectors in order: badge, title, subtitle, mainDesc, cta, intro
-        const selectors = [
-            'input[placeholder="Careers at Pixel Hive"]',
-            'input[placeholder="Build the Future of"]',
-            'input[placeholder="Automated Growth"]',
-            'textarea[placeholder*="growth ecosystems"]',
-            'textarea[placeholder*="problem-solving"]',
-            'textarea[placeholder*="typical marketing agency"]'
-        ];
-        function getFields() {
-            return selectors.map(sel => section.querySelector(sel));
-        }
-        function setInputsReadonly(readonly) {
-            getFields().forEach(el => {
-                if (!el) return;
-                el.readOnly = readonly;
-                if (readonly) {
-                    el.classList.add('bg-gray-100');
-                    el.classList.remove('bg-white');
-                } else {
-                    el.classList.remove('bg-gray-100');
-                    el.classList.add('bg-white');
+        document.addEventListener('DOMContentLoaded', function () {
+            const careerSection = document.getElementById('career-section');
+            if (careerSection) {
+                const selectors = [
+                    'input[placeholder="Careers at Pixel Hive"]',
+                    'input[placeholder="Build the Future of"]',
+                    'input[placeholder="Automated Growth"]',
+                    'textarea[placeholder*="growth ecosystems"]',
+                    'textarea[placeholder*="problem-solving"]',
+                    'textarea[placeholder*="typical marketing agency"]'
+                ];
+                function getFields() {
+                    return selectors.map(sel => careerSection.querySelector(sel));
                 }
-            });
-        }
-        function loadCareerFields() {
-            const data = localStorage.getItem('careerSectionFields');
-            if (!data) return;
-            try {
-                const arr = JSON.parse(data);
-                getFields().forEach((el, i) => { if (el && arr[i] !== undefined) el.value = arr[i]; });
-            } catch {}
-        }
-        function saveCareerFields() {
-            const arr = getFields().map(el => el ? el.value : '');
-            localStorage.setItem('careerSectionFields', JSON.stringify(arr));
-        }
-        // Initial state
-        setInputsReadonly(true);
-        loadCareerFields();
-        // Edit button logic
-        const btn = document.getElementById('career-edit-btn');
-        let saveBtn = null;
-        if (btn) {
-            btn.addEventListener('click', function () {
-                setInputsReadonly(false);
-                // Add Save button if not present
-                if (!saveBtn) {
-                    saveBtn = document.createElement('button');
-                    saveBtn.textContent = 'Save';
-                    saveBtn.className = 'ml-4 px-4 py-2 bg-[#76B1B8] text-white rounded-lg hover:opacity-90 transition-opacity';
-                    btn.parentNode.appendChild(saveBtn);
-                    saveBtn.addEventListener('click', function () {
-                        setInputsReadonly(true);
-                        saveCareerFields();
-                        saveBtn.remove();
-                        saveBtn = null;
+                function setInputsReadonly(readonly) {
+                    getFields().forEach(el => {
+                        if (!el) return;
+                        el.readOnly = readonly;
+                        if (readonly) {
+                            el.classList.add('bg-gray-100');
+                            el.classList.remove('bg-white');
+                        } else {
+                            el.classList.remove('bg-gray-100');
+                            el.classList.add('bg-white');
+                        }
                     });
                 }
-            });
-        }
-    });
+                function loadCareerFields() {
+                    const data = localStorage.getItem('careerSectionFields');
+                    if (!data) return;
+                    try {
+                        const arr = JSON.parse(data);
+                        getFields().forEach((el, i) => { if (el && arr[i] !== undefined) el.value = arr[i]; });
+                    } catch {}
+                }
+                function saveCareerFields() {
+                    const arr = getFields().map(el => el ? el.value : '');
+                    localStorage.setItem('careerSectionFields', JSON.stringify(arr));
+                }
+                setInputsReadonly(true);
+                loadCareerFields();
+                const btn = document.getElementById('career-edit-btn');
+                let saveBtn = null;
+                if (btn) {
+                    btn.addEventListener('click', function () {
+                        setInputsReadonly(false);
+                        if (!saveBtn) {
+                            saveBtn = document.createElement('button');
+                            saveBtn.textContent = 'Save';
+                            saveBtn.className = 'ml-4 px-4 py-2 bg-[#76B1B8] text-white rounded-lg hover:opacity-90 transition-opacity';
+                            btn.parentNode.appendChild(saveBtn);
+                            saveBtn.addEventListener('click', function () {
+                                setInputsReadonly(true);
+                                saveCareerFields();
+                                saveBtn.remove();
+                                saveBtn = null;
+                            });
+                        }
+                    });
+                }
+            }
+
+            // --- Apply Section ---
+            const applySection = document.getElementById('apply-section');
+            if (applySection) {
+                
+                const selectors = [
+                    'input[placeholder="Apply Now"]',
+                    'textarea[placeholder^="Send your CV"]',
+                    'textarea[placeholder*="role you\'re applying for"]',
+                    'input[placeholder="open@pixelhive.com.au"]',
+                    'input[placeholder*="great talent"]'
+                ];
+                function getApplyFields() {
+                    return selectors.map(sel => applySection.querySelector(sel));
+                }
+                function setApplyReadonly(readonly) {
+                    getApplyFields().forEach(el => {
+                        if (!el) return;
+                        el.readOnly = readonly;
+                        if (readonly) {
+                            el.classList.add('bg-gray-100');
+                            el.classList.remove('bg-white');
+                        } else {
+                            el.classList.remove('bg-gray-100');
+                            el.classList.add('bg-white');
+                        }
+                    });
+                }
+                function loadApplyFields() {
+                    const data = localStorage.getItem('careerApplyFields');
+                    if (!data) return;
+                    try {
+                        const arr = JSON.parse(data);
+                        getApplyFields().forEach((el, i) => { if (el && arr[i] !== undefined) el.value = arr[i]; });
+                    } catch {}
+                }
+                function saveApplyFields() {
+                    const arr = getApplyFields().map(el => el ? el.value : '');
+                    localStorage.setItem('careerApplyFields', JSON.stringify(arr));
+                }
+                setApplyReadonly(true);
+                loadApplyFields();
+                
+                const btn = Array.from(applySection.querySelectorAll('button')).find(b => b.textContent.includes('Edit Content'));
+                let saveBtn = null;
+                if (btn) {
+                    btn.addEventListener('click', function () {
+                        setApplyReadonly(false);
+                        if (!saveBtn) {
+                            saveBtn = document.createElement('button');
+                            saveBtn.textContent = 'Save';
+                            saveBtn.className = 'ml-4 px-4 py-2 bg-[#76B1B8] text-white rounded-lg hover:opacity-90 transition-opacity';
+                            btn.parentNode.appendChild(saveBtn);
+                            saveBtn.addEventListener('click', function () {
+                                setApplyReadonly(true);
+                                saveApplyFields();
+                                saveBtn.remove();
+                                saveBtn = null;
+                            });
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Sidebar toggle for mobile
+  const sidebar = document.getElementById('sidebar');
+  const sidebarToggle = document.getElementById('sidebar-toggle');
+  const sidebarClose = document.getElementById('sidebar-close');
+  const sidebarOverlay = document.getElementById('sidebar-overlay');
+  function openSidebar() {
+    sidebar.classList.remove('-translate-x-full');
+    sidebarOverlay.classList.remove('hidden');
+  }
+  function closeSidebar() {
+    sidebar.classList.add('-translate-x-full');
+    sidebarOverlay.classList.add('hidden');
+  }
+  if (sidebarToggle) sidebarToggle.addEventListener('click', openSidebar);
+  if (sidebarClose) sidebarClose.addEventListener('click', closeSidebar);
+  if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
+  window.addEventListener('resize', function() {
+    if (window.innerWidth >= 768) {
+      closeSidebar();
+    }
+  });
+});
     </script>
     </div>
 </body>
