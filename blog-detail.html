@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Detail | Pixel Hive</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans antialiased relative overflow-x-hidden">
+
+  <!-- Background Decorative Shapes -->
+  <div class="fixed inset-0 pointer-events-none z-0">
+    <div class="absolute top-20 left-[10%] w-16 h-16 border-2 border-[#76B1B8] opacity-20 rounded-full"></div>
+    <div class="absolute top-40 left-[3%] w-4 h-24 bg-[#E59A5D] rotate-45 rounded-full opacity-40"></div>
+    <div class="absolute top-32 right-[15%] w-12 h-12 border-2 border-[#E59A5D] opacity-25 rounded-full"></div>
+    <div class="absolute top-[60%] right-[5%] w-20 h-20 bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] rotate-12 opacity-15 rounded-2xl"></div>
+    <div class="absolute bottom-[30%] left-[8%] w-10 h-10 bg-[#76B1B8] opacity-20 rounded-full"></div>
+    <div class="absolute bottom-20 right-[20%] w-6 h-20 bg-[#76B1B8] rotate-[-30deg] rounded-full opacity-30"></div>
+    <div class="absolute top-[45%] left-[20%] w-8 h-8 border-2 border-[#E59A5D] opacity-15 rounded-lg rotate-45"></div>
+    <div class="absolute bottom-[15%] left-[25%] w-14 h-14 border-2 border-[#76B1B8] opacity-10 rounded-full"></div>
+  </div>
+
+  <!-- Hero Section with Image -->
+  <div class="relative z-10 w-full max-w-6xl mx-auto px-4 md:px-6 pt-8">
+    <a href="blogs.html" class="inline-flex items-center gap-2 mb-6 text-xs font-bold tracking-widest text-gray-500 uppercase hover:text-[#E59A5D] transition-all group">
+      <svg class="w-4 h-4 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Insights
+    </a>
+    <div class="w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl md:rounded-3xl overflow-hidden shadow-lg">
+      <div id="hero-bg" class="w-full h-full bg-cover bg-center"></div>
+    </div>
+  </div>
+
+  <!-- Content Card -->
+  <section class="relative z-10 px-4 md:px-6 py-12 md:py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white shadow-xl rounded-2xl md:rounded-3xl p-8 md:p-12">
+        <div id="blog-detail-content"></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const blogData = [
+      {
+        id: 0,
+        title: 'The Hidden Cost of "Good Enough"',
+        image: 'https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=600&q=80',
+        content: `Templates promise convenience.
+
+What they actually deliver is compromise.
+
+You inherit:
+- Layouts designed for averages, not your audience
+- Structures built for aesthetics, not conversion
+- Code bloated with features you will never use
+- Limitations you only discover once you try to scale
+
+The cost is not the template itself.
+
+The cost is everything it prevents you from doing later.
+
+**Growth demands flexibility. Templates resist it.**`
+      },
+      {
+        id: 1,
+        title: "Custom Isn't About Design. It's About Leverage.",
+        image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80',
+        content: `A custom website is not about looking different for the sake of it.
+
+It is about aligning every element with intent.
+
+- Pages built around user behavior, not theme demos
+- Messaging structured to guide decisions, not fill space
+- Performance optimized for your exact goals
+- Integrations that work seamlessly with your CRM, automations, and workflows
+
+**Custom gives you leverage.**
+
+**Templates give you a ceiling.**`
+      },
+      {
+        id: 2,
+        title: 'Why Templates Win the Market (And Lose the War)',
+        image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80',
+        content: `Templates are popular because they are easy to sell:
+- Faster timelines
+- Lower upfront cost
+- Familiar visuals
+
+But familiarity does not convert.
+
+**Clarity does.**
+
+Your audience does not care what theme you used.
+
+They care whether the site understands them.
+
+Most templated sites speak at users.
+
+**Custom sites are built to speak to them.**`
+      },
+      {
+        id: 3,
+        title: 'Our Philosophy at Pixelhive',
+        image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80',
+        content: `We do not start with layouts.
+
+We start with questions.
+
+- What should this site do for the business?
+- Where should attention go first?
+- What action matters most?
+- What systems should this connect to behind the scenes?
+
+Only after those answers are clear do we design and build.
+
+**That is how websites stop being digital brochures and start becoming infrastructure.**`
+      },
+      {
+        id: 4,
+        title: 'The Long Game Always Wins',
+        image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
+        content: `If your goal is to simply "have a website," a template will do.
+
+If your goal is to grow, scale, and build authority, it will not.
+
+**Custom beats templated every time**—not because it is more complex, but because it is more intentional.
+
+And intention is what turns traffic into trust, and trust into growth.
+
+At Pixelhive, we do not build websites to blend in.
+
+**We build them to perform.**`
+      }
+    ];
+
+    // Convert plain text to HTML
+    function textToHtml(text) {
+      if (!text) return '';
+      
+      const lines = text.split('\n');
+      let html = '';
+      let inList = false;
+      
+      for (let i = 0; i < lines.length; i++) {
+        let line = lines[i].trim();
+        
+        // Skip empty lines but close list if open
+        if (!line) {
+          if (inList) {
+            html += '</ul>';
+            inList = false;
+          }
+          continue;
+        }
+        
+        // Convert **text** to bold
+        line = line.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+        
+        // Check if bullet point
+        if (line.startsWith('- ')) {
+          if (!inList) {
+            html += '<ul class="list-disc ml-6 mb-4">';
+            inList = true;
+          }
+          html += '<li>' + line.substring(2) + '</li>';
+        } else {
+          if (inList) {
+            html += '</ul>';
+            inList = false;
+          }
+          html += '<p class="mb-4">' + line + '</p>';
+        }
+      }
+      
+      if (inList) {
+        html += '</ul>';
+      }
+      
+      return html;
+    }
+
+    function renderBlogDetail() {
+      const params = new URLSearchParams(window.location.search);
+      let id = parseInt(params.get('id'), 10);
+      // Default to first blog if no id provided
+      if (isNaN(id)) id = 0;
+      const blog = blogData.find(b => b.id === id);
+      const container = document.getElementById('blog-detail-content');
+      const heroBg = document.getElementById('hero-bg');
+      if (!blog) {
+        container.innerHTML = '<p class="text-red-500">Blog not found.</p>';
+        return;
+      }
+      // Set hero background
+      heroBg.style.backgroundImage = `url('${blog.image}')`;
+      
+      container.innerHTML = `
+        <div class="mb-6">
+          <span class="inline-block px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] rounded-full mb-6">Insights</span>
+        </div>
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-8">${blog.title}</h1>
+        <div class="flex items-center gap-4 mb-10 pb-10 border-b border-gray-200">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] flex items-center justify-center text-white font-bold text-lg">P</div>
+          <div>
+            <p class="font-semibold text-gray-900">Pixelhive Team</p>
+            <p class="text-sm text-gray-500">Digital Growth Experts</p>
+          </div>
+        </div>
+        <div class="prose prose-lg max-w-none prose-p:text-gray-600 prose-p:leading-relaxed prose-li:text-gray-600 prose-strong:text-gray-900">${textToHtml(blog.content)}</div>
+        <div class="mt-12 pt-10 border-t border-gray-200">
+          <p class="text-center text-gray-500 mb-6">Ready to build something intentional?</p>
+          <div class="text-center">
+            <a href="home.html" class="inline-block px-8 py-4 bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] text-white font-bold rounded-full hover:opacity-90 transition-all shadow-lg hover:shadow-xl">Let's Talk</a>
+          </div>
+        </div>
+      `;
+      document.title = blog.title + ' | Pixel Hive';
+    }
+    document.addEventListener('DOMContentLoaded', renderBlogDetail);
+  </script>
+
+</body>
+</html>

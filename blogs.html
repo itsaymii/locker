@@ -72,34 +72,51 @@
       </div>
       <div id="insights-dynamic-list" class="grid grid-cols-1 md:grid-cols-3 gap-12"></div>
       <script>
-        // Render Insights & Resources dynamically from localStorage
-        function renderInsightsFromStorage() {
+        function renderCustomCards() {
           const container = document.getElementById('insights-dynamic-list');
           if (!container) return;
-          let posts = [];
-          try {
-            posts = JSON.parse(localStorage.getItem('insightsPosts')) || [];
-          } catch { posts = []; }
-          container.innerHTML = '';
-          if (!posts.length) {
-            container.innerHTML = '<div class="col-span-3 text-center text-gray-400 italic">No posts found.</div>';
-            return;
-          }
-          posts.forEach(post => {
+          const cards = [
+            {
+              title: 'The Hidden Cost of “Good Enough”',
+              desc: 'Templates promise convenience, but what they actually deliver is compromise.',
+              image: 'https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=600&q=80' // cost, compromise
+            },
+            {
+              title: 'Custom Isn’t About Design. It’s About Leverage.',
+              desc: 'A custom website isn’t about looking different for the sake of it. It’s about aligning every element with intent.',
+              image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80' // custom design, leverage (gears/engineering)
+            },
+            {
+              title: 'Why Templates Win the Market (And Lose the War)',
+              desc: 'Templates are popular because they’re easy to sell: Faster timelines, lower upfront cost, familiar visuals.',
+              image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80' // templates, market
+            },
+            {
+              title: 'Our Philosophy at Pixelhive',
+              desc: 'We don’t start with layouts. We start with questions that drive business results.',
+              image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80' // philosophy, questions
+            },
+            {
+              title: 'The Long Game Always Wins',
+              desc: 'If your goal is to grow, scale, and build authority, custom beats templated every time.',
+              image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80' // long game, growth
+            }
+          ];
+          cards.forEach((card, i) => {
             const div = document.createElement('div');
             div.className = 'group cursor-pointer';
             div.innerHTML = `
               <div class="overflow-hidden rounded-[2.5rem] mb-8 shadow-sm border border-[#F3F4F6] aspect-[4/3]">
-                ${post.image ? `<img src="${post.image}" class="article-img w-full h-full object-cover group-hover:scale-110">` : ''}
+                <img src="${card.image}" alt="${card.title}" class="article-img w-full h-full object-cover group-hover:scale-110" />
               </div>
-              <h3 class="text-[24px] font-[800] tight-heading mb-4 group-hover:text-[#76B1B8] transition-colors">${post.title}</h3>
-              <p class="text-[#6B7280] text-[15px] leading-relaxed mb-6 font-medium sub-heading">${post.content.replace(/\n/g, '<br>')}</p>
-              <a href="#" class="inline-block text-[13px] font-[800] tracking-[0.25em] text-[#111827] uppercase border-b-[3px] border-[#111827] pb-1 hover:text-[#E59A5D] hover:border-[#E59A5D] transition-all">Read More</a>
+              <h3 class="text-[24px] font-[800] tight-heading mb-4 group-hover:text-[#76B1B8] transition-colors">${card.title}</h3>
+              <p class="text-[#6B7280] text-[15px] leading-relaxed mb-6 font-medium sub-heading">${card.desc}</p>
+              <a href="blog-detail.html?id=${i}" class="inline-block text-[13px] font-[800] tracking-[0.25em] text-[#111827] uppercase border-b-[3px] border-[#111827] pb-1 hover:text-[#E59A5D] hover:border-[#E59A5D] transition-all">Read More</a>
             `;
             container.appendChild(div);
           });
         }
-        document.addEventListener('DOMContentLoaded', renderInsightsFromStorage);
+        document.addEventListener('DOMContentLoaded', renderCustomCards);
       </script>
     </div>
   </section>

@@ -151,10 +151,114 @@
 
                 // --- Roles CRUD ---
                 const defaultRoles = [
-                    { icon: '🎓', title: 'Interns (Marketing / Automation / Design)', location: 'Remote/Hybrid', type: 'Internship', status: 'Active' },
-                    { icon: '🔍', title: 'SEO Specialist', location: 'Remote', type: 'Full-time / Part-time', status: 'Active' },
-                    { icon: '⚙️', title: 'CRM & Automation Specialist', location: 'Remote', type: 'Full-time / Part-time', status: 'Active' },
-                    { icon: '💼', title: 'Sales Specialist', location: 'Remote', type: 'Full-time / Part-time', status: 'Active' }
+                    { 
+                        icon: '🎓', 
+                        title: 'Interns (Marketing / Automation / Design)', 
+                        location: 'Remote/Hybrid', 
+                        type: 'Internship', 
+                        status: 'Active',
+                        why: 'This is your chance to learn real-world marketing, automation, and design skills while working on actual client projects.',
+                        what: [
+                            'Assist in creating marketing materials and campaigns',
+                            'Learn and implement automation workflows',
+                            'Support the design team with graphics and layouts',
+                            'Research industry trends and competitor strategies',
+                            'Participate in team meetings and brainstorming sessions'
+                        ],
+                        looking: [
+                            'Currently enrolled or recent graduate in Marketing, Design, or related field',
+                            'Eager to learn and take initiative',
+                            'Basic understanding of social media platforms',
+                            'Good communication skills',
+                            'Able to commit at least 20 hours per week'
+                        ],
+                        bonus: [
+                            'Experience with Canva, Figma, or Adobe tools',
+                            'Familiarity with CRM systems',
+                            'Previous internship experience'
+                        ]
+                    },
+                    { 
+                        icon: '🔍', 
+                        title: 'SEO Specialist', 
+                        location: 'Remote', 
+                        type: 'Full-time / Part-time', 
+                        status: 'Active',
+                        why: 'Help businesses rank higher and get found online through strategic SEO implementation.',
+                        what: [
+                            'Conduct keyword research and competitive analysis',
+                            'Optimize on-page and off-page SEO elements',
+                            'Monitor and report on search rankings and traffic',
+                            'Develop and execute link-building strategies',
+                            'Collaborate with content team on SEO-optimized content'
+                        ],
+                        looking: [
+                            '2+ years of SEO experience',
+                            'Proficient with SEO tools (Ahrefs, SEMrush, Google Analytics)',
+                            'Understanding of technical SEO fundamentals',
+                            'Strong analytical and problem-solving skills',
+                            'Ability to explain SEO concepts to non-technical stakeholders'
+                        ],
+                        bonus: [
+                            'Experience with local SEO',
+                            'Knowledge of HTML/CSS',
+                            'Content writing skills'
+                        ]
+                    },
+                    { 
+                        icon: '⚙️', 
+                        title: 'CRM & Automation Specialist', 
+                        location: 'Remote', 
+                        type: 'Full-time / Part-time', 
+                        status: 'Active',
+                        why: 'Build powerful automation systems that help businesses save time and scale effortlessly.',
+                        what: [
+                            'Design and implement CRM workflows and automations',
+                            'Integrate various tools and platforms (Zapier, Make, etc.)',
+                            'Create email sequences and nurture campaigns',
+                            'Troubleshoot and optimize existing automations',
+                            'Document processes and train team members'
+                        ],
+                        looking: [
+                            'Experience with CRM platforms (HubSpot, GoHighLevel, etc.)',
+                            'Strong understanding of automation logic',
+                            'Attention to detail and process-oriented mindset',
+                            'Problem-solving abilities',
+                            'Good communication skills for client interaction'
+                        ],
+                        bonus: [
+                            'Experience with API integrations',
+                            'Knowledge of JavaScript or Python',
+                            'Background in sales or marketing operations'
+                        ]
+                    },
+                    { 
+                        icon: '💼', 
+                        title: 'Sales Specialist', 
+                        location: 'Remote', 
+                        type: 'Full-time / Part-time', 
+                        status: 'Active',
+                        why: 'Connect with potential clients and help them understand how our solutions can transform their business.',
+                        what: [
+                            'Identify and qualify potential leads',
+                            'Conduct discovery calls and product demos',
+                            'Create and present proposals to prospects',
+                            'Follow up and nurture relationships',
+                            'Collaborate with marketing on lead generation strategies'
+                        ],
+                        looking: [
+                            '1+ years of B2B sales experience',
+                            'Excellent communication and presentation skills',
+                            'Self-motivated with a results-driven mindset',
+                            'Comfortable with CRM tools and sales processes',
+                            'Ability to understand and explain technical solutions'
+                        ],
+                        bonus: [
+                            'Experience in digital marketing or SaaS sales',
+                            'Existing network in target industries',
+                            'Track record of exceeding sales targets'
+                        ]
+                    }
                 ];
                 function getRoles() {
                     const data = localStorage.getItem('careerRoles');
@@ -169,28 +273,44 @@
                     roles.forEach((role, idx) => {
                         const tr = document.createElement('tr');
                         tr.className = 'border-t border-gray-100 hover:bg-[#f7fafc] transition-colors';
-                                                tr.innerHTML = `
-                                                    <td class="px-6 py-4 font-semibold flex items-center gap-3">
-                                                        ${role.icon && role.icon.startsWith('data:image')
-                                                            ? `<img src="${role.icon}" alt="icon" class="w-8 h-8 rounded-full object-cover border border-[#E59A5D]/40" />`
-                                                            : `<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#E59A5D]/20 text-[#E59A5D] text-xl">${role.icon || '💼'}</span>`}
-                                                        <span>${role.title}</span>
-                                                    </td>
-                          <td class="px-6 py-4 text-gray-600">${role.location}</td>
-                          <td class="px-6 py-4 text-gray-600">${role.type}</td>
-                          <td class="px-6 py-4">
-                            <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">${role.status}</span>
-                          </td>
-                          <td class="px-6 py-4">
-                            <div class="flex gap-2">
-                              <button class="role-edit-btn p-2 hover:bg-[#E59A5D]/10 rounded-full transition-colors" title="Edit" data-idx="${idx}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
-                              </button>
-                              <button class="role-delete-btn p-2 hover:bg-[#E0595D]/10 rounded-full transition-colors" title="Delete" data-idx="${idx}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
-                              </button>
-                            </div>
-                          </td>
+                        // Helper to render list
+                        function renderList(arr) {
+                            if (!arr || !arr.length) return '<span class="text-gray-400 italic text-xs">Not set</span>';
+                            return '<ul class="list-disc ml-4 text-xs text-gray-600">' + arr.slice(0,3).map(item => `<li>${item}</li>`).join('') + (arr.length > 3 ? `<li class="text-gray-400">+${arr.length-3} more...</li>` : '') + '</ul>';
+                        }
+                        tr.innerHTML = `
+                            <td class="px-3 py-3 font-semibold">
+                                <div class="flex items-center gap-2">
+                                    ${role.icon && role.icon.startsWith('data:image')
+                                        ? `<img src="${role.icon}" alt="icon" class="w-8 h-8 rounded-full object-cover border border-[#E59A5D]/40" />`
+                                        : `<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#E59A5D]/20 text-[#E59A5D] text-lg">${role.icon || '💼'}</span>`}
+                                    <span class="text-sm font-bold">${role.title}</span>
+                                </div>
+                            </td>
+                            <td class="px-3 py-3 text-sm text-gray-600">${role.location}</td>
+                            <td class="px-3 py-3 text-sm text-gray-600">${role.type}</td>
+                            <td class="px-3 py-3 text-xs align-top">
+                                ${renderList(role.what)}
+                            </td>
+                            <td class="px-3 py-3 text-xs align-top">
+                                ${renderList(role.looking)}
+                            </td>
+                            <td class="px-3 py-3 text-xs align-top">
+                                ${renderList(role.bonus)}
+                            </td>
+                            <td class="px-3 py-3">
+                                <span class="inline-block px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold">${role.status}</span>
+                            </td>
+                            <td class="px-3 py-3">
+                                <div class="flex gap-1">
+                                    <button class="role-edit-btn p-1.5 hover:bg-[#E59A5D]/10 rounded-full transition-colors" title="Edit" data-idx="${idx}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                                    </button>
+                                    <button class="role-delete-btn p-1.5 hover:bg-[#E0595D]/10 rounded-full transition-colors" title="Delete" data-idx="${idx}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+                                    </button>
+                                </div>
+                            </td>
                         `;
                         tbody.appendChild(tr);
                     });
@@ -222,14 +342,14 @@
                                         // Helper to join array to textarea
                                         function arr(val) { return Array.isArray(val) ? val.join('\n') : (val||''); }
                                         tr.innerHTML = `
-                                            <td colspan="5" class="px-6 py-4 bg-gray-50" style="vertical-align:top;">
+                                            <td colspan="8" class="px-6 py-4 bg-gray-50" style="vertical-align:top;">
                                                 <div class="grid grid-cols-2 gap-4">
                                                     <div>
                                                         <label class="block text-xs mb-1">Icon Image</label>
                                                         <input type="file" accept="image/*" class="role-icon-input mb-2" />
                                                         <div class="mt-1">
                                                             ${role.icon && role.icon.startsWith('data:image')
-                                                                ? `<img src="${role.icon}" alt="icon" class="w-12 h-12 rounded-full object-cover border border-[#E59A5D]/40" />`
+                                                                ? `<div style='display:inline-block;position:relative;'><img src="${role.icon}" alt="icon" class="w-12 h-12 rounded-full object-cover border border-[#E59A5D]/40" /><button type='button' class='delete-icon-btn absolute top-0 right-0 bg-white text-red-500 rounded-full p-1 text-xs' title='Remove icon' style='transform:translate(40%,-40%);'>&times;</button></div>`
                                                                 : role.icon ? `<span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#E59A5D]/20 text-[#E59A5D] text-2xl">${role.icon}</span>` : ''}
                                                         </div>
                                                     </div>
@@ -272,6 +392,16 @@
                                                 </div>
                                             </td>
                                         `;
+                                        const deleteIconBtn = tr.querySelector('.delete-icon-btn');
+                                        if (deleteIconBtn) {
+                                            deleteIconBtn.addEventListener('click', function(e) {
+                                                e.preventDefault();
+                                                role.icon = '';
+                                                // Re-render the row to reflect icon removal
+                                                tr.innerHTML = '';
+                                                setTimeout(() => { tbody.children[idx].dispatchEvent(new Event('click')); }, 10);
+                                            });
+                                        }
                                         tr.querySelector('.role-save-btn').addEventListener('click', function() {
                                                 const inputs = tr.querySelectorAll('input, textarea');
                                                 let icon = role.icon || '';
@@ -460,12 +590,15 @@
                                 <div class="overflow-x-auto">
                                     <table class="w-full bg-white rounded-2xl shadow border border-gray-200">
                                         <thead>
-                                            <tr class="bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] text-white">
-                                                <th class="text-left px-6 py-4 rounded-tl-2xl">Role</th>
-                                                <th class="text-left px-6 py-4">Location</th>
-                                                <th class="text-left px-6 py-4">Type</th>
-                                                <th class="text-left px-6 py-4">Status</th>
-                                                <th class="text-left px-6 py-4 rounded-tr-2xl">Actions</th>
+                                            <tr class="bg-gradient-to-r from-[#E59A5D] to-[#76B1B8] text-white text-sm">
+                                                <th class="text-left px-3 py-3 rounded-tl-2xl">Role</th>
+                                                <th class="text-left px-3 py-3">Location</th>
+                                                <th class="text-left px-3 py-3">Type</th>
+                                                <th class="text-left px-3 py-3">What you'll do</th>
+                                                <th class="text-left px-3 py-3">What we're looking for</th>
+                                                <th class="text-left px-3 py-3">Bonus points</th>
+                                                <th class="text-left px-3 py-3">Status</th>
+                                                <th class="text-left px-3 py-3 rounded-tr-2xl">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
